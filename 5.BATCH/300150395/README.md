@@ -194,22 +194,7 @@ crontab -e
 | ![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white&style=flat-square) | Stockage rapports |
 | ![Cron](https://img.shields.io/badge/-Cron-0066CC?style=flat-square) | Planification |
 
----
 
-## 📁 Structure du Projet
-
-```
-.
-├── README.md
-├── gobuster_all_vms.sh      # Script principal
-├── logs/
-│   └── gobuster/
-│       ├── run_*.log
-│       ├── skipped_*.log
-│       └── dir_*.txt
-└── config/
-    └── wordlists.txt
-```
 
 ---
 
@@ -225,6 +210,6 @@ crontab -e
 
 **300150395 - Infrastructure as Code Project**
 
-[![GitHub](https://img.shields.io/badge/GitHub-300150395-181717?logo=github)](https://github.com/300150395)
+[![GitHub](https://img.shields.io/badge/GitHub-300150395-181717?logo=github)](https://github.com/ismailtrache)
 
 </div>
