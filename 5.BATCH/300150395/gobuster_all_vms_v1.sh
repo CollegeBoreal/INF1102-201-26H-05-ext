@@ -1,3 +1,4 @@
+cat > ~/scripts/gobuster_all_vms.sh <<'EOF'
 #!/usr/bin/env bash
 set -euo pipefail
 
@@ -35,10 +36,16 @@ for i in $(seq "$START" "$END"); do
       --timeout "$TIMEOUT" \
       --no-error \
       -o "$outfile" || true
-    grep "Status:" "$outfile" | head -20 || true
+    echo "--- Résultats $ip ---"
+    grep "Status:" "$outfile" 2>/dev/null | head -20 || echo "(aucun résultat)"
   else
     echo "=== SKIP $url (no HTTP response) ===" | tee -a "$SKIPLOG"
   fi
 done
 
 echo "$(date '+%F %T') END" | tee -a "$RUNLOG"
+EOF
+
+chmod +x ~/scripts/gobuster_all_vms.sh
+./gobuster_all_vms.sh
+
