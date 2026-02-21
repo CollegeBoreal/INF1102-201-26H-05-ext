@@ -198,6 +198,22 @@ crontab -e
 
 ---
 
+## 📁 Structure du Projet
+
+```
+.
+📁 5.BATCH/300150395/
+├── gobuster_all_vms.sh        ✅ Script final
+├── gobuster_all_vms_v1.sh     ✅ Script v1
+├── README.md                  ✅ Documentation
+└── reports/gobuster/
+    ├── gobuster_run_2026-02-21_070654.log       ✅
+    └── gobuster_run_2026-02-21_094241_full.log  ✅
+```
+
+
+---
+
 ## 📝 Notes
 
 - ✅ **Scalable:** Facilement adaptable (plage IP, wordlists, ports)
