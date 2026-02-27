@@ -29,7 +29,7 @@
 |:hash:| Boréal :id:                | README.md | images | main.tf | :link: IP |
 |------|----------------------------|-----------|--------|---------|------------|
 | 0 | [300135538](../300135538/README.md) [<image src='https://avatars0.githubusercontent.com/u/133056385?s=460&v=4' width=20 height=20></image>](https://github.com/RedaYousfi) | :x: | :x: | :x: | 10.7.237.224 |
-| 1 | [300141570](../300141570/README.md) [<image src='https://avatars0.githubusercontent.com/u/66260193?s=460&v=4' width=20 height=20></image>](https://github.com/swberk) | :heavy_check_mark: | :x: | :x: | 10.7.237.226 |
+| 1 | [300141570](../300141570/README.md) [<image src='https://avatars0.githubusercontent.com/u/66260193?s=460&v=4' width=20 height=20></image>](https://github.com/swberk) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.226 |
 | 2 | [300146112](../300146112/README.md) [<image src='https://avatars0.githubusercontent.com/u/205994703?s=460&v=4' width=20 height=20></image>](https://github.com/laggabkhalef) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.227 |
 | 3 | [300146676](../300146676/README.md) [<image src='https://avatars0.githubusercontent.com/u/211595997?s=460&v=4' width=20 height=20></image>](https://github.com/harkatiaymen) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.228 |
 | 4 | [300148094](../300148094/README.md) [<image src='https://avatars0.githubusercontent.com/u/212054634?s=460&v=4' width=20 height=20></image>](https://github.com/ouailg28) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.229 |
@@ -38,4 +38,4 @@
 | 7 | [300150296](../300150296/README.md) [<image src='https://avatars0.githubusercontent.com/u/205198510?s=460&v=4' width=20 height=20></image>](https://github.com/bnnyouba99) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.232 |
 | 8 | [300150395](../300150395/README.md) [<image src='https://avatars0.githubusercontent.com/u/211577767?s=460&v=4' width=20 height=20></image>](https://github.com/ismailtrache) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.233 |
 | 9 | [300150557](../300150557/README.md) [<image src='https://avatars0.githubusercontent.com/u/205994729?s=460&v=4' width=20 height=20></image>](https://github.com/hanichou) | :x: | :x: | :x: | 10.7.237.234 |
-| :abacus: | \$\\frac{6}{10}\$ = 60% | \$\displaystyle\sum_{i=1}^{10} s_i\$ = 6 |
+| :abacus: | \$\\frac{7}{10}\$ = 70% | \$\displaystyle\sum_{i=1}^{10} s_i\$ = 7 |
