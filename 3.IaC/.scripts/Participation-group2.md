@@ -28,7 +28,7 @@
 
 |:hash:| Boréal :id:                | README.md | images | main.tf | :link: IP |
 |------|----------------------------|-----------|--------|---------|------------|
-| 0 | [300151233](../300151233/README.md) [<image src='https://avatars0.githubusercontent.com/u/223416913?s=460&v=4' width=20 height=20></image>](https://github.com/syphax25) | :heavy_check_mark: | :x: | :x: | 10.7.237.235 |
+| 0 | [300151233](../300151233/README.md) [<image src='https://avatars0.githubusercontent.com/u/223416913?s=460&v=4' width=20 height=20></image>](https://github.com/syphax25) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.235 |
 | 1 | [300151258](../300151258/README.md) [<image src='https://avatars0.githubusercontent.com/u/231778604?s=460&v=4' width=20 height=20></image>](https://github.com/hakimsb) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.236 |
 | 2 | [300151347](../300151347/README.md) [<image src='https://avatars0.githubusercontent.com/u/207281891?s=460&v=4' width=20 height=20></image>](https://github.com/sarahocine) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.237 |
 | 3 | [300151403](../300151403/README.md) [<image src='https://avatars0.githubusercontent.com/u/211593057?s=460&v=4' width=20 height=20></image>](https://github.com/JustinSandy99) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.238 |
@@ -38,4 +38,4 @@
 | 7 | [300152131](../300152131/README.md) [<image src='https://avatars0.githubusercontent.com/u/205994709?s=460&v=4' width=20 height=20></image>](https://github.com/el-calvino) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.242 |
 | 8 | [300152260](../300152260/README.md) [<image src='https://avatars0.githubusercontent.com/u/212179557?s=460&v=4' width=20 height=20></image>](https://github.com/bekkai-mohibb) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.243 |
 | 9 | [300152410](../300152410/README.md) [<image src='https://avatars0.githubusercontent.com/u/212177230?s=460&v=4' width=20 height=20></image>](https://github.com/imadboud) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.245 |
-| :abacus: | \$\\frac{8}{10}\$ = 80% | \$\displaystyle\sum_{i=1}^{10} s_i\$ = 8 |
+| :abacus: | \$\\frac{9}{10}\$ = 90% | \$\displaystyle\sum_{i=1}^{10} s_i\$ = 9 |
