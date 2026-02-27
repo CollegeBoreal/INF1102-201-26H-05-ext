@@ -22,6 +22,7 @@ $STUDENTS = @(
 "300152131|el-calvino|205994709"
 "300152260|bekkai-mohibb|212179557"
 "300152410|imadboud|212177230"
+)
 
 
 # --------------------------------------
@@ -89,3 +90,5 @@ $TOFU_SECRETS = @(
 
 $TOFU_SECRET_GROUP_1 = $TOFU_SECRETS[0] 
 $TOFU_SECRET_GROUP_2 = $TOFU_SECRETS[1] 
+
+$PK_PROF="b300098957@ramena"
