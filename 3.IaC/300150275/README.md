@@ -31,4 +31,3 @@ La capture d’écran ci-dessous démontre :
 
 ![Preuve VM OpenTofu](images/vm300150275.png)
 
----
