@@ -1,7 +1,8 @@
 # TP – Automatisation d’administration avec script Bash (Linux)
 
 ## Étudiant
-300150275
+ TARIK TIDJET 
+ 300150275
 
 ## Objectif du TP
 Ce travail consiste à automatiser des tâches d’administration sous Linux à l’aide d’un script Bash.
