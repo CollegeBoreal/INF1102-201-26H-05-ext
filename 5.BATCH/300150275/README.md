@@ -1,5 +1,6 @@
 # TP – Automatisation d’administration avec script Batch (Linux)
-
+TARIK TIDJET 
+300150275
 ---
 
 ## 1. Objectif du TP
