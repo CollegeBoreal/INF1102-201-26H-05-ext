@@ -1,99 +1,61 @@
-<<<<<<< HEAD
+# INF1102 – Configuration IDE et Git
+
 ## Validation de la configuration Git
-=======
-\# Installation de Jupyter avec Miniforge (Windows)
 
+### Vérification de l'authentification SSH
 
+Commande utilisée :
 
-\## 1. Installation de Miniforge
+ssh -T git@github.com
 
+Résultat attendu :
 
-
-Installation via Chocolatey :
-
-
-
-choco install miniforge3 -y
-
-
-
-Installation dans :
-
-C:\\tools\\miniforge3
-
-
+Hi Tarik-n! You've successfully authenticated.
 
 ---
 
+## Clonage du dépôt
 
+Commande utilisée :
 
-\## 2. Configuration PowerShell
-
-
-
-Autoriser les scripts :
-
-
-
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-
-
-
-Initialiser conda :
-
-
-
-C:\\tools\\miniforge3\\Scripts\\conda.exe init powershell
-
-
-
-Redémarrer PowerShell
-
-
+git clone https://github.com/CollegeBoreal/INF1102-201-26H-05.git
 
 ---
 
+## Vérification du dépôt
 
+Se placer dans le dossier du projet :
 
-\## 3. Création de l'environnement
+cd INF1102-201-26H-05
 
+Vérifier l’état du dépôt :
 
+git status
 
-conda create -n INF1102 python=3.12 -y
+Résultat :
 
-conda activate INF1102
-
-
-
----
-
-
-
-\## 4. Installation de JupyterLab
-
-
-
-conda install -c conda-forge jupyterlab -y
-
-
-
-Lancement :
-
-
-
-jupyter lab
-
-
+On branch main  
+Your branch is up to date with 'origin/main'.
 
 ---
 
+## Ajout et envoi d’un fichier
 
+Ajouter un fichier :
 
-\## Capture d'écran
+git add README.md
 
+Créer un commit :
 
+git commit -m "Ajout README IDE"
 
-Voir dossier images/777
->>>>>>> b716d91 (Ajout README installation Jupyter)
+Envoyer sur GitHub :
 
-![Validation Git](images/validation_git.png)
+git push
+
+---
+
+## Validation
+
+Le dépôt est correctement configuré.  
+Les modifications sont envoyées sur GitHub sans erreur.
