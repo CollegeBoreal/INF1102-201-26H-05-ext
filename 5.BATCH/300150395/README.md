@@ -222,7 +222,6 @@ crontab -e
 
 ---
 
-<div align="center">
 
 ## 5.BATCH - ISMAIL TRACHE (300150395)
 
@@ -233,7 +232,13 @@ crontab -e
 - ✅ Logs complets
 
 ## Preuves
+<img src="images/1.png" width="800" height="450"></img>
+<img src="images/2.png" width="800" height="450"></img>
+<img src="images/3.png" width="800" height="450"></img>
 
+
+
+<div align="center">
 
 
 **300150395 - Infrastructure as Code Project**
