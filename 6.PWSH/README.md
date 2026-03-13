@@ -131,7 +131,7 @@ Shell : **PowerShell (pwsh)**
 - [ ]  Créer le dossier du TP
 
 ```bash
-sudo mkdir /devops-batch
+mkdir ~/devops-batch
 ```
 
 ---
@@ -141,7 +141,7 @@ sudo mkdir /devops-batch
 Créer le fichier `devops_batch.ps1` :
 
 ```bash
-sudo nano /devops-batch/devops_batch.ps1
+nano ~/devops-batch/devops_batch.ps1
 ```
 
 Ajouter le **shebang** pour Linux :
@@ -164,8 +164,8 @@ Ajouter le **shebang** pour Linux :
 # =========================
 
 # Variables
-$rapportTxt = "/devops-batch/rapport.txt"
-$rapportJson = "/devops-batch/rapport.json"
+$rapportTxt = "~/devops-batch/rapport.txt"
+$rapportJson = "~/devops-batch/rapport.json"
 $hostname = hostname
 $user = whoami
 $date = Get-Date
@@ -237,7 +237,7 @@ Write-Output "Rapports générés : $rapportTxt et $rapportJson"
 ## 🔹 PARTIE 4. Exécuter le batch
 
 ```bash
-sudo pwsh /devops-batch/devops_batch.ps1
+pwsh ~/devops-batch/devops_batch.ps1
 ```
 
 Résultat attendu :
@@ -253,7 +253,7 @@ Résultat attendu :
 ## 🔹 PARTIE 7. Structure finale du TP
 
 ```plaintext
-/devops-batch/
+~/devops-batch/
 │
 ├── devops_batch.ps1      # Script principal
 ├── rapport.txt           # Rapport texte généré
