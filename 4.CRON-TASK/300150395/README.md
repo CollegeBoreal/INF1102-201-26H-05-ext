@@ -44,15 +44,20 @@ crontab -l
 
 # Voir le résultat
 cat /home/ubuntu/nginx_ips.txt
-
+```
 
 📸 Preuve
 Script et cron configurés
 
+<img src="images/1.png" width="800" height="450"></img>
 
-## 3️⃣ Dossier `images/`
+<img src="images/2.png" width="800" height="450"></img>
 
-Ajoute une capture d'écran (`cron_nginx.png`) montrant :
-- Le contenu du script
-- Le crontab configuré
-- Le fichier `nginx_ips.txt` généré
+
+## 3️⃣  `images/`
+
+
+
+<img src="images/3.png" width="800" height="450"></img>
+
+<img src="images/4.png" width="800" height="450"></img>
