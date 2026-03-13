@@ -1,4 +1,5 @@
 #JUSTIN SANDY
+![Crontab](images/Crontab.png)
 # Exercice : Scruter les logs Nginx et détecter les IP des visiteurs
 
 ## 1️⃣ 👁️ Big Brother
@@ -157,6 +158,7 @@ awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr > /home/u
 | `uniq -c`                     | Compter les occurrences              |                                 |
 | `crontab -e`                  | Programmer le script automatiquement |                                 |
 | `chmod +x script.sh`          | Rendre le script exécutable          |                                 |
+
 
 
 
