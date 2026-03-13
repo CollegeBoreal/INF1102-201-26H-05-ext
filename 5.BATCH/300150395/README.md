@@ -222,7 +222,25 @@ crontab -e
 
 ---
 
+
+## 5.BATCH - ISMAIL TRACHE (300150395)
+
+## Script fonctionnel
+- ✅ ~/entreprise/ structure créée
+- ✅ Backup + tar.gz + ping + useradd
+- ✅ Cron 2h00 quotidien
+- ✅ Logs complets
+
+## Preuves
+
+<img src="images/1.png" ></img>
+<img src="images/2.png" ></img>
+<img src="images/3.png" ></img>
+
+
+
 <div align="center">
+
 
 **300150395 - Infrastructure as Code Project**
 
