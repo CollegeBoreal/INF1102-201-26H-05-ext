@@ -233,9 +233,9 @@ crontab -e
 
 ## Preuves
 
-<img src="images/1.png" width="450" height="800"></img>
-<img src="images/2.png" width="450" height="500"></img>
-<img src="images/3.png" width="450" height="800"></img>
+<img src="images/1.png" width="800" height="450"></img>
+<img src="images/2.png" width="800" height="450"></img>
+<img src="images/3.png" width="800" height="450"></img>
 
 
 
