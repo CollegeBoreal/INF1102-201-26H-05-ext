@@ -1,4 +1,4 @@
-# Participation au 12-03-2026 23:55
+# Participation au 13-03-2026 15:21
 
 | Table des matières            | Description                                             |
 |-------------------------------|---------------------------------------------------------|
@@ -35,5 +35,5 @@
 | 16 | [300151608](../300151608/RAPPORT.ipynb) :point_right: [mohammedaiche434](https://github.com/mohammedaiche434) <image src='https://avatars0.githubusercontent.com/u/205994734?s=460&v=4' width=20 height=20></image> | :x: |
 | 17 | [300152131](../300152131/RAPPORT.ipynb) :point_right: [el-calvino](https://github.com/el-calvino) <image src='https://avatars0.githubusercontent.com/u/205994709?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: |
 | 18 | [300152260](../300152260/RAPPORT.ipynb) :point_right: [bekkai-mohibb](https://github.com/bekkai-mohibb) <image src='https://avatars0.githubusercontent.com/u/212179557?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: |
-| 19 | [300152410](../300152410/RAPPORT.ipynb) :point_right: [imadboud](https://github.com/imadboud) <image src='https://avatars0.githubusercontent.com/u/212177230?s=460&v=4' width=20 height=20></image> | :x: |
-| :abacus: | \$\\frac{11}{20}\$ = 55% | \$\displaystyle\sum_{i=1}^{20} s_i\$ = 11 |
+| 19 | [300152410](../300152410/RAPPORT.ipynb) :point_right: [imadboud](https://github.com/imadboud) <image src='https://avatars0.githubusercontent.com/u/212177230?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: |
+| :abacus: | \$\\frac{12}{20}\$ = 60% | \$\displaystyle\sum_{i=1}^{20} s_i\$ = 12 |
