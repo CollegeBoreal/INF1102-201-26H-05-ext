@@ -32,16 +32,16 @@ Programmer un script Batch sous **Linux** permettant de :
 Créer la structure suivante :
 
 ```bash
-sudo mkdir -p /entreprise/data
-sudo mkdir -p /entreprise/backup
-sudo mkdir -p /entreprise/logs
+mkdir -p entreprise/data
+mkdir -p entreprise/backup
+mkdir -p entreprise/logs
 ```
 
 Créer des fichiers test :
 
 ```bash
-echo "Fichier 1" | sudo tee /entreprise/data/fichier1.txt
-echo "Fichier 2" | sudo tee /entreprise/data/fichier2.txt
+echo "Fichier 1" | sudo tee entreprise/data/fichier1.txt
+echo "Fichier 2" | sudo tee entreprise/data/fichier2.txt
 ```
 
 ---
@@ -51,7 +51,7 @@ echo "Fichier 2" | sudo tee /entreprise/data/fichier2.txt
 Créer le fichier :
 
 ```bash
-sudo nano /entreprise/script_gestion.sh
+nano entreprise/script_gestion.sh
 ```
 
 ---
@@ -61,7 +61,7 @@ sudo nano /entreprise/script_gestion.sh
 ```bash
 #!/bin/bash
 
-LOG="/entreprise/logs/log.txt"
+LOG="~/entreprise/logs/log.txt"
 DATE=$(date)
 
 echo "===================================" >> $LOG
@@ -73,7 +73,7 @@ ping -c 4 8.8.8.8 >> $LOG 2>&1
 
 # 2. Sauvegarde des fichiers
 echo "Sauvegarde en cours..." >> $LOG
-cp -r /entreprise/data/* /entreprise/backup/ >> $LOG 2>&1
+cp -r ~/entreprise/data/* ~/entreprise/backup/ >> $LOG 2>&1
 
 # 3. Création utilisateur temporaire
 USER_TEMP="employe_temp"
@@ -87,7 +87,7 @@ else
 fi
 
 # 4. Compression archive
-tar -czvf /entreprise/backup/backup_$(date +%F).tar.gz /entreprise/data >> $LOG 2>&1
+tar -czvf ~/entreprise/backup/backup_$(date +%F).tar.gz ~/entreprise/data >> $LOG 2>&1
 
 echo "Fin exécution : $(date)" >> $LOG
 echo "===================================" >> $LOG
@@ -98,7 +98,7 @@ echo "===================================" >> $LOG
 # 🔹 PARTIE 3 – Rendre exécutable
 
 ```bash
-sudo chmod +x /entreprise/script_gestion.sh
+chmod +x ~/entreprise/script_gestion.sh
 ```
 
 ---
@@ -108,12 +108,12 @@ sudo chmod +x /entreprise/script_gestion.sh
 Exécuter :
 
 ```bash
-sudo /entreprise/script_gestion.sh
+~/entreprise/script_gestion.sh
 ```
 
 Vérifier :
 
-* Les fichiers copiés dans `/entreprise/backup`
+* Les fichiers copiés dans `~/entreprise/backup`
 * L’archive `.tar.gz`
 * L’utilisateur créé :
 
@@ -124,7 +124,7 @@ cat /etc/passwd | grep employe_temp
 * Le fichier log :
 
 ```bash
-cat /entreprise/logs/log.txt
+cat ~/entreprise/logs/log.txt
 ```
 
 ---
@@ -134,13 +134,13 @@ cat /entreprise/logs/log.txt
 Éditer la crontab :
 
 ```bash
-sudo crontab -e
+crontab -e
 ```
 
 Ajouter :
 
 ```
-0 2 * * * /entreprise/script_gestion.sh
+0 2 * * * ${HOME}/entreprise/script_gestion.sh
 ```
 
 ➡ Exécution tous les jours à 2h00
