@@ -224,6 +224,18 @@ crontab -e
 
 <div align="center">
 
+## 5.BATCH - ISMAIL TRACHE (300150395)
+
+## Script fonctionnel
+- ✅ ~/entreprise/ structure créée
+- ✅ Backup + tar.gz + ping + useradd
+- ✅ Cron 2h00 quotidien
+- ✅ Logs complets
+
+## Preuves
+
+
+
 **300150395 - Infrastructure as Code Project**
 
 [![GitHub](https://img.shields.io/badge/GitHub-300150395-181717?logo=github)](https://github.com/ismailtrache)
