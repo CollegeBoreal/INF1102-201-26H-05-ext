@@ -1,41 +1,88 @@
-# TP – Batch DevOps PowerShell sous Linux
+# TP DevOps – Automatisation avec PowerShell sous Linux
 
-## Informations générales
+## Étudiant
 
-- **Nom :** Tarik Tidjet
-- **Boréal ID :** 300150275
-- **Cours :** INF1102
-- **Environnement :** Ubuntu 22.04 LTS
-- **Shell utilisé :** PowerShell 7.5.5
+**Nom :** Tarik Tidjet  
+**Boréal ID :** 300150275  
+**Cours :** INF1102  
+**Environnement :** Ubuntu 22.04 LTS  
+**Shell utilisé :** PowerShell 7.5.5  
 
-## Objectif du laboratoire
+---
 
-L’objectif de ce laboratoire est d’installer PowerShell sur Ubuntu 22.04 et de réaliser un script DevOps capable d’automatiser certaines tâches d’administration système.  
-Le script doit vérifier l’état du système, tester la connectivité SSH et générer des rapports exploitables.
+# 1. Introduction
 
-## Travail réalisé
+Dans ce laboratoire, l’objectif est d’installer **PowerShell sur Ubuntu 22.04** et de développer un **script DevOps permettant d’automatiser plusieurs tâches d’administration système**.
 
-Le fichier `devops_batch.ps1` a été créé et exécuté dans un environnement Ubuntu 22.04.  
-Ce script permet de :
+L’automatisation permet de simplifier la gestion d’un système Linux en collectant automatiquement des informations importantes et en générant des rapports exploitables.
 
-- récupérer la date d’exécution
-- identifier l’utilisateur connecté
-- récupérer le nom de la machine
-- afficher les 5 processus les plus consommateurs en CPU
-- afficher les 5 processus les plus consommateurs en mémoire
-- afficher l’utilisation du disque
-- tester la connectivité SSH vers `127.0.0.1`
-- générer un rapport texte
-- générer un rapport JSON
+Le script développé permet notamment :
 
-## Installation de PowerShell
+- de récupérer des informations système
+- d’analyser l’utilisation CPU et mémoire
+- de vérifier la connectivité SSH
+- de générer des rapports automatisés
 
-Les commandes suivantes ont été utilisées pour installer PowerShell sur Ubuntu 22.04 :
+---
+
+# 2. Connexion SSH à la machine Ubuntu
+
+La première étape consiste à se connecter à la machine Ubuntu afin d’exécuter les commandes nécessaires au laboratoire.
+
+Cette connexion est réalisée via **SSH**.
+
+![Connexion SSH](images/ssh_connection.png)
+
+---
+
+# 3. Création du dossier du projet
+
+Un dossier de travail est créé afin d’organiser les fichiers du laboratoire.
+
+Ce dossier contiendra :
+
+- le script PowerShell
+- les rapports générés
+- les captures d’écran
+
+![Création du dossier](images/creation_dossier.png)
+
+---
+
+# 4. Création du script DevOps
+
+Un script nommé **devops_batch.ps1** est créé afin d’automatiser plusieurs tâches d’administration système.
+
+Ce script est développé dans **PowerShell sous Linux**.
+
+![Création du script](images/03_devops_script_creation.png)
+
+---
+
+# 5. Contenu du script
+
+Le script récupère différentes informations système importantes.
+
+Les informations collectées incluent :
+
+- la date et l’heure du système
+- le nom de l’utilisateur
+- le nom de la machine
+- les processus utilisant le plus de CPU
+- les processus utilisant le plus de mémoire
+- l’utilisation du disque
+- un test de connectivité SSH
+
+Toutes ces informations sont ensuite enregistrées dans des rapports.
+
+![Script DevOps](images/01_script_devops_batch.png)
+
+---
+
+# 6. Exécution du script
+
+Le script est exécuté à l’aide de PowerShell avec les commandes suivantes :
 
 ```bash
-sudo apt update
-sudo apt install -y wget apt-transport-https software-properties-common
-wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb
-sudo apt update
-sudo apt install -y powershell
+pwsh
+./devops_batch.ps1
