@@ -28,7 +28,7 @@
 
 |:hash:| Boréal :id:                | README.md | images | script_gestion.sh | :link: IP |
 |------|----------------------------|-----------|--------|-------------------|------------|
-| 0 | [300151233](../300151233/README.md) [<image src='https://avatars0.githubusercontent.com/u/223416913?s=460&v=4' width=20 height=20></image>](https://github.com/syphax25) | :x: | :x: | :x: | 10.7.237.235 |
+| 0 | [300151233](../300151233/README.md) [<image src='https://avatars0.githubusercontent.com/u/223416913?s=460&v=4' width=20 height=20></image>](https://github.com/syphax25) | :heavy_check_mark: | :x: | :x: | 10.7.237.235 |
 | 1 | [300151258](../300151258/README.md) [<image src='https://avatars0.githubusercontent.com/u/231778604?s=460&v=4' width=20 height=20></image>](https://github.com/hakimsb) | :x: | :x: | :x: | 10.7.237.236 |
 | 2 | [300151347](../300151347/README.md) [<image src='https://avatars0.githubusercontent.com/u/207281891?s=460&v=4' width=20 height=20></image>](https://github.com/sarahocine) | :x: | :x: | :x: | 10.7.237.237 |
 | 3 | [300151403](../300151403/README.md) [<image src='https://avatars0.githubusercontent.com/u/211593057?s=460&v=4' width=20 height=20></image>](https://github.com/JustinSandy99) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.238 |
