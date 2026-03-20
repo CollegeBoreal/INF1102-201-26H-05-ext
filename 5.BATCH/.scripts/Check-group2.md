@@ -28,7 +28,7 @@
 
 |:hash:| Boréal :id:                | README.md | images | /entreprise/script_gestion.sh  | VM | <image src='https://avatars0.githubusercontent.com/u/62551735?s=460&v=4' width=20 height=20></image> SSH |
 |------|----------------------------|-----------|--------|----------------------------------|----|-----|
-| 0 | [300151233](../300151233/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/223416913?s=460&v=4' width=20 height=20></image>](https://github.com/syphax25) | :x: | :x: | :x: | :green_circle: [10.7.237.235](http://10.7.237.235) | :x: |
+| 0 | [300151233](../300151233/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/223416913?s=460&v=4' width=20 height=20></image>](https://github.com/syphax25) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :green_circle: [10.7.237.235](http://10.7.237.235) | :x: |
 | 1 | [300151258](../300151258/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/231778604?s=460&v=4' width=20 height=20></image>](https://github.com/hakimsb) | :x: | :x: | :x: | :green_circle: [10.7.237.236](http://10.7.237.236) | :x: |
 | 2 | [300151347](../300151347/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/207281891?s=460&v=4' width=20 height=20></image>](https://github.com/sarahocine) | :x: | :x: | :x: | :green_circle: [10.7.237.237](http://10.7.237.237) | :x: |
 | 3 | [300151403](../300151403/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/211593057?s=460&v=4' width=20 height=20></image>](https://github.com/JustinSandy99) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :green_circle: [10.7.237.238](http://10.7.237.238) | :x: |
@@ -38,4 +38,4 @@
 | 7 | [300152131](../300152131/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/205994709?s=460&v=4' width=20 height=20></image>](https://github.com/el-calvino) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :green_circle: [10.7.237.242](http://10.7.237.242) | :link: |
 | 8 | [300152260](../300152260/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/212179557?s=460&v=4' width=20 height=20></image>](https://github.com/bekkai-mohibb) | :x: | :x: | :x: | :green_circle: [10.7.237.243](http://10.7.237.243) | :x: |
 | 9 | [300152410](../300152410/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/212177230?s=460&v=4' width=20 height=20></image>](https://github.com/imadboud) | :x: | :x: | :x: | :x: | :x: |
-| :abacus: | \$\\frac{2}{10}\$ = 20% | \$\displaystyle\sum_{i=1}^{10} s_i\$ = 2 |
+| :abacus: | \$\\frac{3}{10}\$ = 30% | \$\displaystyle\sum_{i=1}^{10} s_i\$ = 3 |
