@@ -29,5 +29,8 @@ resource "proxmox_vm_qemu" "vm1" {
   ciuser = "ubuntu"
 
   # ✅ SSH : seulement TA clé (la clé du prof est invalide chez toi)
-  sshkeys = file("C:\\Users\\user\\.ssh\\id_ed25519.clean.pub")
+  sshkeys = join("\n", [
+  file("C:\\Users\\user\\.ssh\\id_ed25519.pub"),
+  file("C:\\Users\\user\\.ssh\\cle_publique_du_prof.clean.pub")
+])
 }
