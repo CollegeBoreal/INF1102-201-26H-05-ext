@@ -9,9 +9,11 @@ sudo nano /entreprise/script_gestion.sh
 
 sudo chmod +x /entreprise/script_gestion.sh
 <img width="478" height="17" alt="image" src="https://github.com/user-attachments/assets/964292bd-9eed-4a08-b925-7ade855a176f" />
+
 ##  PARTIE 4 – Test manuel
 
 <img width="498" height="338" alt="image" src="https://github.com/user-attachments/assets/70983f71-35fa-468b-8e8c-1b3a44686a01" />
+
 ##  PARTIE 5 – Planification avec Cron
 
 <img width="429" height="158" alt="image" src="https://github.com/user-attachments/assets/86a85991-e2b5-4645-8bb0-3d6ea401059c" />
