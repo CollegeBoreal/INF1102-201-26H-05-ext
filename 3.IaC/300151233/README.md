@@ -51,14 +51,14 @@ Connexion via API Token :
 
 Deux clés ont été injectées via Cloud-Init :
 
-- Ma clé publique : `id_ed25519.pub`
+- Ma clé publique : `id_ed*****.pub`
 - Clé publique du professeur
 
 Configuration utilisée :
 
 ```hcl
 sshkeys = <<EOF
-${file("C:\\Users\\PC\\.ssh\\id_ed25519.pub")}
+${file("C:\\Users\\PC\\.ssh\\id_ed*****.pub")}
 ${file("C:\\Users\\PC\\.ssh\\cle_publique_du_prof.pub")}
 EOF
 🚀 Déploiement
