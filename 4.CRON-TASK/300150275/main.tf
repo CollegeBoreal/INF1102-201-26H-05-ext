@@ -1,48 +1,34 @@
-terraform {
-  required_providers {
-    proxmox = {
-      source  = "bpg/proxmox"
-      version = "0.99.0"
-    }
-  }
-}
+resource "proxmox_vm_qemu" "vm1" {
+  name        = var.pm_vm_name
+  target_node = "labinfo"
+  clone       = "ubuntu-jammy-template"
+  full_clone  = false
 
-provider "proxmox" {
-  endpoint  = var.pm_url
-  api_token = "${var.pm_token_id}=${var.pm_token_secret}"
-  insecure  = true
-}
+  cores   = 2
+  sockets = 1
+  memory  = 2048
 
-resource "proxmox_virtual_environment_vm" "vm" {
-  name      = var.pm_vm_name
-  node_name = "labinfo"
+  scsihw = "virtio-scsi-pci"
 
-  clone {
-    vm_id = var.clone_vm_id
+  disk {
+    size    = "10G"
+    type    = "scsi"
+    storage = "local-lvm"
   }
 
-  cpu {
-    cores = 2
-  }
-
-  memory {
-    dedicated = 2048
-  }
-
-  network_device {
+  network {
+    model  = "virtio"
     bridge = "vmbr0"
   }
 
-  initialization {
-    ip_config {
-      ipv4 {
-        address = var.vm_ip
-        gateway = "10.7.237.1"
-      }
-    }
+  os_type = "cloud-init"
 
-    dns {
-      servers = [var.pm_nameserver]
-    }
-  }
+  ipconfig0  = var.pm_ipconfig0
+  nameserver = var.pm_nameserver
+
+  ciuser  = "ubuntu"
+  sshkeys = <<EOF
+${file("~/.ssh/ma_cle.pub")}
+${file("~/.ssh/cle_publique_du_prof.pub")}
+EOF
 }
