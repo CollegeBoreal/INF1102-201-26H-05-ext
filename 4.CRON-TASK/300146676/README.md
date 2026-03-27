@@ -46,4 +46,5 @@ de garder une trace d’exécution
 d’automatiser la tâche avec cron
 Auteur
 ## Numéro d’identification : 300146676
+<img width="1079" height="576" alt="Screenshot 2026-03-27 113613" src="https://github.com/user-attachments/assets/5282245d-a5b4-4e31-9099-38eeac72d623" />
 
