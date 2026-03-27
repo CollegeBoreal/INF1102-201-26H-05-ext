@@ -28,7 +28,7 @@ Il génère automatiquement :
 │   └── analyse.py       # Script Python appelé par Bash
 │
 ├── data/
-│   └── sample.log       # Log généré automatiquement
+│   └── sample.log       # Log généré automatiquement (j'ai pas pu le pusher a cause de .gitignore et surtout je veux pas toucher a .gitignore)
 │
 ├── output/
 │   └── rapport.txt      # Rapport généré automatiquement
