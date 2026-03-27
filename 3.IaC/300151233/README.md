@@ -51,14 +51,14 @@ Connexion via API Token :
 
 Deux clés ont été injectées via Cloud-Init :
 
-- Ma clé publique : `id_ed25519.pub`
+- Ma clé publique : `id_ed*****.pub`
 - Clé publique du professeur
 
 Configuration utilisée :
 
 ```hcl
 sshkeys = <<EOF
-${file("C:\\Users\\PC\\.ssh\\id_ed25519.pub")}
+${file("C:\\Users\\PC\\.ssh\\id_ed*****.pub")}
 ${file("C:\\Users\\PC\\.ssh\\cle_publique_du_prof.pub")}
 EOF
 🚀 Déploiement
@@ -81,3 +81,10 @@ Ce laboratoire démontre la capacité à :
 -Configurer une VM cloud-ready
 - Gérer l’accès sécurisé via SSH
 - L’objectif du laboratoire a été atteint avec succès.
+
+              pm_vm_name      = "vm300151233"
+pm_ipconfig0    = "ip=10.7.237.235/23,gw=10.7.237.1"
+pm_nameserver   = "10.7.237.3"
+pm_url          = "https://10.7.237.38:8006/api2/json"
+pm_token_id     = "tofu@pve!opentofu"
+pm_token_secret = "4fa24fc3-bd8c-4916-ba6e-09xxxxxxx3b00" 

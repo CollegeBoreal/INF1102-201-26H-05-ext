@@ -5,7 +5,7 @@
 # --------------------------------------
 
 param(
-    [ValidateSet(1,2)]
+    [ValidateSet(1,2,3)]
     [int]$Group = 1
 )
 
@@ -27,6 +27,12 @@ switch ($Group) {
         $ACTIVE_SERVERS = $SERVER_GROUP_2
         $PROXMOX_SERVER = $PROXMOX_GROUP_2
         $TOFU_SECRET    = $TOFU_SECRET_GROUP_2
+    }
+    3 { 
+        $ACTIVE_GROUP   = $GROUP_3
+        $ACTIVE_SERVERS = $SERVER_GROUP_3
+        $PROXMOX_SERVER = $PROXMOX_GROUP_3
+        $TOFU_SECRET    = $TOFU_SECRET_GROUP_3
     }
     default { throw "Groupe invalide" }
 }
@@ -69,8 +75,8 @@ Write-Output ""
 # Présence table
 Write-Output "## :a: Présence"
 Write-Output ""
-Write-Output "|:hash:| Boréal :id:                | README.md | images | main.tf | VM |"
-Write-Output "|------|----------------------------|-----------|--------|---------|----|"
+Write-Output "|:hash:| Boréal :id:                | README.md | images | scruter_nginx.sh | VM | <image src='https://avatars0.githubusercontent.com/u/62551735?s=460&v=4' width=20 height=20></image> SSH |"
+Write-Output "|------|----------------------------|-----------|--------|---------|----|-----|"
 
 # -------------------------------
 # Initialisation
@@ -108,25 +114,71 @@ for ($g = 0; $g -lt $ACTIVE_GROUP.Count; $g++) {
     $URL = "[<image src='https://avatars0.githubusercontent.com/u/{1}?s=460&v=4' width=20 height=20></image>](https://github.com/{0})" -f $GitHubID, $AvatarID
     $FILE = "$StudentID/README.md"
     $FOLDER = "$StudentID/images"
-    $TF_FILE = "$StudentID/main.tf"
+    $TF_FILE = "$StudentID/scruter_nginx.sh"
 
     # Vérification VM
+    $VM = ":red_circle: ${ServerID}"
+    $SSH = ":boom:"
     if ($VM_STATUS.ContainsKey($StudentID)) {
-        $VM = if ($VM_STATUS[$StudentID] -eq "running") { ":green_circle: [${ServerID}](http://${ServerID})" } else { ":orange_circle:" }
-    } else {
-        $VM = ":x:"
+        if ($VM_STATUS[$StudentID] -eq "running") {
+            $VM = ":green_circle: [${ServerID}](http://${ServerID})" 
+            
+            # ------------- SSH Test -------------
+            $SSH_TEST = ssh `
+                -o ConnectTimeout=5 `
+                -o BatchMode=yes `
+                -o StrictHostKeyChecking=no `
+                -i ~/.ssh/${PK_PROF} `
+                ubuntu@${ServerID} "ls scruter_nginx.sh nginx_ips.log nginx_ips.txt nginx_ips_freq.txt" 2>$null
+
+            if ($LASTEXITCODE -eq 0) {
+                $SSH = ":link:"
+                $SSH_OK_COUNT++
+            }
+        }
+        else {
+            $VM = ":orange_circle: ${ServerID}"
+        }
+
     }
 
     # Vérification fichiers
-    $README_OK = if (Test-Path $FILE) { ":heavy_check_mark:" } else { ":x:" }
-    $IMAGES_OK = if (Test-Path $FOLDER -PathType Container) { ":heavy_check_mark:" } else { ":x:" }
-    $TF_OK     = if (Test-Path $TF_FILE) { ":heavy_check_mark:" } else { ":x:" }
+    # --- README.md status ---
+    if (-not (Test-Path $FILE)) {
+        $README_STATUS = ":x:"
+    }
+    else {
+        $Content = Get-Content $FILE -Raw
+        $HasText = ($Content -match '\S')
+        $HasImageInReadme = ($Content -match '!\[.*\]\(.*\)') -or ($Content -match '<img.*?>') -or ($Content -match '<image.*?>')
+        
+        if ($HasText -and $HasImageInReadme) {
+            $README_STATUS = ":1st_place_medal:"
+        }
+        else {
+            $README_STATUS = ":2nd_place_medal:"
+        }
+    }
 
-    # Compter le score global si README + images sont ok
-    if ($README_OK -eq ":heavy_check_mark:" -and $IMAGES_OK -eq ":heavy_check_mark:") { $s++ }
+    # --- Images folder status ---
+    if (Test-Path $FOLDER -PathType Container) {
+        $IMAGES_STATUS = ":heavy_check_mark:"
+    }
+    else {
+        $IMAGES_STATUS = ":x:"
+    }
+
+    # --- main.tf status ---
+    if (Test-Path $TF_FILE -PathType Leaf) {
+        $TF_STATUS = ":heavy_check_mark:"
+    }
+    else {
+        $TF_STATUS = ":x:"
+    }
+
 
     # Affichage de la ligne
-    Write-Output "| $i | [$StudentID](../$FILE) :point_right: $URL | $README_OK | $IMAGES_OK | $TF_OK | $VM |"
+    Write-Output "| $i | [$StudentID](../$FILE) :point_right: $URL | $README_STATUS | $IMAGES_STATUS | $TF_STATUS | $VM | $SSH |"
 
     $i++
 }
@@ -135,8 +187,8 @@ for ($g = 0; $g -lt $ACTIVE_GROUP.Count; $g++) {
 # Statistiques finales
 # -------------------------------
 $COUNT = "\$\\frac{$s}{$i}\$"
-$STATS = if ($i -gt 0) { [math]::Round(($s * 100.0 / $i), 2) } else { 0 }
+$STATS = if ($i -gt 0) { [math]::Round(($SSH_OK_COUNT * 100.0 / $i), 2) } else { 0 }
 $SUM = "\$\displaystyle\sum_{i=1}^{$i} s_i\$"
 
-Write-Output "| :abacus: | $COUNT = $STATS% | $SUM = $s |"
+Write-Output "| :abacus: | $COUNT = $STATS% | $SUM = $SSH_OK_COUNT |"
 
