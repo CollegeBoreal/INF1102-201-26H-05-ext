@@ -1,15 +1,19 @@
-📊 Rapport Nginx Python - 2026-03-27 03:27:11.532715
+📊 Rapport Nginx Python - 2026-03-27 16:09:38.196837
 ----------------------------------
-Total requêtes : 7
-Erreurs HTTP (4xx/5xx) : 5
-Erreurs 404 : 5
+Total requêtes : 11
+Erreurs HTTP (4xx/5xx) : 6
+Erreurs 404 : 6
 Erreurs 500 : 0
 
 Top 5 IP :
 7  127.0.0.1
+4  10.7.141.44
+4  144.0.0.0
+4  128.0.0.0
+3  10.7.237.233
 
 Top 5 pages :
-1  /
+2  /
 1  /index.html
 1  /page-inexistante
 1  /admin

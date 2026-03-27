@@ -11,7 +11,7 @@ from collections import Counter
 from datetime import datetime
 
 logfile     = "/var/log/nginx/access.log"
-rapport_dir = os.path.expanduser("~/INF1102-201-26H-05/7.REGEX/300150395")
+rapport_dir = os.path.expanduser("~/REGEX")
 rapport     = f"{rapport_dir}/rapport_nginx_py_{datetime.now().date()}.txt"
 
 if not os.path.exists(logfile):
