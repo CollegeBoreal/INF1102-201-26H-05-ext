@@ -616,10 +616,10 @@ STORAGE="local-zfs"
 
 # 🏁 Conclusion
 
-✔️ script paramétrable = meilleure pratique
-✔️ ZFS chez toi → `local-zfs`
-✔️ LVM ailleurs → `local-lvm`
-✔️ une seule variable = zéro erreur
+- ✔️ script paramétrable = meilleure pratique
+- ✔️ ZFS chez toi → `local-zfs`
+- ✔️ LVM ailleurs → `local-lvm`
+- ✔️ une seule variable = zéro erreur
 
 
 ## 🏗️ Installation
