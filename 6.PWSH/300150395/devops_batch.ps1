@@ -2,7 +2,7 @@
 
 # =====================================
 # DevOps Batch Script - INF1102
-# Auteur : ISMAIL TRACHE
+# Auteur : ISMAIL TRACHE - 1
 # Boreal ID : 300150395
 # =====================================
 

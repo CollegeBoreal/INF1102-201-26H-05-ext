@@ -1,9 +1,14 @@
 # :six: PWSH (PowerShell) — TP DevOps
 
+
 **Nom :** Ismail Trache
+
 **Boréal ID :** 300150395
+
 **Cours :** INF1102
+
 **Environnement :** Ubuntu 22.04 LTS
+
 **Shell :** PowerShell (pwsh)
 
 ---
