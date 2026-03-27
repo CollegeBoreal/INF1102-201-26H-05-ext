@@ -7,8 +7,8 @@
 # =====================================
 
 $logfile   = "/var/log/nginx/access.log"
-$rapportDir = "$HOME/INF1102-201-26H-05/7.REGEX/300150395/REGEX"
-$rapport   = "$rapportDir/rapport_nginx_ps1_$(Get-Date -Format yyyy-MM-dd).txt"
+$rapportDir = "$HOME/REGEX"
+$rapport    = "$rapportDir/rapport_nginx_ps1_$(Get-Date -Format yyyy-MM-dd).txt"
 
 if (-not (Test-Path $logfile)) {
     Write-Host "❌ Fichier log introuvable : $logfile"

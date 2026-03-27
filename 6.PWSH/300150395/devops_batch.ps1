@@ -6,11 +6,11 @@
 # Boreal ID : 300150395
 # =====================================
 
-$rapportTxt  = "$HOME/devops-batch/rapport.txt"
-$rapportJson = "$HOME/devops-batch/rapport.json"
+$rapportTxt  = "/devops-batch/rapport.txt"
+$rapportJson = "/devops-batch/rapport.json"
 
-if (-not (Test-Path "$HOME/devops-batch")) {
-    New-Item -ItemType Directory -Path "$HOME/devops-batch" | Out-Null
+if (-not (Test-Path "/devops-batch")) {
+    New-Item -ItemType Directory -Path "/devops-batch" | Out-Null
 }
 
 $date     = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
