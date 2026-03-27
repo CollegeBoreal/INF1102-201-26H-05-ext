@@ -6,7 +6,7 @@
 # Boreal ID : 300150395
 # =====================================
 
-SITES=("https://google.com" "https://github.com" "https://collegeboreale.ca" "https://example.com" "https://httpstat.us/404")
+SITES=("https://google.com" "https://github.com" "https://collegeboreal.ca" "https://example.com" "https://httpstat.us/404")
 OUTPUT="$(dirname "$0")/../output/rapport.txt"
 DATA="$(dirname "$0")/../data/sample.log"
 DATE=$(date '+%Y-%m-%d %H:%M:%S')

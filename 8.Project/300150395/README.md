@@ -85,23 +85,24 @@ bash scripts/analyse.sh
 
 ```
 ===== RAPPORT MONITORING =====
-Date : 2026-03-27 03:04:30
+Date : 2026-03-27 03:22:34
 
-2026-03-27 03:04:30 | https://google.com        | 301 | 321ms | ❌ ERREUR
-2026-03-27 03:04:30 | https://github.com        | 200 | 654ms | ✅ OK
-2026-03-27 03:04:30 | https://collegeboreale.ca | 000 |  22ms | ❌ ERREUR
-2026-03-27 03:04:30 | https://example.com       | 200 | 160ms | ✅ OK
-2026-03-27 03:04:30 | https://httpstat.us/404   | 000 | 235ms | ❌ ERREUR
+2026-03-27 03:22:34 | https://google.com       | 301 | 339ms | ✅ OK
+2026-03-27 03:22:34 | https://github.com       | 200 | 489ms | ✅ OK
+2026-03-27 03:22:34 | https://collegeboreal.ca | 200 | 218ms | ✅ OK
+2026-03-27 03:22:34 | https://example.com      | 200 | 190ms | ✅ OK
+2026-03-27 03:22:34 | https://httpstat.us/404  | 000 | 236ms | ❌ ERREUR
 
 ===== ANALYSE PYTHON =====
 Total sites vérifiés : 5
-Sites OK (200)       : 2
-Sites en erreur      : 3
-Temps moyen          : 278.4 ms
-Temps le plus rapide : 22 ms
-Temps le plus lent   : 654 ms
+Sites OK (200)       : 3
+Sites en erreur      : 2
+Temps moyen          : 294.4 ms
+Temps le plus rapide : 190 ms
+Temps le plus lent   : 489 ms
 
-Codes d'erreur détectés : [('000', 2), ('301', 1)]
+Codes d'erreur détectés : [('301', 1), ('000', 1)]
+
 ```
 
 ![Rapport généré](images/4.png)

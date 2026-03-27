@@ -1,22 +1,22 @@
 ===== RAPPORT MONITORING =====
-Date : 2026-03-27 03:04:30
+Date : 2026-03-27 03:28:29
 
-2026-03-27 03:04:30 | https://google.com | 301 | 321ms | ❌ ERREUR
-2026-03-27 03:04:30 | https://github.com | 200 | 654ms | ✅ OK
-2026-03-27 03:04:30 | https://collegeboreale.ca | 000 | 22ms | ❌ ERREUR
-2026-03-27 03:04:30 | https://example.com | 200 | 160ms | ✅ OK
-2026-03-27 03:04:30 | https://httpstat.us/404 | 000 | 235ms | ❌ ERREUR
+2026-03-27 03:28:29 | https://google.com | 301 | 261ms | ✅ OK
+2026-03-27 03:28:29 | https://github.com | 200 | 577ms | ✅ OK
+2026-03-27 03:28:29 | https://collegeboreal.ca | 200 | 195ms | ✅ OK
+2026-03-27 03:28:29 | https://example.com | 200 | 178ms | ✅ OK
+2026-03-27 03:28:29 | https://httpstat.us/404 | 000 | 234ms | ❌ ERREUR
 
 Analyse Python en cours...
 
 ===== ANALYSE PYTHON =====
 Total sites vérifiés : 5
-Sites OK (200)       : 2
-Sites en erreur      : 3
-Temps moyen          : 278.4 ms
-Temps le plus rapide : 22 ms
-Temps le plus lent   : 654 ms
+Sites OK (200)       : 3
+Sites en erreur      : 2
+Temps moyen          : 289.0 ms
+Temps le plus rapide : 178 ms
+Temps le plus lent   : 577 ms
 
-Codes d'erreur détectés : [('000', 2), ('301', 1)]
+Codes d'erreur détectés : [('301', 1), ('000', 1)]
 
-Rapport généré le : 2026-03-27 03:04:32.136551
+Rapport généré le : 2026-03-27 03:28:31.464843
