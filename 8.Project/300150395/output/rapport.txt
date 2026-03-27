@@ -1,0 +1,22 @@
+===== RAPPORT MONITORING =====
+Date : 2026-03-27 03:04:30
+
+2026-03-27 03:04:30 | https://google.com | 301 | 321ms | ❌ ERREUR
+2026-03-27 03:04:30 | https://github.com | 200 | 654ms | ✅ OK
+2026-03-27 03:04:30 | https://collegeboreale.ca | 000 | 22ms | ❌ ERREUR
+2026-03-27 03:04:30 | https://example.com | 200 | 160ms | ✅ OK
+2026-03-27 03:04:30 | https://httpstat.us/404 | 000 | 235ms | ❌ ERREUR
+
+Analyse Python en cours...
+
+===== ANALYSE PYTHON =====
+Total sites vérifiés : 5
+Sites OK (200)       : 2
+Sites en erreur      : 3
+Temps moyen          : 278.4 ms
+Temps le plus rapide : 22 ms
+Temps le plus lent   : 654 ms
+
+Codes d'erreur détectés : [('000', 2), ('301', 1)]
+
+Rapport généré le : 2026-03-27 03:04:32.136551
