@@ -518,6 +518,13 @@ Save:
 
 ### Prereqs on Proxmox (PVE 9) [(VM.monitor issue)](https://registry.terraform.io/providers/Telmate/proxmox/latest/docs#proxmox-9-and-newer)
 
+```json
+    proxmox = {
+      source  = "Telmate/proxmox"
+      version = "3.0.2-rc07"
+    }
+```
+
 ```bash
 pveum role add TerraformProv \
       -privs "Datastore.AllocateSpace Datastore.AllocateTemplate Datastore.Audit Pool.Allocate \
