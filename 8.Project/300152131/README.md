@@ -390,6 +390,10 @@ Après plusieurs exécutions automatiques, le graphique accumule les points de d
 
 ### Ensuite
 ![Graphique d'évolution après plusieurs exécutions CRON automatiques](images/15%20graphe%20suite.png) 
+
+### Suite pour execution chaque 2 min 
+![Graphique d'évolution après plusieurs exécutions CRON automatiques](images/16%20graphe.png) 
+
 ---
 
 ## 🔒 Sécurité & Bonnes pratiques
