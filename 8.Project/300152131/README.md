@@ -386,7 +386,7 @@ systemctl status cron
 
 Après plusieurs exécutions automatiques, le graphique accumule les points de données et montre l'évolution réelle du prix Bitcoin dans le temps.
 
-![Graphique d'évolution après plusieurs exécutions CRON automatiques](images/14%202e%20graphe%20apres%20l'automatisation.png)
+![Graphique d'évolution après plusieurs exécutions CRON automatiques](images/14%20graphe%20apres%20automatisation.png)
 
 ---
 
