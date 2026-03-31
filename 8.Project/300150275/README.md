@@ -9,7 +9,7 @@
 
 ## 📋 Description
 
-Ce projet surveille la disponibilité de plusieurs sites web, mesure leur temps de réponse et génère un rapport automatique via un script Bash et Python.
+Ce projet surveille automatiquement la disponibilité et le temps de réponse de 5 sites web toutes les **3 minutes** via un cron job. Les données sont collectées en CSV, analysées avec Python et visualisées avec matplotlib.
 
 ---
 
@@ -18,13 +18,16 @@ Ce projet surveille la disponibilité de plusieurs sites web, mesure leur temps 
 300150275/
 ├── scripts/
 │   ├── analyse.sh       # Script Bash principal
-│   └── analyse.py       # Script Python d'analyse
+│   └── analyse.py       # Script Python de collecte
 ├── data/
-│   └── sample.log       # Logs générés automatiquement
+│   └── monitoring.csv   # Données collectées automatiquement
 ├── output/
-│   └── rapport.txt      # Rapport généré automatiquement
+│   ├── rapport.txt               # Rapport texte
+│   ├── graphique_evolution.png   # Évolution des temps de réponse
+│   └── graphique_cron.png        # Preuve du fonctionnement du cron
+├── images/              # Captures d'écran
 ├── RAPPORT.ipynb        # Rapport Jupyter avec visualisations
-└── README.md            # Instructions et explications
+└── README.md            # Ce fichier
 ```
 
 ---
@@ -50,43 +53,50 @@ bash scripts/analyse.sh
 
 ---
 
-## 📊 3. Rapport généré
+## ⏰ 3. Automatisation avec Cron
+
+Le script s'exécute automatiquement toutes les **3 minutes** grâce au cron :
 ```bash
-cat output/rapport.txt
+*/3 * * * * bash /home/ubuntu/INF1102-201-26H-05/8.Project/300150275/scripts/analyse.sh
 ```
+
+![Collectes Cron](output/graphique_cron.png)
+
+---
+
+## 📊 4. Rapport généré
 
 ![Rapport](images/03_rapport.png)
 
 ---
 
-## 🚀 4. Push sur GitHub
-```bash
-git add 8.Projet/300150275/
-git commit -m "Ajout Projet Monitoring - 300150275"
-git push
-```
+## 📈 5. Évolution des temps de réponse
+
+![Évolution](output/graphique_evolution.png)
+
+---
+
+## 🚀 6. Push sur GitHub
 
 ![Git Push](images/04_git_push.png)
 
 ---
 
-## 🧠 Sites surveillés
+## 🌐 Sites surveillés
 
-| Site | Code HTTP | Temps | Statut |
-|------|-----------|-------|--------|
-| google.com | 200 | 419ms | ✅ EN LIGNE |
-| github.com | 301 | 370ms | ❌ HORS LIGNE |
-| wikipedia.org | 200 | 566ms | ✅ EN LIGNE |
-| youtube.com | 200 | 430ms | ✅ EN LIGNE |
-| amazon.com | 503 | 294ms | ❌ HORS LIGNE |
+| Site | Description |
+|------|-------------|
+| google.com | Moteur de recherche |
+| github.com | Plateforme de code |
+| wikipedia.org | Encyclopédie en ligne |
+| youtube.com | Plateforme vidéo |
+| amazon.com | E-commerce |
 
 ---
 
-## ✅ Résultats
-## 📈 Graphique d'évolution
+## 🔧 Dépendances
 
-![Évolution des temps de réponse](output/graphique_evolution.png)
-- **3 sites** en ligne sur 5
-- **Temps moyen** : 415ms
-- **Site le plus rapide** : amazon.com (294ms)
-- **Site le plus lent** : wikipedia.org (566ms)
+- Python 3.8+
+- Modules : `pandas`, `matplotlib`, `urllib`
+- Cron (Linux)
+- Jupyter Notebook

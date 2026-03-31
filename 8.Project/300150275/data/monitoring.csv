@@ -34,3 +34,13 @@ timestamp,site,code_http,temps_ms,statut
 2026-03-31 01:54:02,https://www.wikipedia.org,0,125,HORS LIGNE
 2026-03-31 01:54:02,https://www.youtube.com,200,164,EN LIGNE
 2026-03-31 01:54:02,https://www.amazon.com,0,118,HORS LIGNE
+2026-03-31 01:57:02,https://www.google.com,200,240,EN LIGNE
+2026-03-31 01:57:02,https://www.github.com,200,367,EN LIGNE
+2026-03-31 01:57:02,https://www.wikipedia.org,0,164,HORS LIGNE
+2026-03-31 01:57:02,https://www.youtube.com,200,252,EN LIGNE
+2026-03-31 01:57:02,https://www.amazon.com,0,245,HORS LIGNE
+2026-03-31 02:00:01,https://www.google.com,200,225,EN LIGNE
+2026-03-31 02:00:01,https://www.github.com,200,270,EN LIGNE
+2026-03-31 02:00:01,https://www.wikipedia.org,0,126,HORS LIGNE
+2026-03-31 02:00:01,https://www.youtube.com,200,183,EN LIGNE
+2026-03-31 02:00:01,https://www.amazon.com,0,161,HORS LIGNE
