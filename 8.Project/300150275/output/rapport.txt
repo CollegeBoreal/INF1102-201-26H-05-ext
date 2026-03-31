@@ -19,3 +19,9 @@ Sites hors ligne     : 2
 📊 Temps moyen        : 415ms
 
 🕒 Analyse effectuée le : 2026-03-31 01:16:36
+🚀 Démarrage du monitoring - Tue Mar 31 01:45:01 UTC 2026
+✅ Collecte terminée - Tue Mar 31 01:45:02 UTC 2026
+🚀 Démarrage du monitoring - Tue Mar 31 01:48:01 UTC 2026
+✅ Collecte terminée - Tue Mar 31 01:48:02 UTC 2026
+🚀 Démarrage du monitoring - Tue Mar 31 01:51:01 UTC 2026
+✅ Collecte terminée - Tue Mar 31 01:51:02 UTC 2026

@@ -3,62 +3,61 @@
 # ============================================
 # Projet 5 : Monitoring de sites web
 # Auteur : Tarik Tidjet - 300150275
+# Collecte toutes les 3 minutes
 # ============================================
 
-import sys
+import urllib.request
+import time
+import csv
 import os
-from collections import Counter
 from datetime import datetime
 
-def analyser_log(fichier):
-    sites_en_ligne = []
-    sites_hors_ligne = []
-    temps_reponse = []
+SITES = [
+    "https://www.google.com",
+    "https://www.github.com",
+    "https://www.wikipedia.org",
+    "https://www.youtube.com",
+    "https://www.amazon.com"
+]
 
-    with open(fichier, "r") as f:
-        lignes = f.readlines()
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CSV_FILE = os.path.join(BASE_DIR, "../data/monitoring.csv")
+RAPPORT  = os.path.join(BASE_DIR, "../output/rapport.txt")
 
-    for ligne in lignes:
-        parties = ligne.strip().split(" | ")
-        if len(parties) < 4:
-            continue
+os.makedirs(os.path.dirname(CSV_FILE), exist_ok=True)
+os.makedirs(os.path.dirname(RAPPORT), exist_ok=True)
 
-        site = parties[0]
-        code = parties[1]
-        temps = int(parties[2].replace("ms", ""))
-        statut = parties[3]
+# Créer le CSV avec entête si inexistant
+if not os.path.exists(CSV_FILE):
+    with open(CSV_FILE, "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["timestamp", "site", "code_http", "temps_ms", "statut"])
 
-        temps_reponse.append((site, temps))
+def verifier_site(url):
+    start = time.time()
+    try:
+        req = urllib.request.urlopen(url, timeout=10)
+        code = req.getcode()
+    except Exception:
+        code = 0
+    temps = int((time.time() - start) * 1000)
+    statut = "EN LIGNE" if code == 200 else "HORS LIGNE"
+    return code, temps, statut
 
-        if "EN LIGNE" in statut:
-            sites_en_ligne.append(site)
-        else:
-            sites_hors_ligne.append(site)
+def collecter():
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"\n📡 Collecte - {timestamp}")
+    print("=" * 50)
 
-    output = os.path.join(os.path.dirname(fichier), "../output/rapport.txt")
+    with open(CSV_FILE, "a", newline="") as f:
+        writer = csv.writer(f)
+        for site in SITES:
+            code, temps, statut = verifier_site(site)
+            writer.writerow([timestamp, site, code, temps, statut])
+            icone = "✅" if statut == "EN LIGNE" else "❌"
+            print(f"{icone} {site} | {code} | {temps}ms | {statut}")
 
-    with open(output, "a") as f:
-        f.write("\n📈 Analyse Python\n")
-        f.write("===========================================\n")
-        f.write(f"Total sites vérifiés : {len(lignes)}\n")
-        f.write(f"Sites en ligne       : {len(sites_en_ligne)}\n")
-        f.write(f"Sites hors ligne     : {len(sites_hors_ligne)}\n")
-
-        if temps_reponse:
-            plus_rapide = min(temps_reponse, key=lambda x: x[1])
-            plus_lent = max(temps_reponse, key=lambda x: x[1])
-            moyenne = sum(t for _, t in temps_reponse) // len(temps_reponse)
-
-            f.write(f"\n⚡ Site le plus rapide : {plus_rapide[0]} ({plus_rapide[1]}ms)\n")
-            f.write(f"🐢 Site le plus lent  : {plus_lent[0]} ({plus_lent[1]}ms)\n")
-            f.write(f"📊 Temps moyen        : {moyenne}ms\n")
-
-        f.write("\n🕒 Analyse effectuée le : " + datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n")
-
-    print("✅ Analyse Python terminée !")
+    print(f"\n✅ Données sauvegardées dans {CSV_FILE}")
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python3 analyse.py <fichier_log>")
-        sys.exit(1)
-    analyser_log(sys.argv[1])
+    collecter()
