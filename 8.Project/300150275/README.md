@@ -83,7 +83,9 @@ git push
 ---
 
 ## ✅ Résultats
+## 📈 Graphique d'évolution
 
+![Évolution des temps de réponse](output/graphique_evolution.png)
 - **3 sites** en ligne sur 5
 - **Temps moyen** : 415ms
 - **Site le plus rapide** : amazon.com (294ms)
