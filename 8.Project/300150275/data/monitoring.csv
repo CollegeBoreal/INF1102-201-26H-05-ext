@@ -29,3 +29,8 @@ timestamp,site,code_http,temps_ms,statut
 2026-03-31 01:51:01,https://www.wikipedia.org,0,173,HORS LIGNE
 2026-03-31 01:51:01,https://www.youtube.com,200,248,EN LIGNE
 2026-03-31 01:51:01,https://www.amazon.com,0,141,HORS LIGNE
+2026-03-31 01:54:02,https://www.google.com,200,209,EN LIGNE
+2026-03-31 01:54:02,https://www.github.com,200,296,EN LIGNE
+2026-03-31 01:54:02,https://www.wikipedia.org,0,125,HORS LIGNE
+2026-03-31 01:54:02,https://www.youtube.com,200,164,EN LIGNE
+2026-03-31 01:54:02,https://www.amazon.com,0,118,HORS LIGNE
