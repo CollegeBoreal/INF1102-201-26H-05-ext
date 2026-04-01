@@ -228,8 +228,8 @@ cat /home/ubuntu/nginx\_ips.log
 ### 1. Création et contenu du script
 
 
+<img src="images/1.png" width="800" height="450"></img>
 
-[Création du script](images/1.png)
 
 
 
@@ -237,7 +237,7 @@ cat /home/ubuntu/nginx\_ips.log
 
 
 
-[Permissions et test](images/2.png)
+<img src="images/2.png" width="800" height="450"></img>
 
 
 
@@ -245,15 +245,15 @@ cat /home/ubuntu/nginx\_ips.log
 
 
 
-[Configuration cron](images/3.png)
+<img src="images/3.png" width="800" height="450"></img>
 
 
 
 ### 4. Résultats — IPs extraites
 
 
+<img src="images/4.png" width="800" height="450"></img>
 
-[IPs extraites](images/4.png)
 
 
 
