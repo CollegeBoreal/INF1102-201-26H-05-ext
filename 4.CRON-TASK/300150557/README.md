@@ -245,7 +245,7 @@ cat /home/ubuntu/nginx\_ips.log
 
 
 
-!\[Configuration cron](images/3.png)
+\[Configuration cron](images/3.png)
 
 
 
