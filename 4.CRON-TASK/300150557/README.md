@@ -1,8 +1,8 @@
-\# 🔍 Exercice : Scruter les logs Nginx
+# 🔍 Exercice : Scruter les logs Nginx
 
 
 
-\## 📋 Informations de l'étudiant
+## 📋 Informations de l'étudiant
 
 
 
@@ -16,11 +16,11 @@
 
 
 
-\---
+---
 
 
 
-\## 🎯 Objectif
+## 🎯 Objectif
 
 
 
@@ -28,11 +28,11 @@ Extraire automatiquement les adresses IP des visiteurs à partir des logs Nginx,
 
 
 
-\---
+---
 
 
 
-\## 📁 Structure du projet
+## 📁 Structure du projet
 
 
 
@@ -52,15 +52,15 @@ Extraire automatiquement les adresses IP des visiteurs à partir des logs Nginx,
 
 
 
-\---
+---
 
 
 
-\## 📝 Script : `scruter\_nginx.sh`
+## 📝 Script : `scruter\_nginx.sh`
 
 
 
-\### Création du fichier
+### Création du fichier
 
 
 
@@ -71,8 +71,7 @@ nano /home/ubuntu/scruter\_nginx.sh
 ```
 
 
-
-\### Contenu du script
+### Contenu du script
 
 
 
@@ -94,7 +93,7 @@ echo "Script exécuté le $(date)" >> /home/ubuntu/nginx\_ips.log
 
 
 
-\### Attribution des permissions
+### Attribution des permissions
 
 
 
@@ -106,11 +105,11 @@ chmod +x /home/ubuntu/scruter\_nginx.sh
 
 
 
-\---
+---
 
 
 
-\## ⏰ Configuration Cron
+## ⏰ Configuration Cron
 
 
 
@@ -138,15 +137,15 @@ Ajouter la ligne suivante :
 
 
 
-\---
+---
 
 
 
-\## ✅ Vérification
+## ✅ Vérification
 
 
 
-\### Consulter les tâches cron actives
+### Consulter les tâches cron actives
 
 
 
@@ -158,7 +157,7 @@ crontab -l
 
 
 
-\### Tester le script manuellement
+### Tester le script manuellement
 
 
 
@@ -170,7 +169,7 @@ crontab -l
 
 
 
-\### Afficher les IPs extraites
+### Afficher les IPs extraites
 
 
 
@@ -182,7 +181,7 @@ cat /home/ubuntu/nginx\_ips.txt
 
 
 
-\### Consulter le journal d'exécution
+### Consulter le journal d'exécution
 
 
 
@@ -194,11 +193,11 @@ cat /home/ubuntu/nginx\_ips.log
 
 
 
-\---
+---
 
 
 
-\## 🧠 Explication des commandes
+## 🧠 Explication des commandes
 
 
 
@@ -218,15 +217,15 @@ cat /home/ubuntu/nginx\_ips.log
 
 
 
-\---
+---
 
 
 
-\## 📸 Preuves
+## 📸 Preuves
 
 
 
-\### 1. Création et contenu du script
+### 1. Création et contenu du script
 
 
 
@@ -234,7 +233,7 @@ cat /home/ubuntu/nginx\_ips.log
 
 
 
-\### 2. Permissions et test d'exécution
+### 2. Permissions et test d'exécution
 
 
 
@@ -242,7 +241,7 @@ cat /home/ubuntu/nginx\_ips.log
 
 
 
-\### 3. Configuration cron
+### 3. Configuration cron
 
 
 
@@ -250,7 +249,7 @@ cat /home/ubuntu/nginx\_ips.log
 
 
 
-\### 4. Résultats — IPs extraites
+### 4. Résultats — IPs extraites
 
 
 
@@ -258,7 +257,7 @@ cat /home/ubuntu/nginx\_ips.log
 
 
 
-\---
+---
 
 
 
