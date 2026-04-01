@@ -37,5 +37,5 @@
 | 6 | [300150275](../300150275/README.md) [<image src='https://avatars0.githubusercontent.com/u/205994588?s=460&v=4' width=20 height=20></image>](https://github.com/tarik-n) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.231 |
 | 7 | [300150296](../300150296/README.md) [<image src='https://avatars0.githubusercontent.com/u/205198510?s=460&v=4' width=20 height=20></image>](https://github.com/bnnyouba99) | :x: | :x: | :x: | 10.7.237.232 |
 | 8 | [300150395](../300150395/README.md) [<image src='https://avatars0.githubusercontent.com/u/211577767?s=460&v=4' width=20 height=20></image>](https://github.com/ismailtrache) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.233 |
-| 9 | [300150557](../300150557/README.md) [<image src='https://avatars0.githubusercontent.com/u/205994729?s=460&v=4' width=20 height=20></image>](https://github.com/hanichou) | :x: | :x: | :x: | 10.7.237.234 |
+| 9 | [300150557](../300150557/README.md) [<image src='https://avatars0.githubusercontent.com/u/205994729?s=460&v=4' width=20 height=20></image>](https://github.com/hanichou) | :heavy_check_mark: | :x: | :x: | 10.7.237.234 |
 | :abacus: | \$\\frac{3}{10}\$ = 30% | \$\displaystyle\sum_{i=1}^{10} s_i\$ = 3 |
