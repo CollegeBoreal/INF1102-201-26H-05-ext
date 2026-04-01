@@ -5,6 +5,7 @@
 | 🥇 | [:tada: Participation](.scripts/Participation-group1.md) | [:checkered_flag: Vérification](.scripts/Check-group1.md) |
 | 🥈 | [:tada: Participation](.scripts/Participation-group2.md) | [:checkered_flag: Vérification](.scripts/Check-group2.md) |
 
+
 ## 🎯 Objectif
 
 Programmer un script Batch sous **Linux** permettant de :
@@ -32,16 +33,16 @@ Programmer un script Batch sous **Linux** permettant de :
 Créer la structure suivante :
 
 ```bash
-mkdir -p entreprise/data
-mkdir -p entreprise/backup
-mkdir -p entreprise/logs
+sudo mkdir -p /entreprise/data
+sudo mkdir -p /entreprise/backup
+sudo mkdir -p /entreprise/logs
 ```
 
 Créer des fichiers test :
 
 ```bash
-echo "Fichier 1" | sudo tee entreprise/data/fichier1.txt
-echo "Fichier 2" | sudo tee entreprise/data/fichier2.txt
+echo "Fichier 1" | sudo tee /entreprise/data/fichier1.txt
+echo "Fichier 2" | sudo tee /entreprise/data/fichier2.txt
 ```
 
 ---
@@ -51,7 +52,7 @@ echo "Fichier 2" | sudo tee entreprise/data/fichier2.txt
 Créer le fichier :
 
 ```bash
-nano entreprise/script_gestion.sh
+sudo nano /entreprise/script_gestion.sh
 ```
 
 ---
@@ -61,7 +62,7 @@ nano entreprise/script_gestion.sh
 ```bash
 #!/bin/bash
 
-LOG="~/entreprise/logs/log.txt"
+LOG="/entreprise/logs/log.txt"
 DATE=$(date)
 
 echo "===================================" >> $LOG
@@ -73,7 +74,7 @@ ping -c 4 8.8.8.8 >> $LOG 2>&1
 
 # 2. Sauvegarde des fichiers
 echo "Sauvegarde en cours..." >> $LOG
-cp -r ~/entreprise/data/* ~/entreprise/backup/ >> $LOG 2>&1
+cp -r /entreprise/data/* /entreprise/backup/ >> $LOG 2>&1
 
 # 3. Création utilisateur temporaire
 USER_TEMP="employe_temp"
@@ -87,7 +88,7 @@ else
 fi
 
 # 4. Compression archive
-tar -czvf ~/entreprise/backup/backup_$(date +%F).tar.gz ~/entreprise/data >> $LOG 2>&1
+tar -czvf /entreprise/backup/backup_$(date +%F).tar.gz /entreprise/data >> $LOG 2>&1
 
 echo "Fin exécution : $(date)" >> $LOG
 echo "===================================" >> $LOG
@@ -98,7 +99,7 @@ echo "===================================" >> $LOG
 # 🔹 PARTIE 3 – Rendre exécutable
 
 ```bash
-chmod +x ~/entreprise/script_gestion.sh
+sudo chmod +x /entreprise/script_gestion.sh
 ```
 
 ---
@@ -108,12 +109,12 @@ chmod +x ~/entreprise/script_gestion.sh
 Exécuter :
 
 ```bash
-~/entreprise/script_gestion.sh
+sudo /entreprise/script_gestion.sh
 ```
 
 Vérifier :
 
-* Les fichiers copiés dans `~/entreprise/backup`
+* Les fichiers copiés dans `/entreprise/backup`
 * L’archive `.tar.gz`
 * L’utilisateur créé :
 
@@ -124,7 +125,7 @@ cat /etc/passwd | grep employe_temp
 * Le fichier log :
 
 ```bash
-cat ~/entreprise/logs/log.txt
+cat /entreprise/logs/log.txt
 ```
 
 ---
@@ -134,13 +135,13 @@ cat ~/entreprise/logs/log.txt
 Éditer la crontab :
 
 ```bash
-crontab -e
+sudo crontab -e
 ```
 
 Ajouter :
 
 ```
-0 2 * * * ${HOME}/entreprise/script_gestion.sh
+0 2 * * * /entreprise/script_gestion.sh
 ```
 
 ➡ Exécution tous les jours à 2h00
@@ -204,46 +205,75 @@ fi
 
 ---
 
-# 📊 Grille d’évaluation
-
-| Critère                    | Points |
-| -------------------------- | ------ |
-| Structure script           | /10    |
-| Sauvegarde fonctionnelle   | /15    |
-| Création utilisateur       | /15    |
-| Journalisation             | /15    |
-| Compression archive        | /10    |
-| Planification cron         | /15    |
-| Vérification et diagnostic | /10    |
-| Professionnalisme          | /10    |
-| **Total**                  | /100   |
-
----
-
-# 🎓 Alignement RAFP
-
-| Compétence              | Couvert |
-| ----------------------- | ------- |
-| 2.1 Commandes Linux     | ✔       |
-| 2.2 Script enchaîné     | ✔       |
-| 2.3 Exécution auto      | ✔       |
-| 2.4 Sauvegarde/archives | ✔       |
-| 2.5 Planification       | ✔       |
-| 2.6 Vérification        | ✔       |
-| 2.7 Diagnostic          | ✔       |
-| 2.8 Correction          | ✔       |
-
----
-
 # ✅ Résultat attendu
 
 À la fin du TP, l’étudiant sera capable de :
 
-* Écrire un script Batch structuré
-* Automatiser une tâche système
-* Planifier son exécution
-* Lire les logs système
-* Diagnostiquer et corriger un problème
+- ✔ Écrire un script Batch structuré
+- ✔ Automatiser une tâche système
+- ✔ Planifier son exécution
+- ✔ Lire les logs système
+- ✔ Diagnostiquer et corriger un problème
+
+### Diagramme “avant et après” exécution
+
+```plaintext
+Avant exécution :
+
+/entreprise/
+│
+├── data/                     # Dossier original
+│   ├── fichier1.txt
+│   ├── fichier2.csv
+│   └── ...
+│
+├── backup/                   # Dossier de sauvegarde vide ou ancien contenu
+│   └── (ancien backup)
+│
+└── logs/                     # Dossier logs
+    └── log.txt               # Peut exister ou vide
+
+
+Après exécution :
+
+/entreprise/
+│
+├── data/                     # Dossier original (inchangé)
+│   ├── fichier1.txt
+│   ├── fichier2.csv
+│   └── ...
+│
+├── backup/                   # Sauvegarde des fichiers + archive
+│   ├── fichier1.txt          # Copie de data/fichier1.txt
+│   ├── fichier2.csv          # Copie de data/fichier2.csv
+│   └── backup_2026-03-10.tar.gz  # Archive compressée de tout le dossier data
+│
+└── logs/
+    └── log.txt               # Journal complet de l’exécution
+        ├── Début exécution : date
+        ├── Test réseau
+        ├── Sauvegarde fichiers
+        ├── Création utilisateur temporaire
+        ├── Compression archive
+        └── Fin exécution : date
+
+Flux de données :
+
+data/ ────copie────▶ backup/
+data/ ────archive──▶ backup/backup_YYYY-MM-DD.tar.gz
+script ────────────▶ logs/log.txt
+```
+
+---
+
+### Points clés du diagramme
+
+1. **`data/`** : source des fichiers à sauvegarder.
+2. **`backup/`** : destination des copies + archive `.tar.gz`.
+3. **`logs/log.txt`** : fichier texte qui enregistre **toutes les étapes du batch**.
+4. **Flux de données** : les fichiers passent de `data/` → `backup/` (copie), puis tout le dossier est **compressé en archive** → `backup/backup_YYYY-MM-DD.tar.gz`.
+5. **Utilisateur temporaire** `employe_temp` est créé dans le système (non représenté par un fichier mais journalisé dans `log.txt`).
+
 
 # 📚 References
 
