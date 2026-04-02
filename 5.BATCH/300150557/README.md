@@ -1,18 +1,18 @@
-\# TP – Automatisation d'administration avec script Batch (Linux)
+# TP – Automatisation d'administration avec script Batch (Linux)
 
 
 
-\*\*Nom :\*\* Hani Aghilas Damouche
+*\*Nom :\*\* Hani Aghilas Damouche
 
-\*\*Numéro étudiant :\*\* 300150557
-
-
-
-\---
+*\*Numéro étudiant :\*\* 300150557
 
 
 
-\## 1. Objectif du TP
+---
+
+
+
+## 1. Objectif du TP
 
 
 
@@ -22,43 +22,43 @@ L'objectif de ce travail est de développer un script Bash permettant d'automati
 
 Le script permet de :
 
-\- Sauvegarder un dossier d'entreprise
+- Sauvegarder un dossier d'entreprise
 
-\- Créer un utilisateur temporaire
+- Créer un utilisateur temporaire
 
-\- Tester la connectivité réseau
+- Tester la connectivité réseau
 
-\- Générer un fichier journal
+- Générer un fichier journal
 
-\- Planifier l'exécution automatique avec cron
+- Planifier l'exécution automatique avec cron
 
-\- Vérifier le bon fonctionnement
+- Vérifier le bon fonctionnement
 
-\- Simuler et corriger des erreurs
+- Simuler et corriger des erreurs
 
-\- Implémenter une amélioration
-
-
-
-\---
+- Implémenter une amélioration
 
 
 
-\## 2. Préparation de l'environnement
+---
 
 
 
-\### 2.1 Création de la structure
+## 2. Préparation de l'environnement
+
+
+
+### 2.1 Création de la structure
 
 
 
 Les dossiers suivants ont été créés :
 
-\- `/entreprise/data`
+- `/entreprise/data`
 
-\- `/entreprise/backup`
+- `/entreprise/backup`
 
-\- `/entreprise/logs`
+- `/entreprise/logs`
 
 
 
@@ -66,7 +66,7 @@ Deux fichiers de test ont été ajoutés dans le dossier `data`.
 
 
 
-\### 2.2 Commandes utilisées
+### 2.2 Commandes utilisées
 
 ```bash
 
@@ -80,7 +80,7 @@ echo "test 2" | sudo tee /entreprise/data/fichier2.txt
 
 
 
-\### 2.3 Capture de validation
+### 2.3 Capture de validation
 
 
 
@@ -88,15 +88,15 @@ echo "test 2" | sudo tee /entreprise/data/fichier2.txt
 
 
 
-\---
+---
 
 
 
-\## 3. Création du script d'automatisation
+## 3. Création du script d'automatisation
 
 
 
-\### 3.1 Emplacement du script
+### 3.1 Emplacement du script
 
 
 
@@ -110,7 +110,7 @@ Le script a été créé dans :
 
 
 
-\### 3.2 Fonctionnalités intégrées
+### 3.2 Fonctionnalités intégrées
 
 
 
@@ -118,27 +118,27 @@ Le script réalise les actions suivantes :
 
 
 
-\- Création des dossiers si nécessaire
+- Création des dossiers si nécessaire
 
-\- Test réseau via `ping 8.8.8.8`
+- Test réseau via `ping 8.8.8.8`
 
-\- Copie des fichiers vers le dossier backup
+- Copie des fichiers vers le dossier backup
 
-\- Création de l'utilisateur temporaire `employe\_temp`
+- Création de l'utilisateur temporaire `employe\_temp`
 
-\- Compression en archive `.tar.gz`
+- Compression en archive `.tar.gz`
 
-\- Journalisation complète des opérations
+- Journalisation complète des opérations
 
-\- Suppression automatique de l'utilisateur temporaire
+- Suppression automatique de l'utilisateur temporaire
 
 
 
-\### 3.3 Contenu du script
+### 3.3 Contenu du script
 
 ```bash
 
-\#!/bin/bash
+#!/bin/bash
 
 
 
@@ -214,15 +214,15 @@ echo "===================================" >> "$LOG"
 
 
 
-\---
+---
 
 
 
-\## 4. Activation et test du script
+## 4. Activation et test du script
 
 
 
-\### 4.1 Rendre le script exécutable
+### 4.1 Rendre le script exécutable
 
 ```bash
 
@@ -232,7 +232,7 @@ chmod +x /home/ubuntu/script\_gestion.sh
 
 
 
-\### 4.2 Exécution manuelle
+### 4.2 Exécution manuelle
 
 ```bash
 
@@ -242,7 +242,7 @@ sudo /home/ubuntu/script\_gestion.sh
 
 
 
-\### 4.3 Vérification de la sauvegarde
+### 4.3 Vérification de la sauvegarde
 
 
 
@@ -254,7 +254,7 @@ La sauvegarde et l'archive compressée ont été créées dans `/entreprise/back
 
 
 
-\### 4.4 Vérification du fichier log
+### 4.4 Vérification du fichier log
 
 
 
@@ -266,15 +266,15 @@ Le fichier log contient le test réseau, la sauvegarde, la création de l'utilis
 
 
 
-\---
+---
 
 
 
-\## 5. Planification automatique avec Cron
+## 5. Planification automatique avec Cron
 
 
 
-\### 5.1 Configuration
+### 5.1 Configuration
 
 
 
@@ -288,7 +288,7 @@ Le script a été ajouté à la crontab avec la commande suivante :
 
 
 
-\### 5.2 Vérification
+### 5.2 Vérification
 
 ```bash
 
@@ -302,15 +302,15 @@ crontab -l
 
 
 
-\---
+---
 
 
 
-\## 6. Dépannage
+## 6. Dépannage
 
 
 
-\### 6.1 Erreur de permission sur le fichier log
+### 6.1 Erreur de permission sur le fichier log
 
 
 
@@ -332,7 +332,7 @@ sudo chown -R ubuntu:ubuntu /entreprise
 
 
 
-\### 6.2 Simulation d'erreur – Permission denied
+### 6.2 Simulation d'erreur – Permission denied
 
 
 
@@ -358,15 +358,13 @@ chmod +x /home/ubuntu/script\_gestion.sh
 
 
 
-<img src="images/6.png" width="800" height="450"></img>
+
+
+---
 
 
 
-\---
-
-
-
-\## 7. Conclusion
+## 7. Conclusion
 
 
 
@@ -374,23 +372,23 @@ Ce TP démontre la mise en place d'une automatisation complète sous Linux inclu
 
 
 
-\- La gestion des fichiers
+- La gestion des fichiers
 
-\- La gestion des utilisateurs
+- La gestion des utilisateurs
 
-\- La planification avec cron
+- La planification avec cron
 
-\- La journalisation
+- La journalisation
 
-\- Le diagnostic
+- Le diagnostic
 
-\- La correction d'erreurs
+- La correction d'erreurs
 
-\- Une amélioration du script
+- Une amélioration du script
 
 
 
-\---
+---
 
 
 
