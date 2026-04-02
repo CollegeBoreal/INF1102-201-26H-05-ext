@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOG_FILE="/var/log/nginx/access.log"
+LOG_FILE="./access.log"
 OUTPUT_FILE="./nginx_ips.txt"
 
 awk '{print $1}' "$LOG_FILE" | sort | uniq > "$OUTPUT_FILE"
