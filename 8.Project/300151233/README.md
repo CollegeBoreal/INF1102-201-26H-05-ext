@@ -1,76 +1,114 @@
-<<<<<<< HEAD
+# 📡 Projet : Surveillance de site web
 
+## 👤 Informations
 
-=======
-# INF1102-201-26H-05 (Vendredi 9:00am S208 )
-
-INF1102 (201) - Programmation de systèmes
-
-## :date: [Épreuves](.epreuves)
-
-| :hash:  | Date   | Épreuves                                           |
-|-------- |--------|:---------------------------------------------------|
-
-## 🧨 [Évaluations](.evaluations)
-
-| :hash:  | Date   | Evaluations                                        |
-|-------- |--------|:---------------------------------------------------|
-
-
-## :one: [Devoirs](Devoirs)
-
-|  :hash: | Date  | Cours                              | 🎉 Participations                   | 🏁 Vérification |
-|---------|-------|:-----------------------------------|:------------------------------------|----------------|
- :one:   | 19-Jan| [0.PlanDeCours](0.PlanDeCours)     | [🎉](0.PlanDeCours/.scripts/Participation.md) |
-| :two:   | 02-Feb| [3.IaC](3.IaC)                     | [🎉 :1st_place_medal:](3.IaC/.scripts/Participation-group1.md) :curly_loop: [🎉 :2nd_place_medal:](3.IaC/.scripts/Participation-group2.md) | [🏁 :1st_place_medal:](3.IaC/.scripts/Check-group1.md) :curly_loop: [🏁 :2nd_place_medal:](3.IaC/.scripts/Check-group2.md) |
-| :three: | 09-Feb| [4.CRON-TASK](4.CRON-TASK)         | [🎉 :1st_place_medal:](4.CRON-TASK/.scripts/Participation-group1.md) :curly_loop: [🎉 :2nd_place_medal:](4.CRON-TASK/.scripts/Participation-group2.md)  | [🏁 :1st_place_medal:](4.CRON-TASK/.scripts/Check-group1.md) :curly_loop: [🏁 :2nd_place_medal:](4.CRON-TASK/.scripts/Check-group2.md) |
-| :four:  | 23-Feb| [5.BATCH](5.BATCH)                 | [🎉 :1st_place_medal:](5.BATCH/.scripts/Participation-group1.md) :curly_loop: [🎉 :2nd_place_medal:](5.BATCH/.scripts/Participation-group2.md) | [🏁 :1st_place_medal:](5.BATCH/.scripts/Check-group1.md) :curly_loop: [🏁 :2nd_place_medal:](5.BATCH/.scripts/Check-group2.md) |
-| :five:  | 16-Mar| [6.PWSH](6.PWSH)                   | [🎉 :1st_place_medal:](6.PWSH/.scripts/Participation-group1.md) :curly_loop: [🎉 :2nd_place_medal:](6.PWSH/.scripts/Participation-group2.md) | [🏁 :1st_place_medal:](6.PWSH/.scripts/Check-group1.md) :curly_loop: [🏁 :2nd_place_medal:](6.PWSH/.scripts/Check-group2.md) |
-
-
-
-
-### :abacus: Évaluation
-
-- [ ]  Stratégies et pondération de l’évaluation
-
-|  Résultat d'apprentissage | Description | % |
-|-|-|-|
-| :one:   | Quiz : Gestionnaire de tâches et observateur d’évènements                              | 10 |
-| :two:   | Laboratoire : Conception d’un script Batch                                             | 20 |
-| :three:,:four:  | Laboratoire : Programmation d’un script Powershell                             | 25 |
-| :four:  | Laboratoire : Crontab, syslog, et filtrage de texte sur Linux                          | 15 |
-| :five:  | Projet: Programmation Bash et Python                                                   | 30 |
-|    |                                                  | :100: |
-
-### :scroll: Déroulement du cours
-
-Le déroulement peut être modifié au besoin. La personne étudiante sera avisée.
-
-| Période | Sem | Activités / Thèmes | Commentaires |
-|-|-:|-|-|
-| 12-Jan | 1️⃣ | [0.PlanDeCours](0.PlanDeCours)
-| 19-Jan | 2️⃣ | [1.Programmation](1.Programmation) de [2.Systemes](2.Systemes)
-| 26-Jan | 3️⃣ | [3.IaC](3.IaC)
-| 02-Feb | 4️⃣ | [P.Proxmox](P.Proxmox)
-| 09-Feb | 5️⃣ | [4.CRON-TASK](4.CRON-TASK)
-| 16-Feb | 6️⃣ | [5.BATCH](5.BATCH)
-| 23-Feb | 7️⃣ |
-| 02-Mar | 📚 |
-| 09-Mar | 8️⃣ | [6.PWSH](6.PWSH)
-| 16-Mar | 9️⃣ | [7.REGEX](7.REGEX)
-| 23-Mar | 1️⃣0️⃣ |
-| 30-Mar | 1️⃣1️⃣ |
-| 06-Apr | 1️⃣2️⃣ |
-| 13-Apr | 1️⃣3️⃣ |
-| 20-Apr | 1️⃣4️⃣ |
-
-
+**Nom : Syphax Ouadfel**
+**ID étudiant : 300151233**
 
 ---
 
-# :books: References
+## 🎯 Objectif
 
+Ce projet a pour but de vérifier la disponibilité de plusieurs sites web et de mesurer leur temps de réponse à l’aide d’un script Python exécuté depuis PowerShell.
 
-- [ ] [LinkedIn Carreer Hub: Proxmox Virtual Environment Essential Training Using Proxmox VE](www.linkedin.com/learning/proxmox-virtual-environment-essential-training)
->>>>>>> b3c56f4aed127e622430e755a8a40b9d67744955
+---
+
+## 🛠️ Technologies utilisées
+
+* Python 3
+* Module `requests`
+* PowerShell
+* (Optionnel) Jupyter Notebook
+
+---
+
+## 📁 Structure du projet
+
+```id="7lffxg"
+ton_projet/
+│
+├── scripts/
+│   └── analyse.py        # Script principal Python
+│
+├── output/
+│   └── rapport.txt       # Rapport généré automatiquement
+│
+├── RAPPORT.ipynb         # Analyse et explications
+└── README.md             # Documentation du projet
+```
+
+---
+
+## ⚙️ Fonctionnement
+
+Le script Python :
+
+* envoie une requête HTTP à plusieurs sites web
+* récupère le code HTTP (200, 404, etc.)
+* mesure le temps de réponse
+* affiche les résultats
+* génère un fichier `rapport.txt`
+
+---
+
+## ▶️ Exécution du projet
+
+### 1. Installer la dépendance
+
+```id="l8yfjv"
+py -m pip install requests
+```
+
+### 2. Lancer le script
+
+Depuis le dossier `scripts` :
+
+```id="pkc1vk"
+py analyse.py
+```
+
+### 3. Générer le rapport
+
+```id="r8a2d0"
+py analyse.py > ../output/rapport.txt
+```
+
+---
+
+## 📊 Exemple de résultat
+
+```id="rkwpd8"
+===== RAPPORT DE SURVEILLANCE =====
+Date: 2026-04-03
+URL: https://google.com
+Code HTTP: 200
+Statut: OK
+Temps: 0.5 secondes
+```
+
+---
+
+## 📈 Analyse (Notebook)
+
+Le fichier `RAPPORT.ipynb` contient :
+
+* une description du projet
+* la méthode utilisée
+* des tests supplémentaires
+* une analyse des résultats
+
+---
+
+## ✅ Résultat attendu
+
+* Vérification de la disponibilité des sites
+* Mesure des performances (temps de réponse)
+* Génération automatique d’un rapport
+
+---
+
+## 💡 Améliorations possibles
+
+* Ajouter plus de sites à surveiller
+* Générer des graphiques (matplotlib)
+* Automatiser l’exécution (cron / tâche planifiée)
