@@ -46,18 +46,6 @@ crontab -l
 cat /home/ubuntu/nginx_ips.txt
 ```
 
-📸 Preuve
-Script et cron configurés
-
-<img src="images/1.png" width="600" height="350"></img>
-
-<img src="images/2.png" width="600" height="350"></img>
-
-
-## 3️⃣  `images/`
 
 
 
-<img src="images/3.png" width="600" height="350"></img>
-
-<img src="images/4.png" width="600" height="350"></img>
