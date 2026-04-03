@@ -1,4 +1,0 @@
-git add .
-git commit -m "Ajout dossier images"
-git pull --no-edit
-git push
