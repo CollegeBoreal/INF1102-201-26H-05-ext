@@ -66,7 +66,7 @@ bash projet-gobuster/scripts/gobuster_all_vms.sh
 ## Résultats
 10.7.237.226 → index.html
 10.7.237.229 → index.html
-10.7.237.233 → index.html, script.js
+10.7.237.239 → index.html, script.js
 
 ---
 
