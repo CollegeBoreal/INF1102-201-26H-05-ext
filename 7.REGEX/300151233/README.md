@@ -1,4 +1,3 @@
-Analyse des logs Nginx avec Regex
 
 Nom : Syphax Ouadfel
 
