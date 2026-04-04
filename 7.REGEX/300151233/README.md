@@ -7,8 +7,6 @@ Cours : INF1102 – Administration d'infrastructure informatique
 TP : Analyse des logs Nginx avec Regex
 
 Objectif du TP
-<img width="1839" height="254" alt="image" src="https://github.com/user-attachments/assets/aeb68db0-4f9e-4325-97e8-954f92f0f911" />
-
 
 L’objectif de ce travail est de développer des scripts permettant d’analyser les fichiers de logs du serveur Nginx.
 L’analyse est réalisée en utilisant des expressions régulières (Regex) avec deux langages :
