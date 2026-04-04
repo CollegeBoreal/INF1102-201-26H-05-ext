@@ -3,7 +3,9 @@ Informations de l’étudiant
 
 Nom : Syphax Ouadfel
 ID : 300151233
+
 Cours : INF1102 – Administration d'infrastructure informatique
+
 TP : Analyse des logs Nginx avec Regex
 
 Objectif du TP
