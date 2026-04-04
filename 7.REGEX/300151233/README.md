@@ -1,10 +1,8 @@
-Rapport – Analyse des logs Nginx avec Regex
-Informations de l’étudiant
+Analyse des logs Nginx avec Regex
 
 Nom : Syphax Ouadfel
-ID : 300151233
 
-Cours : INF1102 – Administration d'infrastructure informatique
+ID : 300151233
 
 TP : Analyse des logs Nginx avec Regex
 
