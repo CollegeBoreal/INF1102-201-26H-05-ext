@@ -5,7 +5,7 @@
 # --------------------------------------
 
 param(
-    [ValidateSet(1,2,3)]
+    [ValidateSet(1,2)]
     [int]$Group = 1
 )
 
@@ -27,12 +27,6 @@ switch ($Group) {
         $ACTIVE_SERVERS = $SERVER_GROUP_2
         $PROXMOX_SERVER = $PROXMOX_GROUP_2
         $TOFU_SECRET    = $TOFU_SECRET_GROUP_2
-    }
-    3 { 
-        $ACTIVE_GROUP   = $GROUP_3
-        $ACTIVE_SERVERS = $SERVER_GROUP_3
-        $PROXMOX_SERVER = $PROXMOX_GROUP_3
-        $TOFU_SECRET    = $TOFU_SECRET_GROUP_3
     }
     default { throw "Groupe invalide" }
 }
