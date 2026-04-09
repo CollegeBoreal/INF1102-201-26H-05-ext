@@ -69,6 +69,7 @@ Conclusion :
 Le service cron fonctionne correctement et exécute les tâches planifiées comme prévu.
 
 🧾 🔹 PARTIE 8 – Conclusion générale
+<img width="957" height="596" alt="ubuntu08" src="https://github.com/user-attachments/assets/3b3514b9-8252-4beb-a97d-50a2a976983b" />
 
 Titre : Conclusion du TP
 
