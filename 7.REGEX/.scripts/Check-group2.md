@@ -28,7 +28,7 @@
 
 |:hash:| Boréal :id:                | README.md | images | analyse_nginx.ps1 | analyse_nginx.py | VM | <image src='https://avatars0.githubusercontent.com/u/62551735?s=460&v=4' width=20 height=20></image> SSH |
 |------|----------------------------|-----------|--------|---------|----|-----|-----|
-| 0 | [300151233](../300151233/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/223416913?s=460&v=4' width=20 height=20></image>](https://github.com/syphax25) | :x: | :x: | :x: | :x: | :green_circle: [10.7.237.235](http://10.7.237.235) | :boom: |
+| 0 | [300151233](../300151233/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/223416913?s=460&v=4' width=20 height=20></image>](https://github.com/syphax25) | :2nd_place_medal: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :green_circle: [10.7.237.235](http://10.7.237.235) | :boom: |
 | 1 | [300151258](../300151258/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/231778604?s=460&v=4' width=20 height=20></image>](https://github.com/hakimsb) | :x: | :x: | :x: | :x: | :green_circle: [10.7.237.236](http://10.7.237.236) | :boom: |
 | 2 | [300151347](../300151347/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/207281891?s=460&v=4' width=20 height=20></image>](https://github.com/sarahocine) | :x: | :x: | :x: | :x: | :green_circle: [10.7.237.237](http://10.7.237.237) | :boom: |
 | 3 | [300151403](../300151403/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/211593057?s=460&v=4' width=20 height=20></image>](https://github.com/JustinSandy99) | :x: | :x: | :x: | :x: | :green_circle: [10.7.237.238](http://10.7.237.238) | :boom: |
