@@ -145,15 +145,15 @@ Ce projet démontre qu'Ansible permet de :
 
 ### Figure 1 - Exécution du playbook Ansible
 
-![Figure 1 - Exécution du playbook](images/1.jpg)
+![Figure 1 - Exécution du playbook](images/1.png)
 
 ### Figure 2 - Contenu du fichier inventory.ini
 
-![Figure 2 - Fichier inventory.ini](images/2.jpg)
+![Figure 2 - Fichier inventory.ini](images/2.png)
 
 ### Figure 3 - Résultat du site web dans le navigateur
 
-![Figure 3 - Site déployé dans le navigateur](images/3.jpg)
+![Figure 3 - Site déployé dans le navigateur](images/3.png)
 
 ## Conclusion
 
