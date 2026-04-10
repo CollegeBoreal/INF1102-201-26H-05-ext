@@ -1,7 +1,9 @@
 
 ## 📸 Résultat du déploiement
 
-![Déploiement](300141570/images/Screenshot%202026-04-10%20112308.png)
+<p align="center">
+  <img src="300141570/images/Screenshot%202026-04-10%20112308.png" width="700"/>
+</p>
 
 # 🏗️ Infrastructure as Code (IaC) avec OpenTofu et Proxmox
 
