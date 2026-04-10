@@ -1,5 +1,105 @@
 # 🚀 Projets INF1102 — Ismail Trache (300150395)
 
+
+# INF1102 — Projet Scrapy News — Ismail Trache (300150395)
+
+## 1. Objectif
+
+Ce projet utilise le framework **Scrapy** pour scraper des citations sur le site de démonstration `https://quotes.toscrape.com`, puis analyse les mots les plus fréquents avec un script **Python**.  
+Le projet génère automatiquement :
+- un fichier **JSONL** `articles.jsonl` avec les données brutes,
+- un **rapport texte** `rapport.txt`,
+- une **figure** `top_words.png`,
+- un **rapport Jupyter** `RAPPORT.ipynb` avec visualisations et commentaires.
+
+## 2. Structure du projet
+
+À la racine de `8.Project/300150395` :
+
+- `news_spider.py` : spider Scrapy (collecte des données)
+- `analyse.py` : script Python d’analyse (statistiques + figure)
+- `analyse.ps1` : script principal (Scrapy + analyse)
+- `articles.jsonl` : données scrapées (généré automatiquement)
+- `rapport.txt` : rapport texte (généré automatiquement)
+- `top_words.png` : graphique des mots fréquents (généré automatiquement)
+- `RAPPORT.ipynb` : rapport Jupyter (analyses + graphiques)
+- `requirements.txt` : dépendances Python (scrapy, matplotlib, …)
+- `images/` : captures d’écran (exécution, Notebook, etc.)
+
+## 3. Installation
+
+```bash
+cd INF1102-201-26H-05/8.Project/300150395
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+## 4. Exécution
+
+### 4.1 Script principal
+
+```bash
+pwsh ./analyse.ps1
+```
+
+ou étape par étape :
+
+```bash
+scrapy runspider news_spider.py -O articles.jsonl
+python analyse.py articles.jsonl
+```
+
+### 4.2 Rapport Jupyter
+
+Ouvrir le fichier `RAPPORT.ipynb` avec **Jupyter Notebook** ou **Jupyter Lab** pour consulter les graphiques et l’analyse écrite.
+
+## 5. Résultats obtenus (exemple)
+
+Après exécution :
+
+- `Nombre d’éléments scrapés` : 100
+- Top 10 des mots les plus fréquents :
+  - you : 103
+  - not : 36
+  - that : 31
+  - but : 26
+  - love : 23
+  - can : 21
+  - your : 18
+  - who : 18
+  - will : 18
+  - have : 17
+
+## 6. Bonnes pratiques
+
+- Scripts lisibles et commentés.
+- Respect de la structure de fichiers demandée dans le cours.
+- Rapport Jupyter avec texte explicatif + figures.
+- Captures d’écran dans `images/` (exécution, contenu de `rapport.txt`, Notebook, etc.).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 **Environnement :** Ubuntu 22.04 LTS | **Cours :** INF1102
 
 ---
