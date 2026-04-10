@@ -1,5 +1,7 @@
 
 ##ouail gacem 300148094
+<img width="1920" height="1080" alt="Screenshot (370)" src="https://github.com/user-attachments/assets/f0aa14e5-b770-497a-a266-b60ab0bf46cc" />
+<img width="1920" height="1080" alt="Screenshot (369)" src="https://github.com/user-attachments/assets/dd87899e-4b41-46af-a1ed-4e6a8d91f905" />
 
 🎯 Objectif
 Programmer un script Batch sous Linux permettant de :
