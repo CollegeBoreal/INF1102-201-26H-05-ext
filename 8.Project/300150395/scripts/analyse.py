@@ -45,9 +45,18 @@ def main():
         t = nettoyer_texte(t)
         tokens.extend(t.split())
 
-    stopwords = {"the", "and", "for", "les", "des", "une", "avec", "vous"}
-    tokens = [t for t in tokens if t not in stopwords and len(t) > 2]
+    # stopwords anglais + quelques mots français, pour enlever les mots trop fréquents
+    stopwords = {
+        "the", "and", "for", "you", "your", "yours", "not", "that", "this", "with",
+        "but", "are", "was", "were", "have", "has", "had", "can", "could", "will",
+        "would", "should", "about", "into", "from", "they", "them", "their", "there",
+        "what", "when", "where", "which", "who", "whom", "why", "how", "all", "any",
+        "more", "most", "some", "such", "only", "other", "than", "then",
+        "its", "it's", "its", "our", "ours", "we", "us",
+        "les", "des", "une", "avec", "vous"
+    }
 
+    tokens = [t for t in tokens if t not in stopwords and len(t) > 3]
     compteur = Counter(tokens)
     top10 = compteur.most_common(10)
 

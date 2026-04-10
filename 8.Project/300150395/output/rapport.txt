@@ -2,13 +2,13 @@
 Nombre d’éléments scrapés : 100
 
 Top 10 des mots les plus fréquents :
-- you : 103
-- not : 36
-- that : 31
-- but : 26
 - love : 23
-- can : 21
-- your : 18
-- who : 18
-- will : 18
-- have : 17
+- never : 13
+- life : 12
+- think : 12
+- albert : 10
+- einstein : 10
+- make : 10
+- rowling : 9
+- like : 9
+- because : 9
