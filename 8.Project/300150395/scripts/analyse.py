@@ -6,9 +6,9 @@ import re
 from pathlib import Path
 
 
-def charger_items(path):
+def charger_items(path: Path):
     items = []
-    with open(path, "r", encoding="utf-8") as f:
+    with path.open("r", encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             if not line:
@@ -17,7 +17,7 @@ def charger_items(path):
     return items
 
 
-def nettoyer_texte(text):
+def nettoyer_texte(text: str) -> str:
     text = text.lower()
     text = re.sub(r"[^a-zàâçéèêëîïôûùüÿñæœ0-9 ]", " ", text)
     return text
@@ -25,10 +25,14 @@ def nettoyer_texte(text):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: analyse.py articles.jsonl")
+        print("Usage: analyse.py data/articles.jsonl")
         sys.exit(1)
 
-    input_file = Path(sys.argv[1])
+    project_root = Path(__file__).resolve().parent.parent
+    input_file = project_root / sys.argv[1]
+    output_dir = project_root / "output"
+    output_dir.mkdir(parents=True, exist_ok=True)
+
     items = charger_items(input_file)
 
     textes = [
@@ -47,7 +51,7 @@ def main():
     compteur = Counter(tokens)
     top10 = compteur.most_common(10)
 
-    with open("rapport.txt", "w", encoding="utf-8") as f:
+    with (output_dir / "rapport.txt").open("w", encoding="utf-8") as f:
         f.write("===== RAPPORT SCRAPY NEWS =====\n")
         f.write(f"Nombre d’éléments scrapés : {len(items)}\n\n")
         f.write("Top 10 des mots les plus fréquents :\n")
@@ -61,7 +65,7 @@ def main():
     plt.title("Top 10 mots fréquents")
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.savefig("top_words.png")
+    plt.savefig(output_dir / "top_words.png")
 
 
 if __name__ == "__main__":
