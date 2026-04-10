@@ -14,7 +14,7 @@
 
 ## :a: Présence
 
-|:hash:| Boréal :id:                | README.md | images | :rocket: playbook.yml | :page_facing_up: invetory.ini | VM | <image src='https://avatars0.githubusercontent.com/u/62551735?s=460&v=4' width=20 height=20></image> SSH |
+|:hash:| Boréal :id:                | README.md | images | :rocket: playbook.yml | :page_facing_up: inventory.ini | VM | <image src='https://avatars0.githubusercontent.com/u/62551735?s=460&v=4' width=20 height=20></image> SSH |
 |------|----------------------------|-----------|--------|-----------------------|-------------------------------|----|----------------------------------------------------------------------------------------------------------|
 | 0 | [300151233](../300151233/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/223416913?s=460&v=4' width=20 height=20></image>](https://github.com/syphax25) | :x: | :x: | [:x:](../300151233/playbook.yml) | [:x:](../300151233/inventory.ini) | :green_circle: [10.7.237.235](http://10.7.237.235) | :grey_question: |
 | 1 | [300151258](../300151258/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/231778604?s=460&v=4' width=20 height=20></image>](https://github.com/hakimsb) | :x: | :x: | [:x:](../300151258/playbook.yml) | [:x:](../300151258/inventory.ini) | :green_circle: [10.7.237.236](http://10.7.237.236) | :grey_question: |
