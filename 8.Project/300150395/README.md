@@ -79,7 +79,11 @@ Après exécution :
 - Captures d’écran dans `images/` (exécution, contenu de `rapport.txt`, Notebook, etc.).
 
 
+## Graphique des mots les plus fréquents
 
+Le script d’analyse génère automatiquement un graphique `top_words.png` à partir de `rapport.txt`.
+
+![Top 10 des mots les plus fréquents](top_words.png)
 
 
 
