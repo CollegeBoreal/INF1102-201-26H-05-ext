@@ -1,4 +1,4 @@
-# Participation au 02-04-2026 06:02
+# Participation au 10-04-2026 15:24
 
 | Table des matières            | Description                                             |
 |-------------------------------|---------------------------------------------------------|
@@ -16,7 +16,7 @@
 
 |:hash:| Boréal :id:                | README.md    | images |
 |------|----------------------------|--------------|--------|
-| 0 | [300135538](../300135538/README.md) :point_right: [RedaYousfi](https://github.com/RedaYousfi) <image src='https://avatars0.githubusercontent.com/u/133056385?s=460&v=4' width=20 height=20></image> | :x: | :x: |
+| 0 | [300135538](../300135538/README.md) :point_right: [RedaYousfi](https://github.com/RedaYousfi) <image src='https://avatars0.githubusercontent.com/u/133056385?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :x: |
 | 1 | [300141570](../300141570/README.md) :point_right: [swberk](https://github.com/swberk) <image src='https://avatars0.githubusercontent.com/u/66260193?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
 | 2 | [300146112](../300146112/README.md) :point_right: [laggabkhalef](https://github.com/laggabkhalef) <image src='https://avatars0.githubusercontent.com/u/205994703?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
 | 3 | [300146676](../300146676/README.md) :point_right: [harkatiaymen](https://github.com/harkatiaymen) <image src='https://avatars0.githubusercontent.com/u/211595997?s=460&v=4' width=20 height=20></image> | :x: | :x: |
@@ -30,10 +30,10 @@
 | 11 | [300151258](../300151258/README.md) :point_right: [hakimsb](https://github.com/hakimsb) <image src='https://avatars0.githubusercontent.com/u/231778604?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 12 | [300151347](../300151347/README.md) :point_right: [sarahocine](https://github.com/sarahocine) <image src='https://avatars0.githubusercontent.com/u/207281891?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 13 | [300151403](../300151403/README.md) :point_right: [JustinSandy99](https://github.com/JustinSandy99) <image src='https://avatars0.githubusercontent.com/u/211593057?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
-| 14 | [300151466](../300151466/README.md) :point_right: [hamza-mila](https://github.com/hamza-mila) <image src='https://avatars0.githubusercontent.com/u/243457456?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :x: |
+| 14 | [300151466](../300151466/README.md) :point_right: [hamza-mila](https://github.com/hamza-mila) <image src='https://avatars0.githubusercontent.com/u/243457456?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
 | 15 | [300151556](../300151556/README.md) :point_right: [Kahinazerkani](https://github.com/Kahinazerkani) <image src='https://avatars0.githubusercontent.com/u/231781132?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
 | 16 | [300151608](../300151608/README.md) :point_right: [mohammedaiche434](https://github.com/mohammedaiche434) <image src='https://avatars0.githubusercontent.com/u/205994734?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 17 | [300152131](../300152131/README.md) :point_right: [el-calvino](https://github.com/el-calvino) <image src='https://avatars0.githubusercontent.com/u/205994709?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
 | 18 | [300152260](../300152260/README.md) :point_right: [bekkai-mohibb](https://github.com/bekkai-mohibb) <image src='https://avatars0.githubusercontent.com/u/212179557?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 19 | [300152410](../300152410/README.md) :point_right: [imadboud](https://github.com/imadboud) <image src='https://avatars0.githubusercontent.com/u/212177230?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
-| :abacus: | \$\\frac{10}{20}\$ = 50% | \$\displaystyle\sum_{i=1}^{20} s_i\$ = 10 |
+| :abacus: | \$\\frac{11}{20}\$ = 55% | \$\displaystyle\sum_{i=1}^{20} s_i\$ = 11 |
