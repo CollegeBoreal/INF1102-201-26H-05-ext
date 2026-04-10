@@ -76,6 +76,29 @@ def main():
     plt.tight_layout()
     plt.savefig(output_dir / "top_words.png")
 
+    # 2) Histogramme horizontal (top_words_horizontal.png)
+    plt.figure(figsize=(10, 5))
+    plt.barh(mots, freqs)
+    plt.title("Top 10 mots fréquents (horizontal)")
+    plt.tight_layout()
+    plt.savefig(output_dir / "top_words_horizontal.png")
+
+    # 3) Top auteurs (authors_top.png)
+    from collections import Counter
+
+    auteurs = [i.get("summary") for i in items if i.get("summary")]
+    compteur_auteurs = Counter(auteurs)
+    top_auteurs = compteur_auteurs.most_common(5)
+
+    noms = [a for a, _ in top_auteurs]
+    freqs_auteurs = [f for _, f in top_auteurs]
+
+    plt.figure(figsize=(8, 4))
+    plt.bar(noms, freqs_auteurs)
+    plt.title("Top 5 auteurs les plus fréquents")
+    plt.xticks(rotation=30)
+    plt.tight_layout()
+    plt.savefig(output_dir / "authors_top.png")
 
 if __name__ == "__main__":
     main()
