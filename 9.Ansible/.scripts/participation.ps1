@@ -5,7 +5,7 @@
 # --------------------------------------
 
 param(
-    [ValidateSet(1,2,3)]
+    [ValidateSet(1,2)]
     [int]$Group = 1,
     [switch]$Check
 )
@@ -29,12 +29,6 @@ switch ($Group) {
         $PROXMOX_SERVER = $PROXMOX_GROUP_2
         $TOFU_SECRET    = $TOFU_SECRET_GROUP_2
     }
-    3 { 
-        $ACTIVE_GROUP   = $GROUP_3
-        $ACTIVE_SERVERS = $SERVER_GROUP_3
-        $PROXMOX_SERVER = $PROXMOX_GROUP_3
-        $TOFU_SECRET    = $TOFU_SECRET_GROUP_3
-    }
     default { throw "Groupe invalide" }
 }
 
@@ -48,7 +42,11 @@ $ErrorActionPreference = "Stop"
 . ../.scripts/commons.ps1
 
 Write-ParticipationHeader
-Write-PresenceHeader
+if ($Check) {
+    Write-PresenceHeader -Check
+} else {
+    Write-PresenceHeader
+}
 
 $i = 0
 $s = 0
@@ -63,19 +61,29 @@ for ($g = 0; $g -lt $ACTIVE_GROUP.Count; $g++) {
     $checks = Get-StudentChecks -Paths $paths
     $url    = Get-GitHubAvatarLink -GitHubID $GitHubID -AvatarID $AvatarID
 
-    if ($Check) {
-        $result = Get-StudentReport -id $StudentID
+
+    $params = @{
+        Index       = $i
+        StudentID   = $StudentID
+        GitHubLink  = $url
+        Checks      = $checks
+        Result      = $result
+        PBPath      = $paths.PB
+        INIPath     = $paths.INI
+        ReadmePath  = $paths.README
     }
 
-    Write-StudentRow `
-        -Index $i `
-        -StudentID $StudentID `
-        -GitHubLink $url `
-        -Checks $checks `
-        -Result $result `
-        -INPath $paths.IN `
-        -OUTPath $paths.OUT `
-        -ReadmePath $paths.README
+
+    $result = [PSCustomObject]@{
+        Id            = $StudentID
+        IO_Exec       = ":grey_question:"
+    }
+    if ($Check) {
+        $result = Get-StudentReport -id $StudentID
+        $params.Check = $true
+    }
+
+    Write-StudentRow @params
 
     if (Test-AllRequiredFilesPresent -Checks $checks) {
         $s++

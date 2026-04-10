@@ -8,5 +8,5 @@
 # Standard output -> .scripts/Participation.md
 # Errors -> $null (discarded)
 
-pwsh .scripts/participation.ps1 -Group 1 > .scripts/Participation-group1.md 2>$null
-pwsh .scripts/participation.ps1 -Group 2 > .scripts/Participation-group2.md 2>$null
+pwsh .scripts/participation.ps1 -Group 1  > .scripts/Participation-group1.md 2>$null
+pwsh .scripts/participation.ps1 -Group 2  > .scripts/Participation-group2.md 2>$null
