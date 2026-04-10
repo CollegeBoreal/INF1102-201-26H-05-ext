@@ -273,6 +273,10 @@ Le wordcloud visualise la fréquence des mots avec une taille proportionnelle à
 
 ![Wordcloud des mots les plus fréquents](output/wordcloud.png)
 
+![Top 10 mots (version horizontale)](output/top_words_horizontal.png)
+
+![Top 5 auteurs les plus fréquents](output/authors_top.png)
+
 ---
 
 ## 🌐 Projets complémentaires
