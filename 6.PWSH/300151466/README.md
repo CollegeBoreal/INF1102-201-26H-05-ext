@@ -6,7 +6,7 @@
 
 **Boréal ID :** 300151466
 
-**Cours :** INF1102
+**Cours :** INF1105
 
 **Environnement :** Ubuntu 22.04 LTS
 
