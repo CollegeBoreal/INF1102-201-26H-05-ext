@@ -1,4 +1,4 @@
-<img width="568" height="182" alt="c7" src="https://github.com/user-attachments/assets/a06af502-e056-4acc-834a-8907d753fa3b" />
+
 # :six: PWSH (PowerShell) — TP DevOps
 
 
@@ -17,7 +17,7 @@
 ## :floppy_disk: Installation de PowerShell sur Ubuntu 22.04
 
 ### 1. Mettre à jour le système
-
+<img width="568" height="182" alt="c7" src="https://github.com/user-attachments/assets/a06af502-e056-4acc-834a-8907d753fa3b" />
 ```bash
 sudo apt update
 ```<img width="598" height="444" alt="c6" src="https://github.com/user-attachments/assets/d4c9cdb9-3ed5-42d8-8f23-0c231f27578c" />
