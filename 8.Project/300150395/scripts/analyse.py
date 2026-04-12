@@ -4,7 +4,7 @@ from collections import Counter
 import matplotlib.pyplot as plt
 import re
 from pathlib import Path
-
+from wordcloud import WordCloud
 
 def charger_items(path: Path):
     items = []
@@ -84,7 +84,6 @@ def main():
     plt.savefig(output_dir / "top_words_horizontal.png")
 
     # 3) Top auteurs (authors_top.png)
-    from collections import Counter
 
     auteurs = [i.get("summary") for i in items if i.get("summary")]
     compteur_auteurs = Counter(auteurs)
@@ -99,6 +98,23 @@ def main():
     plt.xticks(rotation=30)
     plt.tight_layout()
     plt.savefig(output_dir / "authors_top.png")
+
+    # 2) Wordcloud (wordcloud.png)
+    # Recréer un grand texte à partir des tokens filtrés
+    texte_wc = " ".join(tokens)
+
+    wc = WordCloud(
+        width=800,
+        height=400,
+        background_color="white"
+    ).generate(texte_wc)
+
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wc, interpolation="bilinear")
+    plt.axis("off")
+    plt.tight_layout()
+    plt.savefig(output_dir / "wordcloud.png")
+
 
 if __name__ == "__main__":
     main()

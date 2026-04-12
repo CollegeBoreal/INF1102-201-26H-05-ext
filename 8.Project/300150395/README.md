@@ -1,9 +1,11 @@
-# 🚀 Scrapy News — Projet INF1102 Programmation Système
+## 🚀 Scrapy News — Projet INF1102 Programmation Système
 **Étudiant** : Ismail Trache (300150395)  
 **Cours** : INF1102 — Programmation système  
 **Environnement** : Ubuntu 22.04 LTS  
 **Date** : 2026-04-10
  
+
+
 ---
  
 ## 📋 Table des matières
@@ -272,6 +274,10 @@ Le wordcloud visualise la fréquence des mots avec une taille proportionnelle à
 ![Histogramme des 10 mots les plus fréquents](output/top_words.png)
 
 ![Wordcloud des mots les plus fréquents](output/wordcloud.png)
+
+![Top 10 mots (version horizontale)](output/top_words_horizontal.png)
+
+![Top 5 auteurs les plus fréquents](output/authors_top.png)
 
 ---
 

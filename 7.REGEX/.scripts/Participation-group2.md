@@ -37,5 +37,5 @@
 | 6 | [300151608](../300151608/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/205994734?s=460&v=4' width=20 height=20></image>](https://github.com/mohammedaiche434) | :x: | :x: | :x: | :x: | 10.7.237.241 |
 | 7 | [300152131](../300152131/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/205994709?s=460&v=4' width=20 height=20></image>](https://github.com/el-calvino) | :x: | :x: | :x: | :x: | 10.7.237.242 |
 | 8 | [300152260](../300152260/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/212179557?s=460&v=4' width=20 height=20></image>](https://github.com/bekkai-mohibb) | :x: | :x: | :x: | :x: | 10.7.237.243 |
-| 9 | [300152410](../300152410/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/212177230?s=460&v=4' width=20 height=20></image>](https://github.com/imadboud) | :x: | :x: | :x: | :x: | 10.7.237.245 |
-| :abacus: | \$\\frac{2}{10}\$ = 0% | \$\displaystyle\sum_{i=1}^{10} s_i\$ =  |
+| 9 | [300152410](../300152410/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/212177230?s=460&v=4' width=20 height=20></image>](https://github.com/imadboud) | :2nd_place_medal: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.245 |
+| :abacus: | \$\\frac{3}{10}\$ = 0% | \$\displaystyle\sum_{i=1}^{10} s_i\$ =  |
