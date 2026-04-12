@@ -53,7 +53,8 @@ cat /home/ubuntu/nginx_ips.txt
 ```
 
 
-![Script](<img width="614" height="503" alt="image" src="https://github.com/user-attachments/assets/a4009a4a-52e4-462c-a066-24f9f77cfe1d" />
+![Script](<img width="614" height="503" alt="c2" src="https://github.com/user-attachments/assets/18e8b8ab-a4b4-476d-be00-362f4a00d000" />
+
 )
 
 
