@@ -1,0 +1,7 @@
+=== Rapport Monitoring ===
+
+2026-04-12 15:57:03 | https://google.com | Status: 200 | Temps: 0.462s
+2026-04-12 15:57:03 | https://github.com | Status: 200 | Temps: 0.336s
+2026-04-12 15:57:03 | https://wikipedia.org | Status: 403 | Temps: 0.243s
+2026-04-12 15:57:04 | https://youtube.com | Status: 200 | Temps: 0.622s
+2026-04-12 15:57:04 | https://amazon.com | Status: 503 | Temps: 0.384s
