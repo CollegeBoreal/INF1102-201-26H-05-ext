@@ -1,4 +1,4 @@
-
+<img width="568" height="182" alt="c7" src="https://github.com/user-attachments/assets/a06af502-e056-4acc-834a-8907d753fa3b" />
 # :six: PWSH (PowerShell) — TP DevOps
 
 
@@ -20,13 +20,16 @@
 
 ```bash
 sudo apt update
-```
+```<img width="598" height="444" alt="c6" src="https://github.com/user-attachments/assets/d4c9cdb9-3ed5-42d8-8f23-0c231f27578c" />
 
 ### 2. Installer les dépendances
 
 ```bash
 sudo apt install -y wget apt-transport-https software-properties-common
 ```
+<img width="568" height="182" alt="c7" src="https://github.com/user-attachments/assets/c0802a6b-0de9-4952-b90f-df2454f6427b" />
+
+
 
 ### 3. Ajouter le dépôt Microsoft
 
@@ -40,6 +43,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 ```bash
 sudo apt update
 ```
+<img width="449" height="79" alt="c8" src="https://github.com/user-attachments/assets/bc0fd460-f431-4306-bb04-9f48f53357c8" />
 
 ### 5. Installer PowerShell
 
