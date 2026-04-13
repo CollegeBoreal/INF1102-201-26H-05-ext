@@ -1,4 +1,4 @@
-<img width="2249" height="1155" alt="Capture d&#39;écran 2026-04-12 183533" src="https://github.com/user-attachments/assets/ad3ab9c2-3907-4c36-be85-7def5d61d2b1" />
+#300151403
 # 🚀 Projet Ansible – Déploiement automatique de Nginx
 
 ## 📌 Description
