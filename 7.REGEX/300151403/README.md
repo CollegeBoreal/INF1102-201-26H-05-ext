@@ -117,12 +117,18 @@ REGEX/rapport_nginx_py_YYYY-MM-DD.txt
 ```bash
 pwsh ./REGEX/analyse_nginx.ps1
 ```
+<img width="910" height="62" alt="Capture d&#39;écran 2026-04-13 112704" src="https://github.com/user-attachments/assets/7a964d24-af99-4251-a1cd-f090f6e1d527" />
+
+
 
 ### 🐍 Python
 
 ```bash
 python3 REGEX/analyse_nginx.py
 ```
+
+<img width="879" height="59" alt="Capture d&#39;écran 2026-04-13 112739" src="https://github.com/user-attachments/assets/2c2f16ac-5c8e-407b-a731-a8ef9ce2a542" />
+
 
 ---
 
@@ -158,6 +164,8 @@ crontab -e
 ```bash
 grep CRON /var/log/syslog
 ```
+<img width="2241" height="1303" alt="Capture d&#39;écran 2026-04-13 112818" src="https://github.com/user-attachments/assets/74e19e95-5baa-4cec-b476-ef54aa4c8d6c" />
+
 
 ---
 
