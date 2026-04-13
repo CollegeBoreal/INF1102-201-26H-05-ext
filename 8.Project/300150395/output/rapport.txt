@@ -1,0 +1,14 @@
+===== RAPPORT SCRAPY NEWS =====
+Nombre d’éléments scrapés : 100
+
+Top 10 des mots les plus fréquents :
+- love : 23
+- never : 13
+- life : 12
+- think : 12
+- albert : 10
+- einstein : 10
+- make : 10
+- rowling : 9
+- like : 9
+- because : 9
