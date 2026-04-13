@@ -59,6 +59,9 @@ Résultat : OK
 └── rapport.json
 ```
 
+<img width="890" height="93" alt="Capture d&#39;écran 2026-04-13 110148" src="https://github.com/user-attachments/assets/12e3bb9e-c23b-4f26-b983-f2ad52362736" />
+
+
 ---
 
 ## ⚙️ Requirements
