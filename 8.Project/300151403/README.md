@@ -21,6 +21,14 @@ PROJET_METEO/
 
 ---
 
+<img width="876" height="238" alt="Capture d&#39;écran 2026-04-02 145312" src="https://github.com/user-attachments/assets/7dd34348-d2c7-4866-90ef-e2ef43dcccf5" />
+
+
+
+
+
+
+
 ## ⚙️ Fonctionnement
 
 ### 1. `analyse.sh` — Pipeline principal
@@ -36,6 +44,11 @@ Le script Bash orchestre l'ensemble du pipeline :
 
 ### 2. `analyse.py` — Analyse et génération des sorties
 
+
+
+<img width="1110" height="1012" alt="Capture d&#39;écran 2026-04-02 135735" src="https://github.com/user-attachments/assets/e1433620-d644-43f1-8232-ec518aac67fb" />
+
+
 Le script Python :
 
 - Charge les données météo depuis `data/meteo.json`
@@ -49,7 +62,13 @@ Le script Python :
 
 ### `rapport.txt`
 
+
+<img width="1033" height="628" alt="Capture d&#39;écran 2026-04-02 142055" src="https://github.com/user-attachments/assets/61495b5f-8bff-46e6-bff8-dd25b1e385c4" />
+
+
+
 ```
+
 === RAPPORT METEO ===
 
 Ville: Toronto
@@ -72,6 +91,11 @@ Graphique à barres affichant la température et l'humidité pour Toronto.
 - Une clé API valide sur [OpenWeatherMap](https://openweathermap.org/api)
 
 ### Rendre le script exécutable
+
+
+<img width="1046" height="457" alt="Capture d&#39;écran 2026-04-02 140058" src="https://github.com/user-attachments/assets/5612b095-73da-48f2-8a91-ad58da370fe8" />
+
+
 
 ```bash
 chmod +x scripts/analyse.sh
@@ -112,6 +136,11 @@ crontab -e
 ```
 
 ---
+
+<img width="1105" height="1076" alt="Capture d&#39;écran 2026-04-02 144927" src="https://github.com/user-attachments/assets/89acff32-d532-43e6-b39a-6f88a7cbf483" />
+
+
+
 
 ## 🛠️ Technologies utilisées
 
