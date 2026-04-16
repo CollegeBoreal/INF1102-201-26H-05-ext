@@ -23,7 +23,7 @@ Le script `devops_batch.ps1` permet de :
 sudo pwsh /devops-batch/devops_batch.ps1
 📸 Exécution du script
 
-🔗 Lien : images/1.png
+![Execution](images/1.png)
 
 👉 Cette capture montre :
 
@@ -32,7 +32,7 @@ les informations système affichées
 les résultats du traitement (CPU, mémoire, disque, SSH)
 📸 Résultat JSON généré
 
-🔗 Lien : images/2.png
+![JSON](images/2.png)
 
 👉 Cette capture montre :
 
