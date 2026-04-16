@@ -32,7 +32,7 @@ Le script **script_gestion.sh** permet de :
 
 # 📂 Structure du projet
 
-![Structure du projet](images/1.png)
+![Structure du projet](images/capteur1.jpg)
 
 Cette capture montre :
 
