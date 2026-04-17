@@ -125,3 +125,7 @@ Projet réalisé dans le cadre d’un TP en administration système & automatisa
 ⭐ Support
 
 Si ce projet t’aide, laisse une ⭐ sur GitHub !
+<img width="1920" height="1080" alt="Screenshot (385)" src="https://github.com/user-attachments/assets/98b31e25-517f-47f1-8b2b-151bd2860c6c" />
+<img width="1920" height="1080" alt="Screenshot (384)" src="https://github.com/user-attachments/assets/2ba31277-250f-4e34-af00-8005deef15bb" />
+
+
