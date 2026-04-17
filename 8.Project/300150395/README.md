@@ -1,4 +1,4 @@
-*# 🚀 Scrapy News — Projet INF1102 Programmation Système
+## 🚀 Scrapy News — Projet INF1102 Programmation Système
 **Étudiant** : Ismail Trache (300150395)  
 **Cours** : INF1102 — Programmation système  
 **Environnement** : Ubuntu 22.04 LTS  

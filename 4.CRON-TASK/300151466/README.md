@@ -1,4 +1,10 @@
 # Exercice : Scruter les logs Nginx
+##adel bennacer  300151466
+
+
+
+
+
 
 ## 🎯 Objectif
 Extraire les adresses IP des visiteurs du serveur Nginx et automatiser cette tâche avec cron.
@@ -45,6 +51,13 @@ crontab -l
 # Voir le résultat
 cat /home/ubuntu/nginx_ips.txt
 ```
+
+
+![Script](<img width="614" height="503" alt="c2" src="https://github.com/user-attachments/assets/18e8b8ab-a4b4-476d-be00-362f4a00d000" />
+
+)
+
+
 
 
 

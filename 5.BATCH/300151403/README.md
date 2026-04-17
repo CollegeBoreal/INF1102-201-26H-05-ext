@@ -114,12 +114,17 @@ Vérifier :
 ```bash
 cat /etc/passwd | grep employe_temp
 ```
+<img width="1149" height="63" alt="Capture d&#39;écran 2026-04-13 111527" src="https://github.com/user-attachments/assets/b5c04693-5a45-40a5-9589-e87f1463db8b" />
+
 
 * Le fichier log :
 
 ```bash
 cat ~/entreprise/logs/log.txt
 ```
+
+<img width="2251" height="1290" alt="Capture d&#39;écran 2026-04-13 111612" src="https://github.com/user-attachments/assets/027c226f-a74b-405d-8bd2-9081b4c01e0f" />
+
 
 ---
 
@@ -149,17 +154,24 @@ Vérifier que cron fonctionne :
 systemctl status cron
 ```
 
+<img width="2239" height="656" alt="Capture d&#39;écran 2026-04-13 111656" src="https://github.com/user-attachments/assets/f71be251-bdbf-4d02-9a9d-399fc20a8907" />
+
+
 Consulter les journaux :
 
 ```bash
 journalctl -u cron
 ```
+<img width="2121" height="1302" alt="Capture d&#39;écran 2026-04-13 111736" src="https://github.com/user-attachments/assets/3aa7581e-5df5-4244-a3ed-34b24c3fadae" />
+
 
 ou
 
 ```bash
 cat /var/log/syslog | grep CRON
 ```
+<img width="2251" height="1290" alt="Capture d&#39;écran 2026-04-13 111612" src="https://github.com/user-attachments/assets/b7f3f312-d777-488d-86a0-4d6ea8165815" />
+
 
 ---
 
