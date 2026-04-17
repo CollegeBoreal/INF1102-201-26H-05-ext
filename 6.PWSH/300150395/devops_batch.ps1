@@ -2,23 +2,31 @@
 
 # =====================================
 # DevOps Batch Script - INF1102
-# Auteur : ISMAIL TRACHE 
+# Auteur : ISMAIL TRACHE
 # Boreal ID : 300150395
 # =====================================
 
-$rapportTxt = "$HOME/devops-batch/rapport.txt"
+# Créer le dossier s'il n'existe pas
+if (-not (Test-Path "$HOME/devops-batch")) {
+    New-Item -ItemType Directory -Path "$HOME/devops-batch" | Out-Null
+}
+
+
+$rapportTxt  = "$HOME/devops-batch/rapport.txt"
 $rapportJson = "$HOME/devops-batch/rapport.json"
 
-$date = Get-Date
+$date     = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 $hostname = hostname
-$user = whoami
+$user     = whoami
 
+# Création / réinitialisation du rapport texte
 Write-Output "===== RAPPORT DEVOPS =====" | Tee-Object -FilePath $rapportTxt
 Write-Output "Date : $date" | Tee-Object -FilePath $rapportTxt -Append
 Write-Output "Utilisateur : $user" | Tee-Object -FilePath $rapportTxt -Append
 Write-Output "Machine : $hostname" | Tee-Object -FilePath $rapportTxt -Append
 Write-Output "" | Tee-Object -FilePath $rapportTxt -Append
 
+# Top 5 processus par CPU
 Write-Output "Top 5 processus CPU :" | Tee-Object -FilePath $rapportTxt -Append
 $topCPU = Get-Process | Sort-Object CPU -Descending | Select-Object -First 5
 foreach ($p in $topCPU) {
@@ -26,6 +34,8 @@ foreach ($p in $topCPU) {
 }
 
 Write-Output "" | Tee-Object -FilePath $rapportTxt -Append
+
+# Top 5 processus par mémoire
 Write-Output "Top 5 processus mémoire :" | Tee-Object -FilePath $rapportTxt -Append
 $topMem = Get-Process | Sort-Object WS -Descending | Select-Object -First 5
 foreach ($p in $topMem) {
@@ -33,21 +43,30 @@ foreach ($p in $topMem) {
 }
 
 Write-Output "" | Tee-Object -FilePath $rapportTxt -Append
+
+# Utilisation du disque
 Write-Output "Utilisation disque :" | Tee-Object -FilePath $rapportTxt -Append
-$disk = df -h
+$disk = Get-PSDrive -PSProvider FileSystem | Select-Object Name, Used, Free
 $disk | Tee-Object -FilePath $rapportTxt -Append
 
 Write-Output "" | Tee-Object -FilePath $rapportTxt -Append
+
+# Test SSH
 $sshHost = "127.0.0.1"
 Write-Output "Test SSH vers $sshHost" | Tee-Object -FilePath $rapportTxt -Append
+
 try {
     $result = ssh -o BatchMode=yes -o ConnectTimeout=5 $sshHost "echo OK" 2>&1
     Write-Output "Résultat : $result" | Tee-Object -FilePath $rapportTxt -Append
 }
 catch {
-    Write-Output "SSH échoué vers $sshHost" | Tee-Object -FilePath $rapportTxt -Append
+    $errorOut = $_.Exception.Message
+    Write-Output "SSH échoué vers $sshHost - Erreur : $errorOut" | Tee-Object -FilePath $rapportTxt -Append
 }
 
+Write-Output "" | Tee-Object -FilePath $rapportTxt -Append
+
+# Objet de rapport pour le JSON
 $reportObj = [PSCustomObject]@{
     Date        = $date
     Utilisateur = $user
@@ -67,7 +86,8 @@ $reportObj = [PSCustomObject]@{
     Disk        = $disk
 }
 
-$reportObj | ConvertTo-Json -Depth 5 | Set-Content $rapportJson
+$reportObj | ConvertTo-Json -Depth 5 | Set-Content -Path $rapportJson
 
 Write-Output ""
 Write-Output "Rapports générés : $rapportTxt et $rapportJson"
+
