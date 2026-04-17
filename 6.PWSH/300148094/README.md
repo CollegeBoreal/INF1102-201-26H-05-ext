@@ -1,17 +1,27 @@
-##300148094
-
 ⚙️ DevOps Batch System Monitor (PowerShell on Linux)
-GitHub repo size GitHub stars GitHub last commit License PowerShell Platform
+
+ID Projet : 300148094
+
+
+
+
+
 
 🎯 Overview
-This project is a DevOps automation batch script built with PowerShell (pwsh) on Linux.
 
-It performs system monitoring and generates structured reports in both text and JSON formats.
+Ce projet est un script d’automatisation DevOps développé en PowerShell (pwsh) sur Linux.
+
+Il permet de surveiller le système et de générer automatiquement des rapports structurés en format texte et JSON.
 
 🚀 Features
-✔ System monitoring (CPU, Memory, Disk) ✔ Network connectivity check (SSH) ✔ Automated report generation (TXT + JSON) ✔ Object-oriented pipeline (PowerShell) ✔ Cross-platform DevOps scripting
 
-📸 Sample Output
+✔ Surveillance système (CPU, Mémoire, Disque)
+✔ Vérification de connectivité réseau (SSH)
+✔ Génération automatique de rapports (TXT + JSON)
+✔ Utilisation du pipeline orienté objets (PowerShell)
+✔ Script DevOps cross-platform (Linux / Windows)
+
+📸 Exemple de sortie
 ===== RAPPORT DEVOPS =====
 Date : 2026-04-13
 Utilisateur : user
@@ -22,84 +32,100 @@ nginx - CPU: 25
 python - CPU: 18
 
 Espace disque :
-/dev/sda1  40G  20G  50%
+/dev/sda1 40G 20G 50%
 
 Test SSH :
 Résultat : OK
-📂 Project Structure
+📂 Structure du projet
 /devops-batch/
 ├── devops_batch.ps1
 ├── rapport.txt
 └── rapport.json
-Capture d'écran 2026-04-13 110148
-⚙️ Requirements
-Ubuntu 22.04 (Jammy)
+⚙️ Prérequis
+Ubuntu 22.04 (ou similaire)
 PowerShell Core (pwsh)
-SSH client installed
+Client SSH installé
 🔧 Installation
-1. Install PowerShell
+1. Installer PowerShell
 sudo apt update
 sudo apt install -y powershell
-2. Create project directory
+2. Créer le dossier du projet
 sudo mkdir /devops-batch
-3. Create script
+3. Créer le script
 sudo nano /devops-batch/devops_batch.ps1
-▶️ Usage
-Run the script:
+▶️ Utilisation
+
+Exécuter le script :
 
 sudo pwsh /devops-batch/devops_batch.ps1
-📊 Generated Reports
-📄 Text Report
-/devops-batch/rapport.txt
-📦 JSON Report
-/devops-batch/rapport.json
-🧠 PowerShell Pipeline Example
-Get-Process |
-Where-Object {$_.CPU -gt 10} |
-Select-Object ProcessName, CPU
-➡️ Unlike Bash, PowerShell manipulates objects instead of raw text, making automation more reliable.
+📊 Rapports générés
 
-🔍 What the Script Checks
-🖥️ System
-Top 5 processes (CPU)
-Top 5 processes (Memory)
-💾 Disk
-Disk usage via df -h
-🌐 Network
-SSH connectivity test (localhost)
-⏰ Automation
-Linux Cron Job
+📄 Rapport texte
+
+/devops-batch/rapport.txt
+
+📦 Rapport JSON
+
+/devops-batch/rapport.json
+🧠 Exemple de pipeline PowerShell
+Get-Process | Where-Object { $_.CPU -gt 10 } | Select-Object ProcessName, CPU
+
+➡️ Contrairement à Bash, PowerShell manipule des objets et non du texte brut, ce qui rend l’automatisation plus fiable.
+
+🔍 Vérifications effectuées
+🖥️ Système
+Top 5 processus CPU
+Top 5 processus Mémoire
+💾 Disque
+Utilisation du disque (df -h)
+🌐 Réseau
+Test de connectivité SSH (localhost)
+⏰ Automatisation (CRON)
+
+Ajouter une tâche planifiée :
+
 crontab -e
+
+Puis :
+
 0 2 * * * /usr/bin/pwsh /devops-batch/devops_batch.ps1
+
+➡️ Exécution automatique tous les jours à 2h du matin
+
 📈 Roadmap
- Add email alerting
- Add monitoring dashboard
- Integrate with Prometheus / Grafana
- Add API export
- Multi-host monitoring
+ Alertes par email
+ Dashboard de monitoring
+ Intégration Prometheus / Grafana
+ Export API
+ Monitoring multi-machines
 ⚖️ Bash vs PowerShell
 Feature	Bash	PowerShell
-Data type	Text	Objects
-JSON support	External tools	Native
-Pipeline	Text-based	Object-based
-DevOps automation	Medium	High
-💡 Why PowerShell on Linux?
-Cross-platform scripting (Linux + Windows)
-Native JSON support
-Cleaner automation pipelines
-Better maintainability for DevOps scripts
+Type de données	Texte	Objets
+JSON	Externe	Natif
+Pipeline	Texte	Objet
+Automatisation	Moyenne	Avancée
+💡 Pourquoi PowerShell sur Linux ?
+Script cross-platform (Linux + Windows)
+Support natif du JSON
+Pipelines plus propres
+Meilleure maintenabilité pour DevOps
 🤝 Contributing
-Contributions are welcome!
+
+Les contributions sont les bienvenues !
 
 git fork
 git checkout -b feature/new-feature
 git commit -m "Add new feature"
 git push origin feature/new-feature
 📄 License
+
 MIT License
 
-👨‍💻 Author
+👨‍💻 Auteur
+
+Ouail Gacem
 DevOps Lab — PowerShell Automation on Linux
 
 ⭐ Support
-If you find this project useful, give it a ⭐ on GitHub!
+
+Si ce projet t’aide, n’hésite pas à laisser une ⭐ sur GitHub !
