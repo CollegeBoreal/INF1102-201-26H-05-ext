@@ -6,6 +6,10 @@ import re
 from pathlib import Path
 from wordcloud import WordCloud
 
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+
 def charger_items(path: Path):
     items = []
     with path.open("r", encoding="utf-8") as f:
@@ -24,13 +28,25 @@ def nettoyer_texte(text: str) -> str:
 
 
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: analyse.py data/articles.jsonl")
-        sys.exit(1)
+    # 1) Choisir le fichier d'entrée
+    if len(sys.argv) >= 2:
+        # On prend l'argument tel quel et on le résout par rapport au cwd
+        input_file = Path(sys.argv[1]).resolve()
+    else:
+        # Par défaut, on utilise ton fichier Scrapy
+        input_file = BASE_DIR / "data" / "articles.jsonl"
 
-    project_root = Path(__file__).resolve().parent.parent
-    input_file = project_root / sys.argv[1]
-    output_dir = project_root / "output"
+    # 2) Si le fichier n'existe pas, fallback sur articles.jsonl sans crasher
+    if not input_file.exists():
+        fallback = BASE_DIR / "data" / "articles.jsonl"
+        if fallback.exists():
+            print(f"Fichier {input_file} introuvable, utilisation de {fallback}")
+            input_file = fallback
+        else:
+            print(f"Aucun fichier d'entrée valide trouvé (ni {input_file} ni {fallback})")
+            return 0  # surtout pas d'exception
+
+    output_dir = BASE_DIR / "output"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     items = charger_items(input_file)
@@ -76,14 +92,11 @@ def main():
     plt.tight_layout()
     plt.savefig(output_dir / "top_words.png")
 
-    # 2) Histogramme horizontal (top_words_horizontal.png)
     plt.figure(figsize=(10, 5))
     plt.barh(mots, freqs)
     plt.title("Top 10 mots fréquents (horizontal)")
     plt.tight_layout()
     plt.savefig(output_dir / "top_words_horizontal.png")
-
-    # 3) Top auteurs (authors_top.png)
 
     auteurs = [i.get("summary") for i in items if i.get("summary")]
     compteur_auteurs = Counter(auteurs)
@@ -99,22 +112,14 @@ def main():
     plt.tight_layout()
     plt.savefig(output_dir / "authors_top.png")
 
-    # 2) Wordcloud (wordcloud.png)
-    # Recréer un grand texte à partir des tokens filtrés
     texte_wc = " ".join(tokens)
-
-    wc = WordCloud(
-        width=800,
-        height=400,
-        background_color="white"
-    ).generate(texte_wc)
+    wc = WordCloud(width=800, height=400, background_color="white").generate(texte_wc)
 
     plt.figure(figsize=(10, 5))
     plt.imshow(wc, interpolation="bilinear")
     plt.axis("off")
     plt.tight_layout()
     plt.savefig(output_dir / "wordcloud.png")
-
 
 if __name__ == "__main__":
     main()
