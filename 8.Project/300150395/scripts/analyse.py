@@ -4,7 +4,7 @@ from collections import Counter
 import matplotlib.pyplot as plt
 import re
 from pathlib import Path
-
+from wordcloud import WordCloud
 
 def charger_items(path: Path):
     items = []
@@ -45,9 +45,18 @@ def main():
         t = nettoyer_texte(t)
         tokens.extend(t.split())
 
-    stopwords = {"the", "and", "for", "les", "des", "une", "avec", "vous"}
-    tokens = [t for t in tokens if t not in stopwords and len(t) > 2]
+    # stopwords anglais + quelques mots français, pour enlever les mots trop fréquents
+    stopwords = {
+        "the", "and", "for", "you", "your", "yours", "not", "that", "this", "with",
+        "but", "are", "was", "were", "have", "has", "had", "can", "could", "will",
+        "would", "should", "about", "into", "from", "they", "them", "their", "there",
+        "what", "when", "where", "which", "who", "whom", "why", "how", "all", "any",
+        "more", "most", "some", "such", "only", "other", "than", "then",
+        "its", "it's", "its", "our", "ours", "we", "us",
+        "les", "des", "une", "avec", "vous"
+    }
 
+    tokens = [t for t in tokens if t not in stopwords and len(t) > 3]
     compteur = Counter(tokens)
     top10 = compteur.most_common(10)
 
@@ -66,6 +75,45 @@ def main():
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.savefig(output_dir / "top_words.png")
+
+    # 2) Histogramme horizontal (top_words_horizontal.png)
+    plt.figure(figsize=(10, 5))
+    plt.barh(mots, freqs)
+    plt.title("Top 10 mots fréquents (horizontal)")
+    plt.tight_layout()
+    plt.savefig(output_dir / "top_words_horizontal.png")
+
+    # 3) Top auteurs (authors_top.png)
+
+    auteurs = [i.get("summary") for i in items if i.get("summary")]
+    compteur_auteurs = Counter(auteurs)
+    top_auteurs = compteur_auteurs.most_common(5)
+
+    noms = [a for a, _ in top_auteurs]
+    freqs_auteurs = [f for _, f in top_auteurs]
+
+    plt.figure(figsize=(8, 4))
+    plt.bar(noms, freqs_auteurs)
+    plt.title("Top 5 auteurs les plus fréquents")
+    plt.xticks(rotation=30)
+    plt.tight_layout()
+    plt.savefig(output_dir / "authors_top.png")
+
+    # 2) Wordcloud (wordcloud.png)
+    # Recréer un grand texte à partir des tokens filtrés
+    texte_wc = " ".join(tokens)
+
+    wc = WordCloud(
+        width=800,
+        height=400,
+        background_color="white"
+    ).generate(texte_wc)
+
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wc, interpolation="bilinear")
+    plt.axis("off")
+    plt.tight_layout()
+    plt.savefig(output_dir / "wordcloud.png")
 
 
 if __name__ == "__main__":
