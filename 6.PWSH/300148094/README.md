@@ -138,3 +138,11 @@ DevOps Student — Collège Boréal
 ⭐ Support
 
 Si ce projet t’aide, mets une ⭐ sur GitHub !
+
+<img width="1920" height="1080" alt="Screenshot (381)" src="https://github.com/user-attachments/assets/bc598e2d-8fa3-4cfe-b699-cf137089438c" />
+<img width="1920" height="1080" alt="Screenshot (380)" src="https://github.com/user-attachments/assets/0dc16c2a-f0b8-418d-8d3b-69fc63993097" />
+<img width="1920" height="1080" alt="Screenshot (379)" src="https://github.com/user-attachments/assets/d5726dfe-5a5c-43c3-947a-0f7423acfe98" />
+<img width="1920" height="1080" alt="Screenshot (382)" src="https://github.com/user-attachments/assets/eb5475e7-31f7-4989-854c-f05a7cc99245" />
+<img width="998" height="474" alt="Screenshot 2026-04-17 013915" src="https://github.com/user-attachments/assets/5d063dae-b09c-4c09-9579-b250c696102f" />
+
+
