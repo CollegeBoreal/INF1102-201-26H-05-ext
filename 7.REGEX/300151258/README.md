@@ -54,7 +54,7 @@ pwsh ./regex_pwsh.ps1
 
 # 📸 Résultat
 
-![Execution Regex](./images/1.png)
+![Execution Regex](./images/1.jpg)
 
 👉 Cette capture montre :
 
