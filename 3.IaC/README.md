@@ -516,31 +516,134 @@ Save:
 
 ---
 
+### Prereqs on Proxmox (PVE 9) [(VM.monitor issue)](https://registry.terraform.io/providers/Telmate/proxmox/latest/docs#proxmox-9-and-newer)
+
+```json
+    proxmox = {
+      source  = "Telmate/proxmox"
+      version = "3.0.2-rc07"
+    }
+```
+
+```bash
+pveum role add TerraformProv \
+      -privs "Datastore.AllocateSpace Datastore.AllocateTemplate Datastore.Audit Pool.Allocate \
+              Pool.Audit Sys.Audit Sys.Console Sys.Modify VM.Allocate VM.Audit VM.Clone VM.Config.CDROM \
+              VM.Config.Cloudinit VM.Config.CPU VM.Config.Disk VM.Config.HWType VM.Config.Memory VM.Config.Network \
+              VM.Config.Options VM.Migrate VM.PowerMgmt SDN.Use"
+```
+
+```bash
+pveum aclmod / -user tofu@pve -role TerraformProv
+```
+
+---
+
 ### ✔ Create VM Template (cloud-init_template.sh)
 
 ```lua
-# Download cloud image
-wget https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.img
+#!/bin/bash
+
+VMID=9000
+IMG="jammy-server-cloudimg-amd64.img"
+
+# 🔧 PARAMÈTRE STORAGE
+STORAGE=${1:-local-zfs}
+
+echo "➡️ Storage utilisé : $STORAGE"
+
+# Delete VM if exists
+if qm status $VMID &>/dev/null; then
+    echo "VM $VMID existe → suppression..."
+    qm destroy $VMID --purge
+fi
+
+# Download image
+wget -O $IMG https://cloud-images.ubuntu.com/jammy/current/$IMG
 
 # Create VM
-qm create 9000 --name ubuntu-jammy-template --memory 2048 --cores 2 --net0 virtio,bridge=vmbr0
+qm create $VMID \
+  --name ubuntu-jammy-template \
+  --memory 2048 \
+  --cores 2 \
+  --net0 virtio,bridge=vmbr0
 
 # Import disk
-qm importdisk 9000 jammy-server-cloudimg-amd64.img local-lvm
+qm importdisk $VMID $IMG $STORAGE
 
 # Attach disk
-qm set 9000 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-9000-disk-0
+qm set $VMID --scsihw virtio-scsi-pci --scsi0 $STORAGE:vm-$VMID-disk-0
 
 # Cloud-init disk
-qm set 9000 --ide2 local-lvm:cloudinit
+qm set $VMID --ide2 $STORAGE:cloudinit
 
 # Boot settings
-qm set 9000 --boot c --bootdisk scsi0
-qm set 9000 --serial0 socket --vga serial0
+qm set $VMID --boot c --bootdisk scsi0
+qm set $VMID --serial0 socket --vga serial0
+
+# Network (DHCP)
+qm set $VMID --ipconfig0 ip=dhcp
 
 # Convert to template
-qm template 9000
+qm template $VMID
 ```
+
+---
+
+# 🔍 2. Voir ton storage actuel
+
+```bash id="8xqk1a"
+pvesm status
+```
+
+Tu verras un truc comme :
+
+* local-lvm ❌ (pas chez toi)
+* local-zfs ✔️ (ton cas actuel)
+
+---
+
+```bash
+bash cloud-init_template.sh local-zfs
+bash cloud-init_template.sh local-lvm
+```
+
+## ✅ Script universel (ZFS ou LVM)
+
+---
+
+# ⚡ 5. Résumé simple
+
+| Type Proxmox | STORAGE à utiliser |
+| ------------ | ------------------ |
+| ZFS          | `local-zfs` ✔️     |
+| LVM          | `local-lvm` ✔️     |
+
+---
+
+# 💡 6. TON CAS (important)
+
+D’après ton setup :
+
+```text id="7k9xpd"
+raidz1 → ZFS
+```
+
+👉 donc tu dois utiliser :
+
+```bash id="z9d2mf"
+STORAGE="local-zfs"
+```
+
+---
+
+# 🏁 Conclusion
+
+- ✔️ script paramétrable = meilleure pratique
+- ✔️ ZFS chez toi → `local-zfs`
+- ✔️ LVM ailleurs → `local-lvm`
+- ✔️ une seule variable = zéro erreur
+
 
 ## 🏗️ Installation
 

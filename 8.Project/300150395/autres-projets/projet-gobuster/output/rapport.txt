@@ -1,0 +1,23 @@
+===== RAPPORT GOBUSTER VM SCANNER =====
+Date analyse : 2026-02-21 09:48:24
+Réseau scanné : 10.7.237.224-245
+
+Total IPs testées  : 22
+IPs avec HTTP      : 11
+IPs sans réponse   : 11
+Fichiers trouvés   : 12
+
+===== DÉTAIL PAR IP =====
+
+[+] http://10.7.237.226   index.html (200) [21764 bytes]
+[+] http://10.7.237.229   index.html (200) [4772 bytes]
+[+] http://10.7.237.230   index.html (200) [1210 bytes]
+[+] http://10.7.237.233   index.html (200) [14394 bytes] | script.js (200) [6194 bytes]
+[+] http://10.7.237.234   index.html (200) [16012 bytes]
+[+] http://10.7.237.236   index.html (200) [3469 bytes]
+[-] http://10.7.237.237   (aucun résultat)
+[+] http://10.7.237.238   index.html (200) [26980 bytes]
+[+] http://10.7.237.240   index.html (200) [19139 bytes]
+[+] http://10.7.237.242   index.html (200) [3040 bytes]
+
+===== FIN DU RAPPORT =====
