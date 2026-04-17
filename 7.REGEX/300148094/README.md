@@ -1,15 +1,30 @@
 📊 Nginx Log Analyzer
+
 🔍 Analyse automatisée des logs Nginx avec Regex (PowerShell & Python)
-GitHub repo size GitHub stars GitHub last commit License Python PowerShell
+
+
+
+
+
+
+
 
 🎯 Objectif
-Ce projet permet d’analyser les fichiers de logs Nginx à l’aide d’expressions régulières (Regex), puis de générer automatiquement des rapports détaillés.
 
-✔ Analyse des requêtes HTTP ✔ Détection des erreurs (4xx, 5xx) ✔ Identification des IP les plus actives ✔ Analyse des pages les plus visitées ✔ Automatisation possible (cron)
+Ce projet permet d’analyser automatiquement les fichiers de logs Nginx à l’aide d’expressions régulières (Regex), puis de générer des rapports détaillés.
 
-📸 Aperçu du rapport
+🚀 Fonctionnalités
+
+✔ Analyse des requêtes HTTP
+✔ Détection des erreurs (4xx, 5xx)
+✔ Identification des IP les plus actives
+✔ Analyse des pages les plus visitées
+✔ Génération automatique de rapports
+✔ Automatisation possible avec CRON
+
+📸 Exemple de rapport
 📊 Rapport Nginx - 2026-04-13
-----------------------------------
+
 Total requêtes : 1500
 Erreurs HTTP : 120
 Erreurs 404 : 80
@@ -28,20 +43,19 @@ nginx-log-analyzer/
 │   ├── analyse_nginx.ps1
 │   ├── analyse_nginx.py
 │   └── rapport_*.txt
-│
 ├── logs/
 │   └── access.log
-│
 ├── README.md
 └── .gitignore
 📥 Entrée
+
 Fichier de logs Nginx :
 
 /var/log/nginx/access.log
 Exemple de ligne :
-
 192.168.1.10 - - [17/Mar/2026:14:32:10 +0000] "GET /index.html HTTP/1.1" 200 1024
 📤 Sortie
+
 Rapports générés automatiquement :
 
 REGEX/rapport_nginx_ps1_YYYY-MM-DD.txt
@@ -49,9 +63,9 @@ REGEX/rapport_nginx_py_YYYY-MM-DD.txt
 🧠 Regex utilisées
 Élément	Expression régulière
 Adresse IP	(\d{1,3}\.){3}\d{1,3}
-Code HTTP	" (\d{3}) 
-Pages GET	"GET ([^ ]+)
-Erreurs HTTP	" (4|5)\d{2} 
+Code HTTP	"\s(\d{3})
+Pages (GET)	"GET ([^ ]+)
+Erreurs HTTP	`"\s(4
 ⚡ Installation
 🔧 Prérequis
 Python 3.x
@@ -60,11 +74,10 @@ Linux / Windows / WSL
 ▶️ Utilisation
 🟦 PowerShell
 pwsh ./REGEX/analyse_nginx.ps1
-Capture d'écran 2026-04-13 112704
 🐍 Python
 python3 REGEX/analyse_nginx.py
-Capture d'écran 2026-04-13 112739
-📊 Résultats générés
+📊 Résultats
+
 Chaque rapport contient :
 
 📌 Total des requêtes
@@ -74,17 +87,19 @@ Chaque rapport contient :
 🌐 Top 5 IP
 📄 Top 5 pages
 ⏰ Automatisation
-🔁 Linux (cron)
+🔁 CRON (Linux)
 crontab -e
-0 2 * * * /usr/bin/pwsh /home/user/REGEX/analyse_nginx.ps1
+
+Ajouter :
+
+0 2 * * * /usr/bin/pwsh /home/user/nginx-log-analyzer/REGEX/analyse_nginx.ps1
 🔍 Vérification
 grep CRON /var/log/syslog
-Capture d'écran 2026-04-13 112818
 🚀 Roadmap
  Export CSV / JSON
  Graphiques (matplotlib)
  Interface Web (Flask / FastAPI)
- Analyse temps réel
+ Analyse en temps réel
  Détection d’attaques (DDoS, brute force)
 🛠️ Technologies
 🐍 Python 3
@@ -92,19 +107,21 @@ Capture d'écran 2026-04-13 112818
 🔍 Regex
 🐧 Linux / Cron
 🤝 Contribution
+
 Les contributions sont les bienvenues !
 
-Fork le projet
-Crée une branche (feature/ma-feature)
-Commit (git commit -m "Ajout feature")
-Push (git push origin feature/ma-feature)
-Ouvre une Pull Request
+git fork
+git checkout -b feature/ma-feature
+git commit -m "Ajout feature"
+git push origin feature/ma-feature
 📄 Licence
-Ce projet est sous licence MIT.
+
+MIT License
 
 👨‍💻 Auteur
+
 Projet réalisé dans le cadre d’un TP en administration système & automatisation.
 
 ⭐ Support
-Si ce projet t’aide, laisse une ⭐ sur GitHub !
 
+Si ce projet t’aide, laisse une ⭐ sur GitHub !
