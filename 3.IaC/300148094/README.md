@@ -1104,6 +1104,8 @@ Traditionnellement, l'administration des systèmes se faisait **manuellement** :
 **Infrastructure as Code (IaC)** est une approche de programmation système qui permet de gérer les ressources informatiques (serveurs, réseaux, services, utilisateurs, stockage) à l'aide de **fichiers de configuration versionnés** et exécutables automatiquement.
 
 ---
+<img width="1536" height="1024" alt="Proxmox-INF1102" src="https://github.com/user-attachments/assets/a2cfb6db-ea2c-4179-ae5c-cd60d6e2dddf" />
+
 
 ## Position dans la pile système
 
