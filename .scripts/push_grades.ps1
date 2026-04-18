@@ -1,4 +1,6 @@
 # Exit on error
+. .scripts/students.ps1
+
 $ErrorActionPreference = "Stop"
 
 # Ensure environment variables are set
