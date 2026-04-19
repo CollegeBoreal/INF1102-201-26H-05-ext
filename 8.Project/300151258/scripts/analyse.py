@@ -1,37 +1,25 @@
-import sys
-from collections import Counter
+import pandas as pd
 
-file = sys.argv[1]
+file = "data/prix_energie.csv"
+df = pd.read_csv(file)
 
-codes = []
-times = []
+print("===== RAPPORT PRIX ENERGIE =====")
+print("Ville :", "Toronto")
+print("Total lignes :", len(df))
+print("Prix moyen essence :", round(df["essence_toronto"].mean(), 2))
+print("Prix minimum essence :", df["essence_toronto"].min())
+print("Prix maximum essence :", df["essence_toronto"].max())
+print("Prix moyen Brent :", round(df["brent"].mean(), 2))
+print("Prix minimum Brent :", df["brent"].min())
+print("Prix maximum Brent :", df["brent"].max())
 
-with open(file, "r") as f:
-    lines = f.readlines()
-
-for line in lines:
-    parts = line.strip().split()
-    if len(parts) >= 4:
-        codes.append(parts[3])
-    if len(parts) >= 5:
-        try:
-            times.append(float(parts[4]))
-        except:
-            pass
-
-total = len(lines)
-errors = [c for c in codes if c.startswith("4") or c.startswith("5")]
-top_codes = Counter(codes).most_common()
-
-print(f"Total requêtes : {total}")
-print(f"Total erreurs : {len(errors)}")
-print(f"Erreurs 404 : {codes.count('404')}")
-print(f"Erreurs 500 : {codes.count('500')}")
-
-if times:
-    avg_time = sum(times) / len(times)
-    print(f"Temps de réponse moyen : {avg_time:.2f} sec")
-
-print("\nCodes HTTP :")
-for code, count in top_codes:
-    print(f"{code} : {count}")
+with open("output/rapport.txt", "w", encoding="utf-8") as f:
+    f.write("===== RAPPORT PRIX ENERGIE =====\n")
+    f.write("Ville : Toronto\n")
+    f.write(f"Total lignes : {len(df)}\n")
+    f.write(f"Prix moyen essence : {round(df['essence_toronto'].mean(), 2)}\n")
+    f.write(f"Prix minimum essence : {df['essence_toronto'].min()}\n")
+    f.write(f"Prix maximum essence : {df['essence_toronto'].max()}\n")
+    f.write(f"Prix moyen Brent : {round(df['brent'].mean(), 2)}\n")
+    f.write(f"Prix minimum Brent : {df['brent'].min()}\n")
+    f.write(f"Prix maximum Brent : {df['brent'].max()}\n")
