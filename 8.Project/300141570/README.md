@@ -75,6 +75,7 @@ la visualisation graphique des codes HTTP
 la visualisation des temps de réponse
 les statistiques descriptives avec Pandas
 une conclusion sur l’état du site
+```
 📸 Résultats obtenus
 🔹 Répartition des codes HTTP
 ![Codes HTTP](./images/1.png)
