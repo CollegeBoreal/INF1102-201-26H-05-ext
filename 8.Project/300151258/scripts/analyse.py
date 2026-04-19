@@ -1,13 +1,21 @@
 import os
 import pandas as pd
 
-base_path = os.path.dirname(os.path.abspath(_file_))
-csv_path = os.path.join(base_path, "data", "prix_energie.csv")
-output_path = os.path.join(base_path, "rapport.txt")
+# script folder
+script_dir = os.path.dirname(os.path.abspath(_file_))
 
+# project root = parent of scripts
+project_dir = os.path.dirname(script_dir)
+
+# correct paths
+csv_path = os.path.join(project_dir, "data", "prix_energie.csv")
+output_path = os.path.join(project_dir, "rapport.txt")
+
+# load data
 df = pd.read_csv(csv_path)
 df["date"] = pd.to_datetime(df["date"])
 
+# analysis
 ess_mean = round(df["essence_toronto"].mean(), 2)
 ess_min = df["essence_toronto"].min()
 ess_max = df["essence_toronto"].max()
