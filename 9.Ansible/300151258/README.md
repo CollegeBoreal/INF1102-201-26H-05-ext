@@ -93,7 +93,7 @@ curl http://10.7.237.236/index.nginx-debian.html
 
 ## 📸 Capture
 
-![Déploiement réussi](./images/1.png)
+![Déploiement réussi](./images/1.jpg)
 
 ---
 
