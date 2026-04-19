@@ -1,23 +1,51 @@
-from datetime import date
+#!/usr/bin/env python3
+import sys
+from collections import Counter
 
-rapport = f"""Projet : Suivi du prix de l'essence à Toronto
+if len(sys.argv) > 1:
+    file = sys.argv[1]
+else:
+    file = "data/access.log"
 
-Date : {date.today()}
+codes = []
+times = []
 
-Ville suivie : Toronto
-Prix essence : à compléter avec la source officielle
-Prix du Brent : à compléter
-Contexte :
-- tensions au Moyen-Orient
-- hausse récente du pétrole
-- impact possible sur les prix locaux
+with open(file, "r", encoding="utf-8") as f:
+    lines = f.readlines()
 
-Conclusion :
-Les événements géopolitiques peuvent influencer le prix mondial du pétrole,
-ce qui peut avoir un impact sur les prix de l'essence à Toronto.
-"""
+for line in lines:
+    parts = line.strip().split()
+
+    if len(parts) >= 4:
+        codes.append(parts[3])
+
+    if len(parts) >= 5:
+        try:
+            times.append(float(parts[4]))
+        except ValueError:
+            pass
+
+total = len(lines)
+errors = [c for c in codes if c.startswith("4") or c.startswith("5")]
+
+text = []
+text.append("===== RAPPORT MONITORING SITE WEB =====")
+text.append(f"Total requêtes : {total}")
+text.append(f"Total erreurs : {len(errors)}")
+text.append(f"Erreurs 404 : {codes.count('404')}")
+text.append(f"Erreurs 500 : {codes.count('500')}")
+
+if times:
+    avg_time = sum(times) / len(times)
+    text.append(f"Temps de réponse moyen : {avg_time:.2f} sec")
+
+text.append("")
+text.append("Codes HTTP :")
+for code, count in Counter(codes).items():
+    text.append(f"{code} : {count}")
+
+for line in text:
+    print(line)
 
 with open("output/rapport.txt", "w", encoding="utf-8") as f:
-    f.write(rapport)
-
-print("Rapport généré dans output/rapport.txt")
+    f.write("\n".join(text) + "\n")
