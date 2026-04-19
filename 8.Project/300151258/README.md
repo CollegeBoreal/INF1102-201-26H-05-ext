@@ -62,13 +62,13 @@ Le script produit :
 ## 🖼️ Graphiques
 
 ### 📈 Évolution des prix
-![Évolution des prix](images/1.png)
+![Évolution des prix](images/1.jpg)
 
 ### 📊 Comparaison Essence vs Brent
-![Comparaison](images/2.png)
+![Comparaison](images/2.jpg)
 
 ### 📉 Analyse de l’écart
-![Différence](images/3.png)
+![Différence](images/3.jpg)
 
 ---
 
