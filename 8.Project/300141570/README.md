@@ -19,7 +19,15 @@ L’analyse permet de :
 - produire un rapport exploitable dans un contexte DevOps
 
 ---
+![Codes HTTP](./images/1.png)
 
+Ce graphique montre la répartition des codes HTTP...
+
+![Temps réponse](./images/2.png)
+
+Ce graphique montre les temps de réponse...
+
+![Statistiques](./images/3.png)
 ## 📁 Structure du projet
 
 ```text
