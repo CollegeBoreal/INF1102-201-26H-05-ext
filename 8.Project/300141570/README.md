@@ -19,15 +19,6 @@ L’analyse permet de :
 - produire un rapport exploitable dans un contexte DevOps
 
 ---
-![Codes HTTP](./images/1.png)
-
-Ce graphique montre la répartition des codes HTTP...
-
-![Temps réponse](./images/2.png)
-
-Ce graphique montre les temps de réponse...
-
-![Statistiques](./images/3.png)
 ## 📁 Structure du projet
 
 ```text
@@ -86,17 +77,17 @@ les statistiques descriptives avec Pandas
 une conclusion sur l’état du site
 📸 Résultats obtenus
 🔹 Répartition des codes HTTP
-
+![Codes HTTP](./images/1.png)
 Ce graphique montre la fréquence des codes HTTP observés dans le fichier log.
 On constate que la majorité des requêtes retournent un code 200, avec quelques erreurs 404 et 500.
 
 🔹 Temps de réponse
-
+![Temps réponse](./images/2.png)
 Ce graphique représente l’évolution des temps de réponse des requêtes.
 Il permet d’identifier rapidement si certaines requêtes sont plus lentes que les autres.
 
 🔹 Statistiques descriptives
-
+![Statistiques](./images/3.png)
 Le tableau statistique résume les principales mesures sur les temps de réponse :
 
 nombre total de requêtes
