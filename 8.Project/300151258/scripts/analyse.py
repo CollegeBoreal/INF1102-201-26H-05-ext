@@ -1,7 +1,7 @@
+import csv
 import os
-import pandas as pd
 
-# Detect CSV path from either launch location
+# Find CSV from either project root or scripts folder
 if os.path.exists("data/prix_energie.csv"):
     csv_path = "data/prix_energie.csv"
     output_path = "rapport.txt"
@@ -9,29 +9,36 @@ elif os.path.exists("../data/prix_energie.csv"):
     csv_path = "../data/prix_energie.csv"
     output_path = "../rapport.txt"
 else:
-    raise FileNotFoundError("CSV file not found")
+    raise FileNotFoundError("prix_energie.csv not found")
 
-df = pd.read_csv(csv_path)
-df["date"] = pd.to_datetime(df["date"])
+essence_vals = []
+brent_vals = []
 
-ess_mean = round(df["essence_toronto"].mean(), 2)
-ess_min = df["essence_toronto"].min()
-ess_max = df["essence_toronto"].max()
+with open(csv_path, "r", encoding="utf-8") as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        essence_vals.append(float(row["essence_toronto"]))
+        brent_vals.append(float(row["brent"]))
 
-brent_mean = round(df["brent"].mean(), 2)
-brent_min = df["brent"].min()
-brent_max = df["brent"].max()
+ess_mean = round(sum(essence_vals) / len(essence_vals), 2)
+ess_min = min(essence_vals)
+ess_max = max(essence_vals)
 
-report = []
-report.append("=== ESSENCE TORONTO ===")
-report.append(f"Moyenne: {ess_mean}")
-report.append(f"Min: {ess_min}")
-report.append(f"Max: {ess_max}")
-report.append("")
-report.append("=== BRENT ===")
-report.append(f"Moyenne: {brent_mean}")
-report.append(f"Min: {brent_min}")
-report.append(f"Max: {brent_max}")
+brent_mean = round(sum(brent_vals) / len(brent_vals), 2)
+brent_min = min(brent_vals)
+brent_max = max(brent_vals)
+
+report = [
+    "=== ESSENCE TORONTO ===",
+    f"Moyenne: {ess_mean}",
+    f"Min: {ess_min}",
+    f"Max: {ess_max}",
+    "",
+    "=== BRENT ===",
+    f"Moyenne: {brent_mean}",
+    f"Min: {brent_min}",
+    f"Max: {brent_max}",
+]
 
 for line in report:
     print(line)
