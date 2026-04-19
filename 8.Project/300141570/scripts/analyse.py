@@ -1,37 +1,33 @@
 import sys
-from collections import Counter
 
 file = sys.argv[1]
 
+with open(file) as f:
+    lines = f.readlines()
+
+total = len(lines)
 codes = []
 times = []
 
-with open(file, "r") as f:
-    lines = f.readlines()
-
 for line in lines:
     parts = line.strip().split()
-    if len(parts) >= 4:
-        codes.append(parts[3])
     if len(parts) >= 5:
+        codes.append(parts[3])
         try:
             times.append(float(parts[4]))
         except:
             pass
 
-total = len(lines)
 errors = [c for c in codes if c.startswith("4") or c.startswith("5")]
-top_codes = Counter(codes).most_common()
 
-print(f"Total requêtes : {total}")
-print(f"Total erreurs : {len(errors)}")
-print(f"Erreurs 404 : {codes.count('404')}")
-print(f"Erreurs 500 : {codes.count('500')}")
+print("Total requêtes :", total)
+print("Total erreurs :", len(errors))
+print("Erreurs 404 :", codes.count("404"))
+print("Erreurs 500 :", codes.count("500"))
 
 if times:
-    avg_time = sum(times) / len(times)
-    print(f"Temps de réponse moyen : {avg_time:.2f} sec")
+    print("Temps de réponse moyen :", sum(times)/len(times))
 
 print("\nCodes HTTP :")
-for code, count in top_codes:
-    print(f"{code} : {count}")
+for c in set(codes):
+    print(c, ":", codes.count(c))
