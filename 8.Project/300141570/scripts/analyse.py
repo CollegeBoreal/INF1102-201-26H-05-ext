@@ -26,8 +26,8 @@ for line in lines:
 
 total = len(lines)
 errors = [c for c in codes if c.startswith("4") or c.startswith("5")]
-top_codes = Counter(codes).most_common()
 
+print("===== RAPPORT MONITORING SITE WEB =====")
 print(f"Total requêtes : {total}")
 print(f"Total erreurs : {len(errors)}")
 print(f"Erreurs 404 : {codes.count('404')}")
@@ -38,5 +38,5 @@ if times:
     print(f"Temps de réponse moyen : {avg_time:.2f} sec")
 
 print("\nCodes HTTP :")
-for code, count in top_codes:
+for code, count in Counter(codes).items():
     print(f"{code} : {count}")
