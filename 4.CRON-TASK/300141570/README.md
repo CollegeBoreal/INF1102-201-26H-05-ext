@@ -66,7 +66,7 @@ L’automatisation avec CRON pour exécuter des tâches périodiques
 
 ---
 
-### 📌 Important
+```
 ![Script nginx](images/1.png)
 ```bash
 300141570/images/1.png
