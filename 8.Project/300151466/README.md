@@ -1,91 +1,127 @@
-# 🚀 Projets INF1102 — Adel Bennacer (300151466)
+# 🌐 Projet Monitoring Web Automatisé
 
-**Environnement :** Ubuntu 22.04 LTS | **Cours :** INF1102
-
----
-
-## 📋 Sommaire
-
-| Projet | Description |
-|--------|-------------|
-| Projet 5 — Monitoring Web | Vérifie la disponibilité de sites web et mesure le temps de réponse |
-| Projet Gobuster — VM Scanner | Scanner automatique des VMs Proxmox avec Gobuster |
+**Cours** : INF1102-201-26H-05  
+**Étudiant** : Adel Bennacer  
+**Matricule** : 300151466  
+**Date** : 2026-04-12  
 
 ---
 
-# Projet 5 — Monitoring de sites web
+## 🎯 Objectif du projet
 
-## Objectif
-Vérifier la disponibilité des sites web et mesurer leur temps de réponse avec Bash + Python.
+Ce projet a pour but de surveiller automatiquement plusieurs sites web afin de vérifier :
 
-## Structure
-projet5-monitoring/
-- scripts/analyse.sh
-- scripts/analyse.py
-- data/sample.log
-- output/rapport.txt
+- leur disponibilité (status HTTP)
+- leur temps de réponse
 
-## Exécution
-bash projet5-monitoring/scripts/analyse.sh
-
-## Résultats
-===== RAPPORT MONITORING =====
-Date : 2026-03-27
-
-https://google.com       | 301 | 339ms | OK
-https://github.com       | 200 | 489ms | OK
-https://collegeboreal.ca | 200 | 218ms | OK
-https://example.com      | 200 | 190ms | OK
-https://httpstat.us/404  | 000 | 236ms | ERREUR
-
-===== ANALYSE =====
-Total : 5
-OK    : 3
-Erreur: 2
-Moyenne: 294 ms
-
-## Cron
-0 * * * * bash /home/ubuntu/INF1102-201-26H-05/8.Project/300151466/projet5-monitoring/scripts/analyse.sh
+Les données sont enregistrées et analysées pour produire un rapport et un graphique.
 
 ---
 
-# Projet Gobuster — VM Scanner
+## ⚙️ Principe de fonctionnement
 
-## Objectif
-Scanner les VMs Proxmox pour détecter les serveurs web.
+Le système fonctionne en plusieurs étapes :
 
-## Structure
-projet-gobuster/
-- scripts/gobuster_all_vms.sh
-- data/sample.log
-- output/rapport.txt
-
-## Exécution
-bash projet-gobuster/scripts/gobuster_all_vms.sh
-
-## Résultats
-10.7.237.226 → index.html
-10.7.237.229 → index.html
-10.7.237.239 → index.html, script.js
+1. Envoi de requêtes HTTP vers différents sites  
+2. Mesure du temps de réponse  
+3. Sauvegarde des résultats dans un fichier CSV  
+4. Génération d’un rapport texte  
+5. Création d’un graphique avec matplotlib  
+6. Exécution automatique avec cron  
 
 ---
 
-# Références Bash
+## 📁 Organisation des fichiers
 
-mkdir -p → créer dossier  
-cp -r → copier  
-tar -czvf → compresser  
-ping → tester réseau  
-curl → tester site  
-gobuster → scanner  
-crontab -e → planifier  
-date → timestamp  
+```text
+300151466/
+├── scripts/
+│   ├── analyse.sh
+│   └── analyse.py
+├── data/
+│   └── monitoring.csv
+├── output/
+│   ├── rapport.txt
+│   └── graphique_evolution.png
+├── images/
+└── README.md
+```
 
 ---
 
-# Conclusion
-Projet permettant :
-- monitoring web
-- analyse réseau
-- scan automatique
-- automatisation avec cron
+## 01 - Connexion à la machine
+
+```bash
+ssh -i ~/.ssh/ma_cle \
+  -o StrictHostKeyChecking=no \
+  -o UserKnownHostsFile=/tmp/ssh_known_hosts_empty \
+  ubuntu@10.7.237.239
+```
+
+<img width="458" height="428" alt="ssh" src="https://github.com/user-attachments/assets/bf5ab009-09e0-4ccf-9c9b-bf7d1847b404" />
+
+---
+
+## 02 - Lancement du script
+
+Ce script exécute automatiquement le programme Python et génère les fichiers de sortie.
+
+```bash
+bash scripts/analyse.sh
+```
+
+<img width="506" height="119" alt="execution" src="https://github.com/user-attachments/assets/210cae89-1576-4585-ad9f-fa7ad484941f" />
+
+---
+
+## 03 - Automatisation avec Cron
+
+Le script est programmé pour s’exécuter toutes les 3 minutes :
+
+```bash
+*/3 * * * * bash /home/ubuntu/INF1102-201-26H-05/8.Project/300151466/scripts/analyse.sh
+```
+
+Cela permet de collecter les données en continu sans intervention manuelle.
+
+<img width="1000" height="600" alt="cron" src="https://github.com/user-attachments/assets/957b2879-005a-46b6-b143-6e3978f8a6de" />
+
+---
+
+## 04 - Rapport généré
+
+<img width="889" height="441" alt="rapport" src="https://github.com/user-attachments/assets/21cbbe31-de53-4aad-815d-8e4bb9d479ba" />
+
+---
+
+## 05 - Résultats obtenus
+
+Le projet génère automatiquement :
+
+- un fichier CSV contenant toutes les données  
+- un rapport texte avec les résultats  
+- un graphique représentant l’évolution des performances  
+
+---
+
+## 06 - Déploiement sur GitHub
+
+```bash
+git add .
+git commit -m "Projet monitoring web"
+git push
+```
+
+---
+
+## 07 - Conclusion
+
+Ce projet démontre l’importance de l’automatisation dans la surveillance des systèmes.
+
+Il permet :
+
+- de suivre les performances des sites web  
+- de détecter les erreurs rapidement  
+- d’analyser les données de manière visuelle  
+
+C’est une solution simple et efficace pour le monitoring en environnement Linux.

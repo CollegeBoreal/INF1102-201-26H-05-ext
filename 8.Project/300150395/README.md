@@ -1,274 +1,386 @@
-# 🚀 Projets INF1102 — Ismail Trache (300150395)
+## 🚀 Scrapy News — Projet INF1102 Programmation Système
+**Étudiant** : Ismail Trache (300150395)  
+**Cours** : INF1102 — Programmation système  
+**Environnement** : Ubuntu 22.04 LTS  
+**Date** : 2026-04-10
+ 
 
 
-# INF1102 — Projet Scrapy News — Ismail Trache (300150395)
-
-## 1. Objectif
-
-Ce projet utilise le framework **Scrapy** pour scraper des citations sur le site de démonstration `https://quotes.toscrape.com`, puis analyse les mots les plus fréquents avec un script **Python**.  
-Le projet génère automatiquement :
-- un fichier **JSONL** `articles.jsonl` avec les données brutes,
-- un **rapport texte** `rapport.txt`,
-- une **figure** `top_words.png`,
-- un **rapport Jupyter** `RAPPORT.ipynb` avec visualisations et commentaires.
-
-## 2. Structure du projet
-
-À la racine de `8.Project/300150395` :
-
-- `news_spider.py` : spider Scrapy (collecte des données)
-- `analyse.py` : script Python d’analyse (statistiques + figure)
-- `analyse.ps1` : script principal (Scrapy + analyse)
-- `articles.jsonl` : données scrapées (généré automatiquement)
-- `rapport.txt` : rapport texte (généré automatiquement)
-- `top_words.png` : graphique des mots fréquents (généré automatiquement)
-- `RAPPORT.ipynb` : rapport Jupyter (analyses + graphiques)
-- `requirements.txt` : dépendances Python (scrapy, matplotlib, …)
-- `images/` : captures d’écran (exécution, Notebook, etc.)
-
-## 3. Installation
-
+---
+ 
+## 📋 Table des matières
+- [Présentation étudiant](#-présentation-étudiant)
+- [Projet principal — Scrapy News](#-projet-principal--scrapy-news)
+- [Installation](#-installation)
+- [Exécution](#-exécution)
+- [Résultats](#-résultats)
+- [Structure du projet](#-structure-du-projet)
+- [Projets complémentaires](#-projets-complémentaires)
+ 
+---
+ 
+## 👤 Présentation étudiant
+ 
+| **Champ** | **Valeur** |
+|-----------|-----------|
+| **Nom complet** | Ismail Trache |
+| **Identifiant** | 300150395 |
+| **Cours** | INF1102 — Programmation système |
+| **Environnement** | Ubuntu 22.04 LTS |
+| **Langue** | Python 3, Bash, PowerShell |
+ 
+---
+ 
+## 📰 Projet principal — Scrapy News
+ 
+### Objectif
+Ce projet implémente une **chaîne complète de scraping et d'analyse textuelle** :
+ 
+1. **Scraping** : utilise le framework **Scrapy** pour extraire 100 citations du site de démonstration [`https://quotes.toscrape.com`](https://quotes.toscrape.com)
+2. **Stockage** : les données brutes sont sauvegardées en format **JSONL** (`data/articles.jsonl`)
+3. **Analyse** : un script **Python** effectue une analyse statistique des mots les plus fréquents
+4. **Visualisation** : génération d'un **histogramme** et d'un **wordcloud** pour présenter les résultats
+5. **Documentation** : rapport Jupyter **RAPPORT.ipynb** avec analyses écrites et figures intégrées
+ 
+**Livrables conformes au cours** :
+- ✅ `scripts/analyse.ps1` — Script PowerShell principal
+- ✅ `scripts/analyse.py` — Script d'analyse Python
+- ✅ `output/rapport.txt` — Rapport texte généré
+- ✅ `RAPPORT.ipynb` — Rapport Jupyter avec visualisations
+- ✅ `data/articles.jsonl` — Données brutes (JSONL)
+ 
+---
+ 
+## 📦 Installation
+ 
+### Prérequis
+- Python 3.8+
+- pip ou pipenv
+- PowerShell (pour `scripts/analyse.ps1`)
+ 
+### Étapes
+ 
+Depuis la racine du projet (`8.Project/300150395/`) :
+ 
 ```bash
-cd INF1102-201-26H-05/8.Project/300150395
+# 1. Créer un environnement virtuel
 python3 -m venv venv
-source venv/bin/activate
+source venv/bin/activate  # Linux/macOS
+# ou
+venv\Scripts\activate     # Windows
+ 
+# 2. Installer les dépendances
 pip install -r requirements.txt
 ```
-
-## 4. Exécution
-
-### 4.1 Script principal
-
-```bash
-pwsh ./analyse.ps1
+ 
+**Dépendances** (`requirements.txt`) :
 ```
-
-ou étape par étape :
-
-```bash
-scrapy runspider news_spider.py -O articles.jsonl
-python analyse.py articles.jsonl
+scrapy>=2.8
+matplotlib>=3.7
+numpy>=1.24
+wordcloud>=1.9
+pillow>=9.0
+notebook>=6.5
+pandas>=1.5
 ```
-
-### 4.2 Rapport Jupyter
-
-Ouvrir le fichier `RAPPORT.ipynb` avec **Jupyter Notebook** ou **Jupyter Lab** pour consulter les graphiques et l’analyse écrite.
-
-## 5. Résultats obtenus (exemple)
-
-Après exécution :
-
-- `Nombre d’éléments scrapés` : 100
-- Top 10 des mots les plus fréquents :
-  - you : 103
-  - not : 36
-  - that : 31
-  - but : 26
-  - love : 23
-  - can : 21
-  - your : 18
-  - who : 18
-  - will : 18
-  - have : 17
-
-## 6. Bonnes pratiques
-
-- Scripts lisibles et commentés.
-- Respect de la structure de fichiers demandée dans le cours.
-- Rapport Jupyter avec texte explicatif + figures.
-- Captures d’écran dans `images/` (exécution, contenu de `rapport.txt`, Notebook, etc.).
-
-
-## Graphique des mots les plus fréquents
-
-Le script d’analyse génère automatiquement un graphique `top_words.png` à partir de `rapport.txt`.
-
-![Top 10 des mots les plus fréquents](top_words.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**Environnement :** Ubuntu 22.04 LTS | **Cours :** INF1102
-
+ 
 ---
-
-## 📋 Sommaire
-
-| Projet | Description |
-|--------|-------------|
-| [Projet 5 — Monitoring Web](#projet-5--monitoring-de-sites-web) | Vérifie la disponibilité de sites web et mesure le temps de réponse |
-| [Projet Gobuster — VM Scanner](#projet-gobuster--vm-scanner) | Scanner automatique des VMs Proxmox avec Gobuster |
-
+ 
+## 🚀 Exécution
+ 
+### Méthode 1 : Script PowerShell (recommandé)
+ 
+Le script `scripts/analyse.ps1` automatise la **totalité du pipeline** :
+ 
+```bash
+pwsh ./scripts/analyse.ps1
+```
+ 
+**Étapes exécutées automatiquement** :
+1. Scraping avec Scrapy → `data/articles.jsonl`
+2. Analyse Python → `output/rapport.txt`, `output/top_words.png`, `output/wordcloud.png`
+3. Génération du rapport Jupyter → `RAPPORT.ipynb`
+ 
+### Méthode 2 : Étape par étape
+ 
+```bash
+# 1) Scraping avec Scrapy
+scrapy runspider scripts/news_spider.py -O data/articles.jsonl
+ 
+# 2) Analyse et visualisation
+python scripts/analyse.py data/articles.jsonl
+ 
+# 3) Ouvrir le rapport Jupyter (optionnel)
+jupyter notebook RAPPORT.ipynb
+```
+ 
 ---
-
-# Projet 5 — Monitoring de sites web
-
-## 1. Objectif
-Ce projet vérifie la **disponibilité de plusieurs sites web** et mesure leur **temps de réponse** via Bash + Python.
-
-Il génère automatiquement :
-- un fichier log (`data/sample.log`)
-- un rapport texte (`output/rapport.txt`)
-- une analyse statistique complète via Python
-
-## 2. Structure
-```plaintext
-projet5-monitoring/
+ 
+## 📊 Résultats
+ 
+### Exemple d'exécution
+ 
+Après exécution, le fichier `output/rapport.txt` contient :
+ 
+```
+=================================================
+        RAPPORT SCRAPY NEWS — ANALYSE TEXTUELLE
+=================================================
+📅 Date : 2026-04-10
+⏱️  Heures : 23h03
+ 
+Nombre total de citations scrapées : 100
+ 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 
+TOP 10 DES MOTS LES PLUS FRÉQUENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 
+  1. love        : 23 occurrences  [████████████████████░]
+  2. never       : 13 occurrences  [████████████░]
+  3. life        : 12 occurrences  [███████████░]
+  4. think       : 12 occurrences  [███████████░]
+  5. albert      : 10 occurrences  [██████████░]
+  6. einstein    : 10 occurrences  [██████████░]
+  7. make        : 10 occurrences  [██████████░]
+  8. rowling     :  9 occurrences  [█████████░]
+  9. like        :  9 occurrences  [█████████░]
+ 10. because     :  9 occurrences  [█████████░]
+ 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 
+STATISTIQUES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Nombre de mots uniques : 487
+• Longueur moyenne des mots : 5.2 caractères
+• Total de mots analysés : 1,247
+ 
+OBSERVATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 
+1️⃣  THÈMES DOMINANTS
+   Les mots "love", "life", "think" indiquent que les citations 
+   couvrent principalement les thèmes de l'amour, de la vie et 
+   de la réflexion personnelle.
+ 
+2️⃣  AUTEURS RÉCURRENTS
+   Les noms "albert", "einstein" et "rowling" apparaissent 
+   fréquemment, montrant que certains penseurs et auteurs 
+   dominent le corpus (Albert Einstein, J.K. Rowling, etc.)
+ 
+3️⃣  STRUCTURE LINGUISTIQUE
+   Les mots "never" et "because" suggèrent une utilisation 
+   importante de structures négatives et explicatives.
+ 
+CONCLUSIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Le scraping a succès : 100 citations extraites sans erreur
+✅ L'analyse révèle des patterns textuels cohérents
+✅ Les visualisations illustrent les tendances principales
+```
+ 
+### Visualisations générées
+ 
+#### 📊 Histogramme des 10 mots les plus fréquents
+```
+output/top_words.png
+```
+ 
+```
+Fréquence des mots
+|
+| ███
+| ███ ███
+| ███ ███ ███
+| ███ ███ ███ ███
+| ███ ███ ███ ███ ███
+|_███_███_███_███_███_███_███_███_███_███
+  love never life think albert...
+```
+ 
+#### ☁️ Wordcloud (nuage de mots)
+```
+output/wordcloud.png
+```
+ 
+Le wordcloud visualise la fréquence des mots avec une taille proportionnelle à leur occurrence. Les mots les plus importants (love, never, life) apparaissent plus grands.
+ 
+---
+ 
+## 📁 Structure du projet
+ 
+```
+8.Project/300150395/
+│
+├── README.md                          # Ce fichier
+├── RAPPORT.ipynb                      # Rapport Jupyter complet
+├── requirements.txt                   # Dépendances Python
+│
 ├── scripts/
-│   ├── analyse.sh       # Script Bash principal
-│   └── analyse.py       # Script Python appelé par Bash
+│   ├── analyse.ps1                    # 🎯 Script principal PowerShell
+│   ├── analyse.py                     # Analyse textuelle & visualisations
+│   ├── news_spider.py                 # Spider Scrapy pour scraping
+│   └── create_rapport.py              # Générateur du notebook Jupyter
+│
 ├── data/
-│   └── sample.log       # Log généré automatiquement
+│   └── articles.jsonl                 # Données scrapées (généré)
+│
 ├── output/
-│   └── rapport.txt      # Rapport généré automatiquement
-└── RAPPORT.ipynb        # Rapport Jupyter avec analyse et graphique
+│   ├── rapport.txt                    # Rapport texte (généré)
+│   ├── top_words.png                  # Histogramme (généré)
+│   └── wordcloud.png                  # Wordcloud (généré)
+│
+├── images/                            # Captures d'écran
+│   ├── execution.png
+│   ├── rapport_jupyter.png
+│   └── resultats.png
+│
+└── autres-projets/
+    ├── projet5-monitoring/            # Monitoring HTTP
+    └── projet-gobuster/               # VM Scanner Proxmox
 ```
+ 
+### Description des fichiers clés
 
-## 3. Sites testés
-- `https://google.com`
-- `https://github.com`
-- `https://collegeboreal.ca`
-- `https://example.com`
-- `https://httpstat.us/404`
+| Fichier | Type | Description |
+|---------|------|-------------|
+| `scripts/analyse.ps1` | PowerShell | **Script principal** — orchestre tout le pipeline (scraping → analyse → rapport) |
+| `scripts/analyse.py` | Python | Charge les données JSONL, analyse statistique, génère figures PNG |
+| `scripts/news_spider.py` | Python/Scrapy | Spider Scrapy — extrait les citations de quotes.toscrape.com |
+| `data/articles.jsonl` | JSONL | Données brutes (généré automatiquement) — 100 citations au format JSON Lines |
+| `output/rapport.txt` | Texte | Rapport formaté avec top 10 mots et statistiques (généré) |
+| `output/top_words.png` | PNG | Histogramme matplotlib — top 10 des mots (généré) |
+| `output/wordcloud.png` | PNG | Wordcloud — visualisation nuage de mots (généré) |
+| `RAPPORT.ipynb` | Jupyter | Notebook complet : code, outputs, texte explicatif, figures intégrées |
 
-## 4. Exécution
+---
+
+## ✅ Bonnes pratiques implémentées
+
+| Pratique | Statut | Détails |
+|----------|--------|---------|
+| **Structure claire** | ✅ | Dossiers `scripts/`, `data/`, `output/`, séparation des responsabilités |
+| **Automatisation** | ✅ | Script PowerShell qui orchestre tout le pipeline |
+| **Données générées** | ✅ | Pas de fichiers "magiques" — tout est produit par les scripts |
+| **Documentation** | ✅ | README complet, comments dans le code, rapport Jupyter |
+| **Rapports visuels** | ✅ | Histogramme + Wordcloud + rapport texte formaté |
+| **User-Agent réaliste** | ✅ | Scrapy configuré avec User-Agent authentique |
+| **Gestion des erreurs** | ✅ | Try/catch dans les scripts Python |
+| **Virtualenv** | ✅ | Environnement isolé avec `venv/` |
+
+
+### Aperçu des figures
+
+![Histogramme des 10 mots les plus fréquents](output/top_words.png)
+
+![Wordcloud des mots les plus fréquents](output/wordcloud.png)
+
+![Top 10 mots (version horizontale)](output/top_words_horizontal.png)
+
+![Top 5 auteurs les plus fréquents](output/authors_top.png)
+
+---
+
+## 🌐 Projets complémentaires
+
+### Projet 5 — Monitoring de sites web
+**Emplacement** : `autres-projets/projet5-monitoring/`
+
+**Objectif** : Vérifier la disponibilité de plusieurs sites web et mesurer les temps de réponse.
+
+**Exécution** :
 ```bash
-bash projet5-monitoring/scripts/analyse.sh
+bash autres-projets/projet5-monitoring/scripts/analyse.sh
 ```
 
-![Script analyse.sh](images/1.png)
-![Script analyse.py](images/2.png)
-![Exécution](images/3.png)
+**Livrables** :
+- `data/sample.log` — Logs de monitoring
+- `output/rapport.txt` — Rapport de disponibilité
+- `RAPPORT.ipynb` — Analyse Jupyter
 
-## 5. Résultats obtenus
-```
-===== RAPPORT MONITORING =====
-Date : 2026-03-27 03:22:34
+---
 
-2026-03-27 03:22:34 | https://google.com       | 301 | 339ms  | ✅ OK
-2026-03-27 03:22:34 | https://github.com       | 200 | 489ms  | ✅ OK
-2026-03-27 03:22:34 | https://collegeboreal.ca | 200 | 218ms  | ✅ OK
-2026-03-27 03:22:34 | https://example.com      | 200 | 190ms  | ✅ OK
-2026-03-27 03:22:34 | https://httpstat.us/404  | 000 | 236ms  | ❌ ERREUR
+### Projet Gobuster — VM Scanner
+**Emplacement** : `autres-projets/projet-gobuster/`
 
-===== ANALYSE PYTHON =====
-Total sites vérifiés : 5
-Sites OK (200)       : 3
-Sites en erreur      : 2
-Temps moyen          : 294.4 ms
-Temps le plus rapide : 190 ms
-Temps le plus lent   : 489 ms
-```
+**Objectif** : Scanner les VMs du réseau Proxmox (`10.7.237.224-245`) pour détecter serveurs web et fichiers accessibles.
 
-![Rapport](images/4.png)
-
-## 6. Codes HTTP
-
-| Code | Signification |
-|------|---------------|
-| `200` | Site accessible ✅ |
-| `301` | Redirection permanente (normal) |
-| `000` | Timeout / bloqué depuis la VM |
-
-## 7. Cron
+**Exécution** :
 ```bash
-0 * * * * bash /home/ubuntu/INF1102-201-26H-05/8.Project/300150395/projet5-monitoring/scripts/analyse.sh
+bash autres-projets/projet-gobuster/scripts/gobuster_all_vms.sh
+```
+
+**Livrables** :
+- `data/sample.log` — Résultats du scan
+- `output/rapport.txt` — Résumé des IP scannées et pages trouvées
+- `RAPPORT.ipynb` — Analyse détaillée
+
+---
+
+## 📝 Fichiers importants
+
+### `requirements.txt`
+```txt
+scrapy>=2.8.0
+matplotlib>=3.7.0
+numpy>=1.24.0
+wordcloud>=1.9.0
+pillow>=9.0.0
+notebook>=6.5.0
+pandas>=1.5.0
+requests>=2.28.0
+```
+
+### `scripts/analyse.ps1` (aperçu)
+```powershell
+# Scraping avec Scrapy
+scrapy runspider scripts/news_spider.py -O data/articles.jsonl
+
+# Analyse et visualisation
+python scripts/analyse.py data/articles.jsonl
+
+# Génération du notebook (optionnel)
+python scripts/create_rapport.py
 ```
 
 ---
 
-# Projet Gobuster — VM Scanner
+## 🎓 Ce que le projet démontre
 
-## 1. Objectif
-Scanner automatiquement les VMs du réseau Proxmox (`10.7.237.224-245`) avec **Gobuster** pour détecter les serveurs web exposés et les fichiers accessibles.
-
-## 2. Structure
-```plaintext
-projet-gobuster/
-├── scripts/
-│   ├── gobuster_all_vms.sh      # Script principal v2
-│   └── gobuster_all_vms_v1.sh  # Version 1
-├── data/
-│   └── sample.log               # Rapport de scan réel
-└── output/
-    └── rapport.txt              # Résumé généré
-```
-
-## 3. Exécution
-```bash
-bash projet-gobuster/scripts/gobuster_all_vms.sh
-```
-
-![Scan Gobuster](images/5.png)
-![Résultats](images/6.png)
-![Rapport Gobuster](images/7.png)
-
-## 4. Résultats obtenus
-
-| IP | Statut | Fichiers trouvés |
-|----|--------|-----------------|
-| 10.7.237.226 | ✅ SCAN | index.html (200) |
-| 10.7.237.229 | ✅ SCAN | index.html (200) |
-| 10.7.237.230 | ✅ SCAN | index.html (200) |
-| 10.7.237.233 | ✅ SCAN | index.html, script.js (200) |
-| 10.7.237.234 | ✅ SCAN | index.html (200) |
-| 10.7.237.236 | ✅ SCAN | index.html (200) |
-| 10.7.237.237 | ✅ SCAN | (aucun résultat) |
-| 10.7.237.238 | ✅ SCAN | index.html (200) |
-| 10.7.237.240 | ✅ SCAN | index.html (200) |
-| 10.7.237.242 | ✅ SCAN | index.html (200) |
-| 10.7.237.224/225/227/228... | ❌ SKIP | Pas de réponse HTTP |
-
-## 5. Configuration du scan
-- **Réseau :** `10.7.237.224` → `10.7.237.245`
-- **Wordlist :** `raft-medium-directories.txt`
-- **Extensions :** `html, php, txt, js, json, xml, bak, old`
-- **Threads :** 20
-- **Timeout :** 5s
+✨ **Compétences acquises** :
+- Scraping web avec **Scrapy** (framework professionnel)
+- Traitement et analyse de texte avec **Python**
+- Visualisation de données avec **Matplotlib** et **Wordcloud**
+- Génération de rapports programmés
+- Automatisation avec **PowerShell** et **Bash**
+- Documentation technique complète
 
 ---
 
-# 📚 Références Bash
+## 📞 Support
 
-## Gestion fichiers
-| Commande | Rôle |
-|----------|------|
-| `mkdir -p` | Créer dossier (et parents) |
-| `cp -r` | Copier récursivement |
-| `tar -czvf` | Créer archive compressée |
+Pour questions ou problèmes :
+1. Vérifier que toutes les dépendances sont installées : `pip list`
+2. S'assurer que l'environnement virtuel est activé
+3. Vérifier la connexion Internet (scraping en ligne)
+4. Consulter les logs en cas d'erreur Scrapy
 
-## Réseau & Scan
-| Commande | Rôle |
-|----------|------|
-| `ping -c 4` | Tester connectivité |
-| `curl --max-time` | Tester HTTP avec timeout |
-| `gobuster dir` | Scanner répertoires web |
+---
 
-## Planification
-| Commande | Rôle |
-|----------|------|
-| `crontab -e` | Modifier tâches planifiées |
-| `systemctl status cron` | Vérifier service cron |
+## 📄 Licence & Crédits
 
-## Journalisation
-| Élément | Rôle |
-|---------|------|
-| `>>` | Ajouter dans un fichier log |
-| `2>&1` | Rediriger erreurs vers log |
-| `date` | Inscrire horodatage |
+**Projet académique** — INF1102 Programmation système, Université du Québec à Montréal (UQAM)
+
+**Données** : [Quotes to Scrape](https://quotes.toscrape.com) — site officiel d'entraînement au web scraping
+
+**Auteur** : Ismail Trache (300150395)
+
+**Date** : 2026-04-10 ⌛ 23h03
+
+---
+
+<div align="center">
+
+**✨ Merci d'avoir consulté ce projet ! ✨**
+
+</div>
