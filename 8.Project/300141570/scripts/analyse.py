@@ -1,9 +1,8 @@
 import sys
 
+file = "data/access.log"
 if len(sys.argv) > 1:
     file = sys.argv[1]
-else:
-    file = "data/access.log"
 
 codes = []
 times = []
@@ -24,14 +23,14 @@ for line in lines:
             pass
 
 total = len(lines)
-errors = 0
 
+errors = 0
 for c in codes:
     if c.startswith("4") or c.startswith("5"):
         errors += 1
 
 print("===== RAPPORT MONITORING SITE WEB =====")
-print("Date :", "AUTO")
+print("Date : 2026-04-18")
 print("")
 print("Total requêtes :", total)
 print("Total erreurs :", errors)
@@ -45,10 +44,8 @@ if len(times) > 0:
 print("")
 print("Codes HTTP :")
 
-unique = []
+already = []
 for c in codes:
-    if c not in unique:
-        unique.append(c)
-
-for c in unique:
-    print(c, ":", codes.count(c))
+    if c not in already:
+        already.append(c)
+        print(c, ":", codes.count(c))
