@@ -1,6 +1,4 @@
-#!/usr/bin/env python3
 import sys
-from collections import Counter
 
 if len(sys.argv) > 1:
     file = sys.argv[1]
@@ -10,7 +8,7 @@ else:
 codes = []
 times = []
 
-with open(file, "r", encoding="utf-8") as f:
+with open(file, "r") as f:
     lines = f.readlines()
 
 for line in lines:
@@ -22,30 +20,35 @@ for line in lines:
     if len(parts) >= 5:
         try:
             times.append(float(parts[4]))
-        except ValueError:
+        except:
             pass
 
 total = len(lines)
-errors = [c for c in codes if c.startswith("4") or c.startswith("5")]
+errors = 0
 
-text = []
-text.append("===== RAPPORT MONITORING SITE WEB =====")
-text.append(f"Total requêtes : {total}")
-text.append(f"Total erreurs : {len(errors)}")
-text.append(f"Erreurs 404 : {codes.count('404')}")
-text.append(f"Erreurs 500 : {codes.count('500')}")
+for c in codes:
+    if c.startswith("4") or c.startswith("5"):
+        errors += 1
 
-if times:
-    avg_time = sum(times) / len(times)
-    text.append(f"Temps de réponse moyen : {avg_time:.2f} sec")
+print("===== RAPPORT MONITORING SITE WEB =====")
+print("Date :", "AUTO")
+print("")
+print("Total requêtes :", total)
+print("Total erreurs :", errors)
+print("Erreurs 404 :", codes.count("404"))
+print("Erreurs 500 :", codes.count("500"))
 
-text.append("")
-text.append("Codes HTTP :")
-for code, count in Counter(codes).items():
-    text.append(f"{code} : {count}")
+if len(times) > 0:
+    avg = sum(times) / len(times)
+    print("Temps de réponse moyen :", round(avg, 2), "sec")
 
-for line in text:
-    print(line)
+print("")
+print("Codes HTTP :")
 
-with open("output/rapport.txt", "w", encoding="utf-8") as f:
-    f.write("\n".join(text) + "\n")
+unique = []
+for c in codes:
+    if c not in unique:
+        unique.append(c)
+
+for c in unique:
+    print(c, ":", codes.count(c))
