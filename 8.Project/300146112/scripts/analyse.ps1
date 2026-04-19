@@ -1,6 +1,6 @@
-$input = "../data/sample.log"
+$input = "..\data\300146112.log"
 $output = "../output/rapport.txt"
 
 Write-Output "Analyse du fichier log" | Out-File $output
 
-python ../scripts/analyse.py $input >> $output
+python .\scripts\analyse.py $input >> $output
