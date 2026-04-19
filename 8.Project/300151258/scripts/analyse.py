@@ -1,25 +1,25 @@
 import pandas as pd
+import os
 
-file = "data/prix_energie.csv"
-df = pd.read_csv(file)
+# Always start from script location (IMPORTANT for teacher script)
+base_path = os.path.dirname(_file_)
 
-print("===== RAPPORT PRIX ENERGIE =====")
-print("Ville :", "Toronto")
-print("Total lignes :", len(df))
-print("Prix moyen essence :", round(df["essence_toronto"].mean(), 2))
-print("Prix minimum essence :", df["essence_toronto"].min())
-print("Prix maximum essence :", df["essence_toronto"].max())
-print("Prix moyen Brent :", round(df["brent"].mean(), 2))
-print("Prix minimum Brent :", df["brent"].min())
-print("Prix maximum Brent :", df["brent"].max())
+# Correct path to CSV
+csv_path = os.path.join(base_path, "data", "prix_energie.csv")
 
-with open("output/rapport.txt", "w", encoding="utf-8") as f:
-    f.write("===== RAPPORT PRIX ENERGIE =====\n")
-    f.write("Ville : Toronto\n")
-    f.write(f"Total lignes : {len(df)}\n")
-    f.write(f"Prix moyen essence : {round(df['essence_toronto'].mean(), 2)}\n")
-    f.write(f"Prix minimum essence : {df['essence_toronto'].min()}\n")
-    f.write(f"Prix maximum essence : {df['essence_toronto'].max()}\n")
-    f.write(f"Prix moyen Brent : {round(df['brent'].mean(), 2)}\n")
-    f.write(f"Prix minimum Brent : {df['brent'].min()}\n")
-    f.write(f"Prix maximum Brent : {df['brent'].max()}\n")
+# Load data
+df = pd.read_csv(csv_path)
+
+# Convert date
+df["date"] = pd.to_datetime(df["date"])
+
+# ===== ANALYSIS =====
+print("=== ESSENCE TORONTO ===")
+print("Moyenne:", round(df["essence_toronto"].mean(), 2))
+print("Min:", df["essence_toronto"].min())
+print("Max:", df["essence_toronto"].max())
+
+print("\n=== BRENT ===")
+print("Moyenne:", round(df["brent"].mean(), 2))
+print("Min:", df["brent"].min())
+print("Max:", df["brent"].max())
