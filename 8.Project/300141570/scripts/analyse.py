@@ -1,42 +1,23 @@
-import sys
-from collections import Counter
+from datetime import date
 
-if len(sys.argv) > 1:
-    file = sys.argv[1]
-else:
-    file = "data/access.log"
+rapport = f"""Projet : Suivi du prix de l'essence à Toronto
 
-codes = []
-times = []
+Date : {date.today()}
 
-with open(file, "r") as f:
-    lines = f.readlines()
+Ville suivie : Toronto
+Prix essence : à compléter avec la source officielle
+Prix du Brent : à compléter
+Contexte :
+- tensions au Moyen-Orient
+- hausse récente du pétrole
+- impact possible sur les prix locaux
 
-for line in lines:
-    parts = line.strip().split()
+Conclusion :
+Les événements géopolitiques peuvent influencer le prix mondial du pétrole,
+ce qui peut avoir un impact sur les prix de l'essence à Toronto.
+"""
 
-    if len(parts) >= 4:
-        codes.append(parts[3])
+with open("output/rapport.txt", "w", encoding="utf-8") as f:
+    f.write(rapport)
 
-    if len(parts) >= 5:
-        try:
-            times.append(float(parts[4]))
-        except:
-            pass
-
-total = len(lines)
-errors = [c for c in codes if c.startswith("4") or c.startswith("5")]
-
-print("===== RAPPORT MONITORING SITE WEB =====")
-print(f"Total requêtes : {total}")
-print(f"Total erreurs : {len(errors)}")
-print(f"Erreurs 404 : {codes.count('404')}")
-print(f"Erreurs 500 : {codes.count('500')}")
-
-if times:
-    avg_time = sum(times) / len(times)
-    print(f"Temps de réponse moyen : {avg_time:.2f} sec")
-
-print("\nCodes HTTP :")
-for code, count in Counter(codes).items():
-    print(f"{code} : {count}")
+print("Rapport généré dans output/rapport.txt")
