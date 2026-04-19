@@ -1,21 +1,18 @@
 import os
 import pandas as pd
 
-# script folder
-script_dir = os.path.dirname(os.path.abspath(_file_))
+# Get project root safely (works everywhere)
+project_dir = os.getcwd()
 
-# project root = parent of scripts
-project_dir = os.path.dirname(script_dir)
-
-# correct paths
+# Paths
 csv_path = os.path.join(project_dir, "data", "prix_energie.csv")
 output_path = os.path.join(project_dir, "rapport.txt")
 
-# load data
+# Load data
 df = pd.read_csv(csv_path)
 df["date"] = pd.to_datetime(df["date"])
 
-# analysis
+# Analysis
 ess_mean = round(df["essence_toronto"].mean(), 2)
 ess_min = df["essence_toronto"].min()
 ess_max = df["essence_toronto"].max()
@@ -24,6 +21,7 @@ brent_mean = round(df["brent"].mean(), 2)
 brent_min = df["brent"].min()
 brent_max = df["brent"].max()
 
+# Build report
 report = []
 report.append("=== ESSENCE TORONTO ===")
 report.append(f"Moyenne: {ess_mean}")
@@ -35,6 +33,7 @@ report.append(f"Moyenne: {brent_mean}")
 report.append(f"Min: {brent_min}")
 report.append(f"Max: {brent_max}")
 
+# Print + Save
 for line in report:
     print(line)
 
