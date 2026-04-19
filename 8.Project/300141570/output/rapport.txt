@@ -1,13 +1,15 @@
-===== RAPPORT MONITORING SITE WEB =====
-Date: Sun Apr 19 01:19:31 UTC 2026
+Projet : Suivi du prix de l'essence à Toronto
 
-Total requêtes : 5
-Total erreurs : 2
-Erreurs 404 : 1
-Erreurs 500 : 1
-Temps de réponse moyen : 0.50 sec
+Date : 2026-04-19
 
-Codes HTTP :
-200 : 3
-500 : 1
-404 : 1
+Ville suivie : Toronto
+Prix essence : à compléter avec la source officielle
+Prix du Brent : à compléter
+Contexte :
+- tensions au Moyen-Orient
+- hausse récente du pétrole
+- impact possible sur les prix locaux
+
+Conclusion :
+Les événements géopolitiques peuvent influencer le prix mondial du pétrole,
+ce qui peut avoir un impact sur les prix de l'essence à Toronto.
