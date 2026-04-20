@@ -92,7 +92,7 @@ Cela confirme que la machine cible a bien reçu la configuration demandée.
 Le site a ensuite été testé dans le navigateur avec l'adresse suivante :
 
 ```text
-http://10.7.237.233
+http://10.7.237.235
 ```
 
 L'affichage du site confirme que le déploiement automatique a réussi.
