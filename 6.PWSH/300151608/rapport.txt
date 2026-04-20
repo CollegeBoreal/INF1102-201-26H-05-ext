@@ -1,0 +1,30 @@
+===== RAPPORT DEVOPS =====
+Date : 04/20/2026 02:03:42
+Utilisateur : ubuntu
+Machine : vm300151608
+
+Top CPU :
+snapd CPU: 477.28
+rcu_sched CPU: 313.05
+kcompactd0 CPU: 126.02
+systemd CPU: 116.58
+multipathd CPU: 37.44
+
+Top Mémoire :
+pwsh MEM: 103649280
+snapd MEM: 39952384
+multipathd MEM: 27906048
+unattended-upgrade-shutdown MEM: 21704704
+networkd-dispatcher MEM: 19353600
+
+Disque :
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           197M 1016K  196M   1% /run
+/dev/sda1       9.6G  3.3G  6.3G  35% /
+tmpfs           982M     0  982M   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/sda15      105M  6.1M   99M   6% /boot/efi
+tmpfs           197M  4.0K  197M   1% /run/user/1000
+
+Test SSH :
+Host key verification failed.
