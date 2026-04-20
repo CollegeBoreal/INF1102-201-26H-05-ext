@@ -121,4 +121,7 @@ crontab -e
 
 
 Le script s'exécute automatiquement toutes les heures et met à jour les fichiers de résultats.
+## Images
+![Cron Execution](images/cron_execution.png)
+![Script](images/script.png)
 
