@@ -25,6 +25,7 @@
 </p>
 
 ---
+<img width="876" height="238" alt="Capture d&#39;écran 2026-04-02 145312" src="https://github.com/user-attachments/assets/7dd34348-d2c7-4866-90ef-e2ef43dcccf5" />
 
 ## 🚀 Présentation
 
