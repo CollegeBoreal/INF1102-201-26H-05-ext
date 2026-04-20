@@ -1,0 +1,23 @@
+Génération du rapport...
+Date: Sun Apr 20 00:15:23 UTC 2026
+-----------------------------------
+
+📊 Statistiques:
+
+Total requêtes: 5
+Total IP uniques: 2
+
+🔝 Top 5 IP:
+  3 - 127.0.0.1
+  2 - 10.7.237.232
+
+🔝 Top 5 URLs:
+  2 - /index.html
+  1 - /about.html
+  1 - /contact.html
+  1 - /api/data
+
+📈 Codes HTTP:
+  200: 3
+  404: 1
+  500: 1
