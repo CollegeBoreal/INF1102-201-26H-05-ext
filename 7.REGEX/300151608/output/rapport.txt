@@ -1,0 +1,10 @@
+Total: 3
+Erreurs: 2
+
+Top IP:
+2 - 192.168.1.10
+1 - 192.168.1.11
+
+Top pages:
+2 - /index.html
+1 - /home
