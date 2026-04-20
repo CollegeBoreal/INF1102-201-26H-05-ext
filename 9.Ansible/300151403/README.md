@@ -26,3 +26,48 @@ Ce projet utilise **Ansible sur WSL (Ubuntu)** pour automatiser le déploiement 
 ---
 
 ## 🧱 Architecture
+
+---
+
+## ⚙️ Fonctionnalités
+
+✨ Automatisation complète avec Ansible  
+⚡ Installation automatique de Nginx  
+🚀 Démarrage + activation du service  
+📄 Déploiement d’une page HTML personnalisée  
+🌍 Accès via IP publique de la VM  
+
+---
+
+## 📸 Aperçu du projet
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/cd4239aa-56c9-4dde-a01f-0e9ffdac9352" width="85%" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0f27f7c0-f27b-4a64-8576-c5b0dff3b89f" width="85%" />
+</p>
+
+---
+
+## 📁 Structure du projet
+
+---
+
+## 📜 Playbook Ansible
+
+Le playbook automatise :
+
+✔ Installation de Nginx  
+✔ Déploiement de la page web  
+✔ Activation du service systemd  
+
+---
+
+## 🚀 Déploiement
+
+### 1️⃣ Lancer le playbook
+
+```bash
+ansible-playbook -i inventory.ini playbook.yml
