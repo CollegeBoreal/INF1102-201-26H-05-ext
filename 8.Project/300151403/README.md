@@ -49,6 +49,8 @@
 
 ### 🔹 1. Pipeline Bash — `analyse.sh`
 
+
+
 Le script Bash orchestre l'ensemble du pipeline :
 
 - Détection des chemins dynamiques (`dirname`)
@@ -61,6 +63,11 @@ Le script Bash orchestre l'ensemble du pipeline :
 ---
 
 ### 🔹 2. Analyse Python — `analyse.py`
+
+
+<img width="1110" height="1012" alt="Capture d&#39;écran 2026-04-02 135735" src="https://github.com/user-attachments/assets/e1433620-d644-43f1-8232-ec518aac67fb" />
+
+
 
 Le script Python :
 
@@ -80,6 +87,8 @@ Le script Python :
 ### 📄 rapport.txt
 
 ---
+
+<img width="1033" height="628" alt="Capture d&#39;écran 2026-04-02 142055" src="https://github.com/user-attachments/assets/61495b5f-8bff-46e6-bff8-dd25b1e385c4" />
 
 ### 📈 meteo.png
 
@@ -104,3 +113,75 @@ Graphique à barres affichant :
 
 ```bash
 pip install matplotlib
+
+## 🚀 Utilisation
+
+### Prérequis
+
+- Python 3 avec `matplotlib` installé
+- `curl` disponible sur le système
+- Une clé API valide sur [OpenWeatherMap](https://openweathermap.org/api)
+
+### Rendre le script exécutable
+
+
+<img width="1046" height="457" alt="Capture d&#39;écran 2026-04-02 140058" src="https://github.com/user-attachments/assets/5612b095-73da-48f2-8a91-ad58da370fe8" />
+
+
+
+```bash
+chmod +x scripts/analyse.sh
+```
+
+### Lancer manuellement le pipeline
+
+```bash
+cd scripts/
+bash analyse.sh
+```
+
+### Résultat attendu
+
+```
+===== PIPELINE METEO =====
+[1] Récupération météo...
+✅ Données récupérées
+[2] Lancement analyse Python...
+✅ Rapport généré
+✅ Pipeline terminé
+```
+
+---
+
+## 🕐 Automatisation avec Cron
+
+Le pipeline est planifié pour s'exécuter automatiquement **toutes les 10 minutes** via `crontab` :
+
+```cron
+*/10 * * * * /home/ubuntu/PROJET_METEO/scripts/analyse.sh >> /home/ubuntu/PROJET_METEO/output/cron.log 2>&1
+```
+
+Pour modifier la planification :
+
+```bash
+crontab -e
+```
+
+---
+
+<img width="1105" height="1076" alt="Capture d&#39;écran 2026-04-02 144927" src="https://github.com/user-attachments/assets/89acff32-d532-43e6-b39a-6f88a7cbf483" />
+
+
+
+
+## 🛠️ Technologies utilisées
+
+| Outil | Rôle |
+|---|---|
+| Bash | Orchestration du pipeline |
+| Python 3 | Analyse des données |
+| Matplotlib | Génération du graphique |
+| curl | Appel à l'API REST |
+| cron | Automatisation planifiée |
+| OpenWeatherMap API | Source des données météo |
+
