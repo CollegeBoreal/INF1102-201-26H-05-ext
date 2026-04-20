@@ -1,3 +1,4 @@
+
 # INF1102-201-26H-05 (Vendredi ✅ 9:00pm S208)
 
 INF1102 (201) - Programmation de systèmes
@@ -68,3 +69,22 @@ Le déroulement peut être modifié au besoin. La personne étudiante sera avis�
 # :books: References
 
 - [ ] [LinkedIn Carreer Hub: Proxmox Virtual Environment Essential Training Using Proxmox VE](www.linkedin.com/learning/proxmox-virtual-environment-essential-training)
+=======
+# Projet Bash + Python
+
+## Objectif
+Ce projet permet d’analyser un fichier log avec Bash et Python, puis de générer un rapport texte automatique.
+
+## Structure
+- scripts/analyse.sh : script Bash principal
+- scripts/analyse.py : script Python d’analyse
+- scripts/requirements.txt : dépendances Python
+- data/sample.log : fichier de test
+- output/rapport.txt : rapport généré
+- RAPPORT.ipynb : notebook d’analyse
+- README.md : documentation
+
+## Exécution
+```bash
+bash scripts/analyse.sh
+>>>>>>> e0e5dccc (Ajout projet Bash + Python + rapport)

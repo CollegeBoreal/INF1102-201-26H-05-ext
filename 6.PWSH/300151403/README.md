@@ -1,111 +1,227 @@
 ##300151403
 
+# ⚙️ DevOps Batch System Monitor (PowerShell on Linux)
 
-:fortune_cookie: Utiliser **PowerShell sous Linux** apporte plusieurs avantages, surtout dans un contexte **administration système, DevOps ou automatisation multi-plateforme**. Voici les principaux points :
-
----
-
-## 1️⃣ Automatisation multi-plateforme
-
-* PowerShell fonctionne **sur Windows, Linux et macOS**.
-* Les mêmes scripts peuvent fonctionner **sur plusieurs OS**, avec peu ou pas de modification.
-* Très utile si tu gères **des serveurs mixtes** dans une entreprise (Windows + Ubuntu + RedHat, etc.).
+![GitHub repo size](https://img.shields.io/github/repo-size/TON-USERNAME/devops-batch)
+![GitHub stars](https://img.shields.io/github/stars/TON-USERNAME/devops-batch?style=social)
+![GitHub last commit](https://img.shields.io/github/last-commit/TON-USERNAME/devops-batch)
+![License](https://img.shields.io/badge/license-MIT-green)
+![PowerShell](https://img.shields.io/badge/PowerShell-Core-blue)
+![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20WSL-lightgrey)
 
 ---
 
-## 2️⃣ Pipeline orienté objets
+## 🎯 Overview
 
-* Contrairement au Bash, qui travaille principalement avec du texte, PowerShell **travaille avec des objets**.
-* Exemple :
+This project is a **DevOps automation batch script** built with **PowerShell (pwsh)** on Linux.
 
-```powershell
-Get-Process | Where-Object {$_.CPU -gt 10} | Select-Object ProcessName, CPU
+It performs system monitoring and generates structured reports in both **text** and **JSON** formats.
+
+---
+
+## 🚀 Features
+
+✔ System monitoring (CPU, Memory, Disk)
+✔ Network connectivity check (SSH)
+✔ Automated report generation (TXT + JSON)
+✔ Object-oriented pipeline (PowerShell)
+✔ Cross-platform DevOps scripting
+
+---
+
+## 📸 Sample Output
+
+```text
+===== RAPPORT DEVOPS =====
+Date : 2026-04-13
+Utilisateur : user
+Machine : ubuntu
+
+Top 5 processus CPU :
+nginx - CPU: 25
+python - CPU: 18
+
+Espace disque :
+/dev/sda1  40G  20G  50%
+
+Test SSH :
+Résultat : OK
 ```
 
-* Chaque commande renvoie un **objet structuré**, pas seulement des lignes de texte, ce qui facilite :
-
-  * le filtrage (`Where-Object`)
-  * la sélection (`Select-Object`)
-  * l’exportation (`Export-Csv`, `ConvertTo-Json`)
-
 ---
 
-## 3️⃣ Intégration avec les API et services
-
-* PowerShell peut appeler **API REST**, manipuler JSON et XML facilement.
-* Exemple : tu peux automatiser des tâches DevOps avec **Moodle API, Azure, AWS, Rubrik**, etc., directement depuis Linux.
-* Bash demanderait beaucoup plus de parsing et de scripts supplémentaires.
-
----
-
-## 4️⃣ Gestion de systèmes complexe
-
-* PowerShell peut **accéder à des informations système avancées** : processus, services, utilisateurs, SSH, disque, réseau, etc.
-* Les commandes sont souvent **plus lisibles et standardisées** qu’avec Bash, surtout pour des tâches complexes.
-
----
-
-## 5️⃣ Scripts plus robustes et maintenables
-
-* **Variables typées, fonctions, modules** : permet de structurer les scripts comme de vrais programmes.
-* Plus facile de créer des **batchs DevOps complexes**, comme celui que tu as commencé à faire (`devops_batch.ps1`).
-
----
-
-## 6️⃣ Interopérabilité avec Windows
-
-* Si tu as des **scripts Windows** existants, tu peux souvent les **adapter pour Linux** sans réécrire tout en Bash.
-* Très utile dans un **environnement hybride Windows/Linux**.
-
----
-
-### Exemple concret :
-
-* **Bash** : extraire les 5 processus les plus gourmands en mémoire, puis générer un JSON :
+## 📂 Project Structure
 
 ```bash
-ps aux --sort=-%mem | head -n 6 | awk '{print $11, $4}' > top.txt
+/devops-batch/
+├── devops_batch.ps1
+├── rapport.txt
+└── rapport.json
 ```
 
-* **PowerShell** :
+<img width="890" height="93" alt="Capture d&#39;écran 2026-04-13 110148" src="https://github.com/user-attachments/assets/12e3bb9e-c23b-4f26-b983-f2ad52362736" />
 
-```powershell
-Get-Process | Sort-Object WS -Descending | Select-Object -First 5 Name,WS | ConvertTo-Json
-```
-
-→ Le résultat est directement un **JSON utilisable**, prêt pour des scripts DevOps.
 
 ---
 
-💡 **Résumé en une phrase** :
+## ⚙️ Requirements
 
-> PowerShell sous Linux combine **la puissance et la lisibilité de PowerShell Windows** avec **la flexibilité de Linux**, ce qui rend l’automatisation et le DevOps plus rapides, robustes et multi-plateforme.
-
----
-
-# Comparatif Bash vs PowerShell sous Linux
-
-| Fonctionnalité            | Bash                            | PowerShell                                                                            | Commentaire / Avantage PowerShell                                                      |
-| ------------------------- | ------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| **Type de données**       | Texte (strings)                 | Objets (.NET/PSObjects)                                                               | Les objets permettent de filtrer, trier et exporter facilement sans parsing compliqué. |                                                                                            |                            |                         |                                                                      |
-| **Filtrage**              | `grep` ou `awk`                 | `Where-Object {$_.CPU -gt 10}`                                                        | Plus lisible et robuste, sans découpage manuel des colonnes.                           |                                                                                            |                            |                         |                                                                      |
-| **Export CSV / JSON**     | `awk ... > fichier.csv` ou `jq` | `ConvertTo-Csv` ou `ConvertTo-Json`                                                   | Prêt pour ingestion dans d’autres scripts ou API DevOps.                               |                                                                                            |                            |                         |                                                                      |
-| **Boucles**               | `for i in *; do ...; done`      | `foreach ($f in Get-ChildItem) { ... }`                                               | Syntaxe plus orientée objets, accès direct aux propriétés (`$f.Name`, `$f.Length`).    |                                                                                            |                            |                         |                                                                      |
-| **Variables typées**      | Pas typées, string par défaut   | Typées (`[int]$count = 5`)                                                            | Moins d’erreurs et meilleure maintenance pour scripts complexes.                       |                                                                                            |                            |                         |                                                                      |
-| **Accès SSH**             | `ssh user@host "command"`       | `ssh user@host "command"` (directement dans PowerShell, intégré dans un script batch) | Peut être intégré avec variables PowerShell et gestion automatique des erreurs.        |                                                                                            |                            |                         |                                                                      |
-| **Gestion fichiers**      | `cp, mv, rm, tar`               | `Copy-Item, Move-Item, Remove-Item, Compress-Archive`                                 | Commandes plus cohérentes et cross-platform.                                           |                                                                                            |                            |                         |                                                                      |
-| **Automatisation DevOps** | Scripts multiples + parsing     | Scripts uniques orientés objets + modules                                             | PowerShell facilite intégration API, JSON, Azure, AWS, etc.                            |                                                                                            |                            |                         |                                                                      |
-| **Multi-plateforme**      | Limité, Bash Linux/macOS        | Linux + Windows + macOS                                                               | Les mêmes scripts fonctionnent sur plusieurs OS sans réécriture majeure.               |                                                                                            |                            |                         |                                                                      |
+* Ubuntu 22.04 (Jammy)
+* PowerShell Core (`pwsh`)
+* SSH client installed
 
 ---
 
-### Exemple concret : générer un rapport DevOps
+## 🔧 Installation
 
-**Bash** :
+### 1. Install PowerShell
 
 ```bash
-ps aux --sort=-%mem | head -n 5 > top_mem.txt
-df -h >> top_mem.txt
+sudo apt update
+sudo apt install -y powershell
 ```
 
-**PowerShell** :
+### 2. Create project directory
+
+```bash
+sudo mkdir /devops-batch
+```
+
+### 3. Create script
+
+```bash
+sudo nano /devops-batch/devops_batch.ps1
+```
+
+---
+
+## ▶️ Usage
+
+Run the script:
+
+```bash
+sudo pwsh /devops-batch/devops_batch.ps1
+```
+
+---
+
+## 📊 Generated Reports
+
+### 📄 Text Report
+
+```
+/devops-batch/rapport.txt
+```
+
+### 📦 JSON Report
+
+```
+/devops-batch/rapport.json
+```
+
+---
+
+## 🧠 PowerShell Pipeline Example
+
+```powershell
+Get-Process |
+Where-Object {$_.CPU -gt 10} |
+Select-Object ProcessName, CPU
+```
+
+➡️ Unlike Bash, PowerShell manipulates **objects instead of raw text**, making automation more reliable.
+
+---
+
+## 🔍 What the Script Checks
+
+### 🖥️ System
+
+* Top 5 processes (CPU)
+* Top 5 processes (Memory)
+
+### 💾 Disk
+
+* Disk usage via `df -h`
+
+### 🌐 Network
+
+* SSH connectivity test (localhost)
+
+---
+
+## ⏰ Automation
+
+### Linux Cron Job
+
+```bash
+crontab -e
+```
+
+```bash
+0 2 * * * /usr/bin/pwsh /devops-batch/devops_batch.ps1
+```
+
+---
+
+## 📈 Roadmap
+
+* [ ] Add email alerting
+* [ ] Add monitoring dashboard
+* [ ] Integrate with Prometheus / Grafana
+* [ ] Add API export
+* [ ] Multi-host monitoring
+
+---
+
+## ⚖️ Bash vs PowerShell
+
+| Feature           | Bash           | PowerShell   |
+| ----------------- | -------------- | ------------ |
+| Data type         | Text           | Objects      |
+| JSON support      | External tools | Native       |
+| Pipeline          | Text-based     | Object-based |
+| DevOps automation | Medium         | High         |
+
+---
+
+## 💡 Why PowerShell on Linux?
+
+* Cross-platform scripting (Linux + Windows)
+* Native JSON support
+* Cleaner automation pipelines
+* Better maintainability for DevOps scripts
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+```bash
+git fork
+git checkout -b feature/new-feature
+git commit -m "Add new feature"
+git push origin feature/new-feature
+```
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+## 👨‍💻 Author
+
+DevOps Lab — PowerShell Automation on Linux
+
+---
+
+## ⭐ Support
+
+If you find this project useful, give it a ⭐ on GitHub!
+
+---
+
