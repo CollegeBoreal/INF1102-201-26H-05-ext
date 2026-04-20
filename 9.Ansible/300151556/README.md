@@ -91,13 +91,14 @@ ansible-playbook -i inventory.ini playbook.yml
 
 ## 🖼️ Résultats
 
-### 🔹 Exécution du playbook
+
+### 🔹 Résultat dans le navigateur
 <img width="959" height="461" alt="1" src="https://github.com/user-attachments/assets/130c44c0-6cea-4570-833c-baeaa1781123" />
 
 
 ---
 
-### 🔹 Résultat dans le navigateur
+### 🔹 Exécution du playbook
 <img width="832" height="257" alt="2e" src="https://github.com/user-attachments/assets/03fe2901-4d33-42b6-ac8a-77cb4fdc7243" />
 
 
