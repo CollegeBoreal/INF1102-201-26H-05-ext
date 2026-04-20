@@ -1,0 +1,21 @@
+- name: Installer et configurer nginx
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Installer nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Creer page HTML
+      copy:
+        content: "<h1>Deploiement Ansible reussi - 300151556</h1>"
+        dest: /var/www/html/index.nginx-debian.html
+
+    - name: Demarrer nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
