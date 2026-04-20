@@ -1,10 +1,10 @@
-#  PROJET_METEO
+# 🌦️ PROJET_METEO
 
 Pipeline automatisé de collecte et d'analyse de données météorologiques via l'API OpenWeatherMap.
 
 ---
 
-##    Structure du projet
+## 📁 Structure du projet
 
 ```
 PROJET_METEO/
@@ -29,7 +29,7 @@ PROJET_METEO/
 
 
 
-##  Fonctionnement
+## ⚙️ Fonctionnement
 
 ### 1. `analyse.sh` — Pipeline principal
 
@@ -58,7 +58,7 @@ Le script Python :
 
 ---
 
-##    Exemple de sortie
+## 📊 Exemple de sortie
 
 ### `rapport.txt`
 
@@ -82,7 +82,7 @@ Graphique à barres affichant la température et l'humidité pour Toronto.
 
 ---
 
-##    Utilisation
+## 🚀 Utilisation
 
 ### Prérequis
 
@@ -121,7 +121,7 @@ bash analyse.sh
 
 ---
 
-##    Automatisation avec Cron
+## 🕐 Automatisation avec Cron
 
 Le pipeline est planifié pour s'exécuter automatiquement **toutes les 10 minutes** via `crontab` :
 
@@ -142,7 +142,7 @@ crontab -e
 
 
 
-##  Technologies utilisées
+## 🛠️ Technologies utilisées
 
 | Outil | Rôle |
 |---|---|
@@ -152,4 +152,3 @@ crontab -e
 | curl | Appel à l'API REST |
 | cron | Automatisation planifiée |
 | OpenWeatherMap API | Source des données météo |
->>>>>>> 94166bc7c6d4ac73240397c80ab15b055cf51ecb
