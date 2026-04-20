@@ -16,7 +16,7 @@
 
 |:hash:| Boréal :id: | README.md | images | :rocket: playbook.yml | :page_facing_up: inventory.ini |
 |------|-------------|-----------|--------|-----------------------|-------------------------------|
-| 0 | [300151233](../300151233/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/223416913?s=460&v=4' width=20 height=20></image>](https://github.com/syphax25) | :x: | :x: | [:x:](../300151233/playbook.yml) | [:x:](../300151233/inventory.ini) |
+| 0 | [300151233](../300151233/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/223416913?s=460&v=4' width=20 height=20></image>](https://github.com/syphax25) | :2nd_place_medal: | :x: | [:heavy_check_mark:](../300151233/playbook.yml) | [:heavy_check_mark:](../300151233/inventory.ini) |
 | 1 | [300151258](../300151258/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/231778604?s=460&v=4' width=20 height=20></image>](https://github.com/hakimsb) | :1st_place_medal: | :heavy_check_mark: | [:heavy_check_mark:](../300151258/playbook.yml) | [:heavy_check_mark:](../300151258/inventory.ini) |
 | 2 | [300151347](../300151347/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/207281891?s=460&v=4' width=20 height=20></image>](https://github.com/sarahocine) | :x: | :x: | [:x:](../300151347/playbook.yml) | [:x:](../300151347/inventory.ini) |
 | 3 | [300151403](../300151403/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/211593057?s=460&v=4' width=20 height=20></image>](https://github.com/JustinSandy99) | :1st_place_medal: | :heavy_check_mark: | [:heavy_check_mark:](../300151403/playbook.yml) | [:heavy_check_mark:](../300151403/inventory.ini) |
