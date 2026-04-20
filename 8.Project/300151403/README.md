@@ -78,6 +78,10 @@ Le script Python :
   - 📍 Ville
 - Génère :
   - 📊 Graphique (`output/meteo.png`)
+
+ <img width="640" height="480" alt="meteo" src="https://github.com/user-attachments/assets/8a1f8aae-c983-40a2-a5f6-7fb32dd4c523" />
+
+  - 
   - 📄 Rapport (`output/rapport.txt`)
 
 ---
