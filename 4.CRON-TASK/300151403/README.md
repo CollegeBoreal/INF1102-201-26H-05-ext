@@ -1,49 +1,34 @@
-# 🛡️ NGINX LOG MONITORING PIPELINE
-### 👤 Justin Sandy
+# 🛡️ NGINX LOG MONITORING PIPELINE ⚡
+### 👤 Justin Sandy | DevOps & Security Automation Project
 
-![Crontab](images/Crontab.png)
+<p align="center">
+  <img src="images/Crontab.png" width="650"/>
+</p>
 
----
-
-## 🚀 Objectif du projet
-
-Ce projet a pour but de mettre en place un **système automatisé de surveillance des logs Nginx**, permettant de :
-
-- 👁️ Extraire les adresses IP des visiteurs
-- 📊 Analyser les accès au serveur web
-- 🧠 Identifier les visiteurs les plus fréquents
-- ⏱️ Automatiser le traitement via `cron`
-- 📁 Stocker les résultats pour audit et monitoring
+<p align="center">
+  <img src="https://media.giphy.com/media/kH1DBkPNyZPOk0BxrM/giphy.gif" width="130"/>
+  <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" width="130"/>
+  <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width="130"/>
+  <img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" width="130"/>
+</p>
 
 ---
 
-## 🧱 Architecture du système
+## 🚀 🌐 PROJECT OVERVIEW
 
 ```text
-          ┌──────────────┐
-          │  Nginx Web   │
-          │   Server     │
-          └──────┬───────┘
-                 │
-                 ▼
-     /var/log/nginx/access.log
-                 │
-                 ▼
-     ┌──────────────────────┐
-     │ Bash Script (AWK)    │
-     │ - extraction IP      │
-     │ - nettoyage          │
-     │ - tri + analyse      │
-     └─────────┬────────────┘
-               │
-               ▼
-   ┌─────────────────────────┐
-   │ Output Files            │
-   │ - nginx_ips.txt         │
-   │ - nginx_ips_freq.txt    │
-   │ - logs audit            │
-   └─────────┬───────────────┘
-             │
-             ▼
-        ⏰ CRON JOB
-   (exécution automatique)
+⚡ NGINX LOG MONITORING PIPELINE ACTIVE ⚡
+
+[ WEB SERVER (NGINX) ]
+          ↓
+[ access.log / error.log ]
+          ↓
+[ BASH + AWK ANALYSIS ENGINE ]
+          ↓
+[ IP EXTRACTION + CLEANING ]
+          ↓
+[ TRAFFIC ANALYSIS (SORT / UNIQ / COUNT) ]
+          ↓
+[ OUTPUT FILES STORAGE ]
+          ↓
+[ CRON AUTOMATION ⏰ EVERY HOUR ]
