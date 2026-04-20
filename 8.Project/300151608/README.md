@@ -3,6 +3,36 @@
 ## Objectif
 Ce projet permet d’analyser un fichier log avec Bash et Python, puis de générer un rapport texte automatique.
 
+
+
+<img width="960" height="1020" alt="000010000" src="https://github.com/user-attachments/assets/d91f8a51-9d2b-4579-a424-0bd6f196ae10" />
+
+
+
+<img width="960" height="1020" alt="000005000000000" src="https://github.com/user-attachments/assets/6e37e489-3cd6-4950-88a0-53b047e03069" />
+
+
+<img width="960" height="1020" alt="000000200000000000" src="https://github.com/user-attachments/assets/cac6ce35-a103-46f5-a936-bd6865281430" />
+
+
+
+<img width="960" height="1020" alt="0000000000040000000" src="https://github.com/user-attachments/assets/00eb292a-160e-4948-b2c8-537108704190" />
+
+
+
+<img width="960" height="1020" alt="000000000000300000000000" src="https://github.com/user-attachments/assets/20996b9d-076f-4926-9d07-7797bfcced32" />
+
+
+
+<img width="960" height="1020" alt="0006000000000000" src="https://github.com/user-attachments/assets/bc9e847d-da57-4f26-a6b2-7c90f1c3534d" />
+
+
+
+
+
+
+
+
 ## Structure
 - scripts/analyse.sh : script Bash principal
 - scripts/analyse.py : script Python d’analyse
