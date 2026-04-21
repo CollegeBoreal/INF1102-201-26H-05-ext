@@ -4,7 +4,7 @@
 **Cours** : INF1102 — Programmation système  
 **Environnement** : Ubuntu 22.04 LTS / Windows PowerShell  
 **Date** : 2026-04-21
-
+ 
 ---
 
 ## 1. Objectif
