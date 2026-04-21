@@ -8,6 +8,7 @@
 
 ## Objectif du TP
 
+
 Ce travail a pour objectif de mettre en pratique **Ansible** comme outil de **gestion de configuration** dans une approche **Infrastructure as Code (IaC)**. Le but principal est d'automatiser le déploiement d'un serveur web **Nginx** ainsi que la publication d'un site statique composé de fichiers **HTML, CSS et JavaScript**.
 
 À la fin du TP, le système doit être capable de :
