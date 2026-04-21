@@ -1,5 +1,7 @@
 import sys
 from collections import Counter
+import matplotlib.pyplot as plt
+import os
 
 file = sys.argv[1]
 
@@ -15,6 +17,8 @@ with open(file, 'r') as f:
 top_ips = Counter(ips).most_common(3)
 top_urls = Counter(urls).most_common(3)
 
+# 📄 Générer rapport texte
+os.makedirs("output", exist_ok=True)
 with open("output/rapport.txt", "w") as out:
     out.write("Top IPs:\n")
     for ip, count in top_ips:
@@ -24,5 +28,16 @@ with open("output/rapport.txt", "w") as out:
     for url, count in top_urls:
         out.write(f"{url} : {count}\n")
 
-print("Rapport généré dans output/rapport.txt")
+# 📊 Générer graphique
+os.makedirs("Figures", exist_ok=True)
 
+labels = [ip for ip, _ in top_ips]
+values = [count for _, count in top_ips]
+
+plt.bar(labels, values)
+plt.title("Top IPs")
+plt.xlabel("IP")
+plt.ylabel("Nombre de requêtes")
+plt.savefig("Figures/top_ips.png")
+
+print("✅ Rapport et graphique générés")
