@@ -1,6 +1,6 @@
 # 📊 Projet 8 – Analyse de logs avec Bash & Python
 
-**Étudiante : 300151556**
+**Étudiante : KAHINA ZERKANI 300151556**
 
 ---
 
@@ -143,20 +143,28 @@ Top URLs:
 
 ### 🔹 Exécution du script
 
-<img width="959" height="461" alt="1" src="https://github.com/user-attachments/assets/51dd4df3-d1eb-4f73-a34b-436b3686d537" />
+<img width="607" height="58" alt="image" src="https://github.com/user-attachments/assets/6d02d856-29fc-4baf-afcd-e4065570d8b4" />
+
 
 
 ---
 
 ### 🔹 Rapport généré
+<img width="542" height="44" alt="image" src="https://github.com/user-attachments/assets/69e51d38-fee6-460c-8658-382153d0b3ab" />
 
-<img width="614" height="59" alt="image" src="https://github.com/user-attachments/assets/f1ad08db-e1b0-4f48-afc7-e77b609a6cbf" />
+
+<img width="160" height="161" alt="image" src="https://github.com/user-attachments/assets/a94df6d0-4215-41aa-88f1-973ccf3b4f2b" />
+
+
 
 ---
 
 ## 📊 Graphique
 
 <img width="527" height="29" alt="image" src="https://github.com/user-attachments/assets/4efd1d05-8d37-478f-870f-c58abdee6d68" />
+
+<img width="659" height="322" alt="image" src="https://github.com/user-attachments/assets/46b9c334-c4b4-4ff4-b138-78e7ac560716" />
+
 
 
 ---
