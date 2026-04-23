@@ -1,7 +1,5 @@
-
 # INF1102-201-26H-05 (Vendredi ✅ 9:00pm S208)
-   AICHE MOHAMMED
-   300151608
+
 INF1102 (201) - Programmation de systèmes
 
 ## :date: [Épreuves](.epreuves)
@@ -11,7 +9,21 @@ INF1102 (201) - Programmation de systèmes
 
 ## 🧨 [Évaluations](.evaluations)
 
-| :hash:  | Date   | Evaluations                                        ||-------- |-------|:---------------------------------------------------|
+| :hash:  | Date   | Evaluations                                        |
+|-------- |--------|:---------------------------------------------------|
+
+
+## :one: [Devoirs](Devoirs)
+
+|  :hash: | Date  | Cours                              | 🎉 Participations                   | 🏁 Vérification |
+|---------|-------|:-----------------------------------|:------------------------------------|----------------|
+| :one:   | 02-Feb| [3.IaC](3.IaC)                     | [🎉 :1st_place_medal:](3.IaC/.scripts/Participation-group1.md) :curly_loop: [🎉 :2nd_place_medal:](3.IaC/.scripts/Participation-group2.md) | [🏁 :1st_place_medal:](3.IaC/.scripts/Check-group1.md) :curly_loop: [🏁 :2nd_place_medal:](3.IaC/.scripts/Check-group2.md) |
+| :two: | 09-Feb| [4.CRON-TASK](4.CRON-TASK)         | [🎉 :1st_place_medal:](4.CRON-TASK/.scripts/Participation-group1.md) :curly_loop: [🎉 :2nd_place_medal:](4.CRON-TASK/.scripts/Participation-group2.md)  | [🏁 :1st_place_medal:](4.CRON-TASK/.scripts/Check-group1.md) :curly_loop: [🏁 :2nd_place_medal:](4.CRON-TASK/.scripts/Check-group2.md) |
+| :three:  | 23-Feb| [5.BATCH](5.BATCH)                 | [🎉 :1st_place_medal:](5.BATCH/.scripts/Participation-group1.md) :curly_loop: [🎉 :2nd_place_medal:](5.BATCH/.scripts/Participation-group2.md) | [🏁 :1st_place_medal:](5.BATCH/.scripts/Check-group1.md) :curly_loop: [🏁 :2nd_place_medal:](5.BATCH/.scripts/Check-group2.md) |
+| :four:  | 16-Mar| [6.PWSH](6.PWSH)                   | [🎉 :1st_place_medal:](6.PWSH/.scripts/Participation-group1.md) :curly_loop: [🎉 :2nd_place_medal:](6.PWSH/.scripts/Participation-group2.md) | [🏁 :1st_place_medal:](6.PWSH/.scripts/Check-group1.md) :curly_loop: [🏁 :2nd_place_medal:](6.PWSH/.scripts/Check-group2.md) |
+| :five:  | 23-Mar| [7.REGEX](7.REGEX)                   | [🎉 :1st_place_medal:](7.REGEX/.scripts/Participation-group1.md) :curly_loop: [🎉 :2nd_place_medal:](6.PWSH/.scripts/Participation-group2.md) | [🏁 :1st_place_medal:](7.REGEX/.scripts/Check-group1.md) :curly_loop: [🏁 :2nd_place_medal:](7.REGEX/.scripts/Check-group2.md) |
+| :five:  |  7-Avr| [8.Project](8.Project)                   | [🎉 :1st_place_medal:](8.Project/.scripts/Participation-group1.md) :curly_loop: [🎉 :2nd_place_medal:](8.Project/.scripts/Participation-group2.md) |
+| :six:  |   15-Avr| [9.Ansible](9.Ansible)                   | [🎉 :1st_place_medal:](9.Ansible/.scripts/Participation-group1.md) :curly_loop: [🎉 :2nd_place_medal:](9.Ansible/.scripts/Participation-group2.md)  |  [🏁 :1st_place_medal:](7.REGEX/.scripts/Check-group1.md) :curly_loop: [🏁 :2nd_place_medal:](7.REGEX/.scripts/Check-group2.md)
 
 
 
@@ -44,7 +56,7 @@ Le déroulement peut être modifié au besoin. La personne étudiante sera avis�
 | 09-Mar | 8️⃣ | [6.PWSH](6.PWSH)
 | 16-Mar | 9️⃣ | [7.REGEX](7.REGEX)
 | 23-Mar | 1️⃣0️⃣ | [8.Project](8.Project)
-| 30-Mar | 1️⃣1️⃣ | [9.Ansible](9.Ansib
+| 30-Mar | 1️⃣1️⃣ | [9.Ansible](9.Ansible)
 | 06-Apr | 1️⃣2️⃣ | 
 | 13-Apr | 1️⃣3️⃣ |
 | 20-Apr | 1️⃣4️⃣ |
@@ -56,20 +68,3 @@ Le déroulement peut être modifié au besoin. La personne étudiante sera avis�
 # :books: References
 
 - [ ] [LinkedIn Carreer Hub: Proxmox Virtual Environment Essential Training Using Proxmox VE](www.linkedin.com/learning/proxmox-virtual-environment-essential-training)
-# Projet Bash + Python
-
-## Objectif
-Ce projet permet d’analyser un fichier log avec Bash et Python, puis de générer un rapport texte automatique.
-
-## Structure
-- scripts/analyse.sh : script Bash principal
-- scripts/analyse.py : script Python d’analyse
-- scripts/requirements.txt : dépendances Python
-- data/sample.log : fichier de test
-- output/rapport.txt : rapport généré
-- RAPPORT.ipynb : notebook d’analyse
-- README.md : documentation
-
-## Exécution
-```bash
-bash scripts/analyse.sh
