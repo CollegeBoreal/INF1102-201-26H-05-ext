@@ -1,22 +1,22 @@
 # Setup
 
-## :a: LMS Assignment ID = 23
+## :a: LMS Assignment ID = 30
 
 ```
-https://${LMS_URL}/mod/assign/view.php?id=23
+https://${LMS_URL}/mod/assign/view.php?id=30
 ```
 
 ```json
 {
-  "id": 23,            // Assignment ID
-  "cmid": 27,          // Rubric Definition CMID
-  "name": "8.Project"  // Assignment name
+  "id": 30,
+  "cmid": 34,
+  "name": "8.Project"
 }
 ```
 
 ## :b: Rubric Definition for
 
-- [ ] cmids[0]=27
+- [ ] cmids[0]=34
 
 - [ ] Retrieve all rubric definitions from LMS
 
@@ -26,7 +26,7 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
 -d "wstoken=${API_SYNC_TOKEN}" \
 -d "wsfunction=core_grading_get_definitions" \
 -d "moodlewsrestformat=json" \
--d "cmids[0]=27" \
+-d "cmids[0]=34" \
 -d "areaname=submissions" | jq .
 ```
 ```
@@ -40,47 +40,47 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
 {
   "areas": [
     {
-      "cmid": 27,
-      "contextid": 480,
+      "cmid": 34,
+      "contextid": 487,
       "component": "mod_assign",
       "areaname": "submissions",
       "activemethod": "rubric",
       "definitions": [
         {
-          "id": 22,
+          "id": 29,
           "method": "rubric",
           "name": "🅰️ Présence",
           "description": "",
           "descriptionformat": 1,
           "status": 20,
           "copiedfromid": null,
-          "timecreated": 1776971276,
+          "timecreated": 1776999055,
           "usercreated": 3,
-          "timemodified": 1776995538,
+          "timemodified": 1776999055,
           "usermodified": 3,
           "timecopied": 0,
           "rubric": {
             "rubric_criteria": [
               {
-                "id": 109,
+                "id": 145,
                 "sortorder": 1,
                 "description": "README.md",
                 "descriptionformat": 1,
                 "levels": [
                   {
-                    "id": 251,
+                    "id": 334,
                     "score": 0,
                     "definition": "❌",
                     "definitionformat": 1
                   },
                   {
-                    "id": 252,
+                    "id": 335,
                     "score": 1,
                     "definition": "🥈",
                     "definitionformat": 1
                   },
                   {
-                    "id": 253,
+                    "id": 336,
                     "score": 2,
                     "definition": "🥇",
                     "definitionformat": 1
@@ -88,19 +88,19 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
                 ]
               },
               {
-                "id": 110,
+                "id": 146,
                 "sortorder": 2,
                 "description": "images",
                 "descriptionformat": 1,
                 "levels": [
                   {
-                    "id": 254,
+                    "id": 337,
                     "score": 0,
                     "definition": "❌",
                     "definitionformat": 1
                   },
                   {
-                    "id": 255,
+                    "id": 338,
                     "score": 1,
                     "definition": "✔️",
                     "definitionformat": 1
@@ -108,25 +108,25 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
                 ]
               },
               {
-                "id": 111,
+                "id": 147,
                 "sortorder": 3,
                 "description": "🚀 analyse.py",
                 "descriptionformat": 1,
                 "levels": [
                   {
-                    "id": 256,
+                    "id": 339,
                     "score": 0,
                     "definition": "❔",
                     "definitionformat": 1
                   },
                   {
-                    "id": 257,
+                    "id": 340,
                     "score": 1,
                     "definition": "‼️",
                     "definitionformat": 1
                   },
                   {
-                    "id": 284,
+                    "id": 341,
                     "score": 2,
                     "definition": "🚀",
                     "definitionformat": 1
@@ -134,19 +134,19 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
                 ]
               },
               {
-                "id": 113,
+                "id": 149,
                 "sortorder": 4,
                 "description": "🧾 RAPPORT",
                 "descriptionformat": 1,
                 "levels": [
                   {
-                    "id": 260,
+                    "id": 344,
                     "score": 0,
                     "definition": "❌",
                     "definitionformat": 1
                   },
                   {
-                    "id": 261,
+                    "id": 345,
                     "score": 1,
                     "definition": "🧾",
                     "definitionformat": 1
@@ -154,19 +154,19 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
                 ]
               },
               {
-                "id": 112,
+                "id": 148,
                 "sortorder": 5,
                 "description": "✍️ Sgn",
                 "descriptionformat": 1,
                 "levels": [
                   {
-                    "id": 258,
+                    "id": 342,
                     "score": 0,
                     "definition": "❌",
                     "definitionformat": 1
                   },
                   {
-                    "id": 259,
+                    "id": 343,
                     "score": 1,
                     "definition": "✍️",
                     "definitionformat": 1
@@ -174,25 +174,25 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
                 ]
               },
               {
-                "id": 114,
+                "id": 150,
                 "sortorder": 6,
                 "description": "🖼️ Figures",
                 "descriptionformat": 1,
                 "levels": [
                   {
-                    "id": 262,
+                    "id": 346,
                     "score": 0,
                     "definition": "0️⃣",
                     "definitionformat": 1
                   },
                   {
-                    "id": 263,
+                    "id": 347,
                     "score": 1,
                     "definition": "1️⃣",
                     "definitionformat": 1
                   },
                   {
-                    "id": 264,
+                    "id": 348,
                     "score": 2,
                     "definition": "*️⃣",
                     "definitionformat": 1
@@ -200,19 +200,19 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
                 ]
               },
               {
-                "id": 115,
+                "id": 151,
                 "sortorder": 7,
                 "description": "analyse.ps1",
                 "descriptionformat": 1,
                 "levels": [
                   {
-                    "id": 265,
+                    "id": 349,
                     "score": 0,
                     "definition": "❌",
                     "definitionformat": 1
                   },
                   {
-                    "id": 266,
+                    "id": 350,
                     "score": 1,
                     "definition": "✔️",
                     "definitionformat": 1
@@ -220,19 +220,19 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
                 ]
               },
               {
-                "id": 116,
+                "id": 152,
                 "sortorder": 8,
                 "description": "rapport.txt",
                 "descriptionformat": 1,
                 "levels": [
                   {
-                    "id": 267,
+                    "id": 351,
                     "score": 0,
                     "definition": "❌",
                     "definitionformat": 1
                   },
                   {
-                    "id": 268,
+                    "id": 352,
                     "score": 1,
                     "definition": "✔️",
                     "definitionformat": 1

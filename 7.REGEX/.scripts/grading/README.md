@@ -1,22 +1,22 @@
 # Setup
 
-## :a: LMS Assignment ID = 22
+## :a: LMS Assignment ID = 29
 
 ```
-https://${LMS_URL}/mod/assign/view.php?id=22
+https://${LMS_URL}/mod/assign/view.php?id=29
 ```
 
 ```json
 {
-  "id": 22,             // Assignment ID
-  "cmid": 26,           // Rubric Definition CMID
-  "name": "7.REGEX"      // Assignment name
+  "id": 29,
+  "cmid": 33,
+  "name": "7.REGEX"
 }
 ```
 
 ## :b: Rubric Definition for
 
-- [ ] cmids[0]=26
+- [ ] cmids[0]=33
 
 - [ ] Retrieve all rubric definitions from LMS
 
@@ -25,7 +25,7 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
 -d "wstoken=${API_SYNC_TOKEN}" \
 -d "wsfunction=core_grading_get_definitions" \
 -d "moodlewsrestformat=json" \
--d "cmids[0]=26" \
+-d "cmids[0]=33" \
 -d "areaname=submissions" | jq .
 ```
 ```
@@ -39,47 +39,47 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
 {
   "areas": [
     {
-      "cmid": 26,
-      "contextid": 479,
+      "cmid": 33,
+      "contextid": 486,
       "component": "mod_assign",
       "areaname": "submissions",
       "activemethod": "rubric",
       "definitions": [
         {
-          "id": 21,
+          "id": 28,
           "method": "rubric",
           "name": "🅰️ Présence",
           "description": "",
           "descriptionformat": 1,
           "status": 20,
           "copiedfromid": null,
-          "timecreated": 1776971169,
+          "timecreated": 1776999055,
           "usercreated": 3,
-          "timemodified": 1776971260,
+          "timemodified": 1776999055,
           "usermodified": 3,
           "timecopied": 0,
           "rubric": {
             "rubric_criteria": [
               {
-                "id": 104,
+                "id": 140,
                 "sortorder": 1,
                 "description": "README.md",
                 "descriptionformat": 1,
                 "levels": [
                   {
-                    "id": 240,
+                    "id": 323,
                     "score": 0,
                     "definition": "❌",
                     "definitionformat": 1
                   },
                   {
-                    "id": 241,
+                    "id": 324,
                     "score": 1,
                     "definition": "🥈",
                     "definitionformat": 1
                   },
                   {
-                    "id": 242,
+                    "id": 325,
                     "score": 2,
                     "definition": "🥇",
                     "definitionformat": 1
@@ -87,19 +87,19 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
                 ]
               },
               {
-                "id": 105,
+                "id": 141,
                 "sortorder": 2,
                 "description": "images",
                 "descriptionformat": 1,
                 "levels": [
                   {
-                    "id": 243,
+                    "id": 326,
                     "score": 0,
                     "definition": "❌",
                     "definitionformat": 1
                   },
                   {
-                    "id": 244,
+                    "id": 327,
                     "score": 1,
                     "definition": "✔️",
                     "definitionformat": 1
@@ -107,19 +107,19 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
                 ]
               },
               {
-                "id": 106,
+                "id": 142,
                 "sortorder": 3,
                 "description": "analyse_nginx.ps1",
                 "descriptionformat": 1,
                 "levels": [
                   {
-                    "id": 245,
+                    "id": 328,
                     "score": 0,
                     "definition": "❌",
                     "definitionformat": 1
                   },
                   {
-                    "id": 246,
+                    "id": 329,
                     "score": 1,
                     "definition": "✔️",
                     "definitionformat": 1
@@ -127,19 +127,19 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
                 ]
               },
               {
-                "id": 108,
+                "id": 144,
                 "sortorder": 4,
                 "description": "analyse_nginx.py",
                 "descriptionformat": 1,
                 "levels": [
                   {
-                    "id": 249,
+                    "id": 332,
                     "score": 0,
                     "definition": "❌",
                     "definitionformat": 1
                   },
                   {
-                    "id": 250,
+                    "id": 333,
                     "score": 1,
                     "definition": "✔️",
                     "definitionformat": 1
@@ -147,19 +147,19 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
                 ]
               },
               {
-                "id": 107,
+                "id": 143,
                 "sortorder": 5,
                 "description": "🎓 SSH",
                 "descriptionformat": 1,
                 "levels": [
                   {
-                    "id": 247,
+                    "id": 330,
                     "score": 0,
                     "definition": "💥",
                     "definitionformat": 1
                   },
                   {
-                    "id": 248,
+                    "id": 331,
                     "score": 1,
                     "definition": "🔗",
                     "definitionformat": 1
@@ -174,6 +174,7 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
   ],
   "warnings": []
 }
+
 ```
 
 </details>
