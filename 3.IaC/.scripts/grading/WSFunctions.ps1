@@ -5,7 +5,7 @@
 # =====================================================================
 
 # LMS assignment ID where participation grades will be submitted
-$LMSAssignmentID = 9
+$LMSAssignmentID = 25
 
 # Enables verbose/debug output when set to $true
 $DEBUG = $false
@@ -13,10 +13,10 @@ $DEBUG = $false
 # Explicit emoji → rubric level mapping for DB execution criterion
 # (Used when the emoji represents more than pass/fail)
 $EmojiToScore = @{
-    ":red_circle:" = 67
-    ":green_circle:" = 68
-    ":boom:" = 69
-    ":link:" = 70
+    ":red_circle:" = 292
+    ":green_circle:" = 293
+    ":boom:" = 294
+    ":link:" = 295
 }
 
 # =====================================================================
@@ -65,7 +65,7 @@ function Get-ParticipationGrades {
             # README.md quantity (fail/silver/gold)
             # ---------------------------------
             $readEmoji = ($cols[3]).Trim()
-            $levels = @(60, 61, 62)  # fail, silver, gold
+            $levels = @(285, 286, 287)  # fail, silver, gold
             $readScore = Get-RubricLevelIdFromReadmeEmoji `
                 -Emoji $readEmoji `
                 -Levels $levels
@@ -76,20 +76,20 @@ function Get-ParticipationGrades {
             $imgEmoji = ($cols[4]).Trim()
             $imgScore = Get-RubricLevelIdFromEmoji `
                 -Emoji $imgEmoji `
-                -FailLevelId 63 `
-                -PassLevelId 64
+                -FailLevelId 288 `
+                -PassLevelId 289
 
             # If README.md exceeds expectations,
             # images folder is implicitly considered present
-            if ($readScore -gt 62) {
-                $imgScore = 64
+            if ($readScore -gt 287) {
+                $imgScore = 289
             }
 
             $mainEmoji = ($cols[5]).Trim()
             $mainScore = Get-RubricLevelIdFromEmoji `
                 -Emoji $mainEmoji `
-                -FailLevelId 65 `
-                -PassLevelId 66
+                -FailLevelId 288 `
+                -PassLevelId 289
 
             # ---------------------------------
             # VM execution
@@ -157,11 +157,11 @@ function New-LMSRubricFromEntry {
 
     # Build rubric
     $rubric = @(
-        @{ criterionid = 26;  levelid = $Entry.readme;    remark = "Quantité README.md " }
-        @{ criterionid = 27;  levelid = $Entry.image;     remark = "Présence répertoire images " }
-        @{ criterionid = 28;  levelid = $Entry.main;      remark = "Présence code source" }
-        @{ criterionid = 29;  levelid = $Entry.vm;        remark = "Présence de la VM" }
-        @{ criterionid = 30;  levelid = $Entry.link;      remark = "Présence du la clé SSH Prof" }
+        @{ criterionid = 123;  levelid = $Entry.readme;    remark = "Quantité README.md " }
+        @{ criterionid = 124;  levelid = $Entry.image;     remark = "Présence répertoire images " }
+        @{ criterionid = 125;  levelid = $Entry.main;      remark = "Présence code source" }
+        @{ criterionid = 126;  levelid = $Entry.vm;        remark = "Présence de la VM" }
+        @{ criterionid = 127;  levelid = $Entry.link;      remark = "Présence du la clé SSH Prof" }
     )
 
     # Validate level IDs (avoid Moodle crash)

@@ -5,7 +5,7 @@
 # =====================================================================
 
 # LMS assignment ID where participation grades will be submitted
-$LMSAssignmentID = 8
+$LMSAssignmentID = 26
 
 # Enables verbose/debug output when set to $true
 $DEBUG = $false
