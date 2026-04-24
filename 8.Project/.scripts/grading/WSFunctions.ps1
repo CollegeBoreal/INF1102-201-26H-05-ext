@@ -5,7 +5,7 @@
 # =====================================================================
 
 # LMS assignment ID where participation grades will be submitted
-$LMSAssignmentID = 23
+$LMSAssignmentID = 30
 
 # Enables verbose/debug output when set to $true
 $DEBUG = $false
@@ -13,15 +13,15 @@ $DEBUG = $false
 # Explicit emoji → rubric level mapping for DB execution criterion
 # (Used when the emoji represents more than pass/fail)
 $EmojiToScore = @{
-    ":grey_question:" = 256
-    ":bangbang:" = 257
-    ":rocket:" = 284
-    ":receipt:" = 261
-    ":writing_hand:" = 259
-    ":zero:" = 262
-    ":one:" = 263
-    ":asterisk:" = 264
-    ":boom:" = 270
+    ":grey_question:" = 339
+    ":bangbang:" = 340
+    ":rocket:" = 341
+    ":receipt:" = 345
+    ":writing_hand:" = 343
+    ":zero:" = 346
+    ":one:" = 347
+    ":asterisk:" = 348
+    ":boom:" = 349
 }
 
 # =====================================================================
@@ -72,7 +72,7 @@ function Get-ParticipationGrades {
             # README.md quantity (fail/silver/gold)
             # ---------------------------------
             $readEmoji = ($cols[3]).Trim()
-            $levels = @(251, 252, 253)  # fail, silver, gold
+            $levels = @(334, 335, 336)  # fail, silver, gold
             $readScore = Get-RubricLevelIdFromReadmeEmoji `
                 -Emoji $readEmoji `
                 -Levels $levels
@@ -83,36 +83,39 @@ function Get-ParticipationGrades {
             $imgEmoji = ($cols[4]).Trim()
             $imgScore = Get-RubricLevelIdFromEmoji `
                 -Emoji $imgEmoji `
-                -FailLevelId 254 `
-                -PassLevelId 255
+                -FailLevelId 337 `
+                -PassLevelId 338
 
             # If README.md exceeds expectations,
             # images folder is implicitly considered present
-            if ($readScore -gt 253) {
-                $imgScore = 255
+            if ($readScore -gt 336) {
+                $imgScore = 338
             }
 
             # ---------------------------------
             # analyse.py execution
             # ---------------------------------
             $ioEmoji = ($cols[5]).Trim()
-            $ioScore = $EmojiToScore[$ioEmoji] ?? 256
+            $ioScore = $EmojiToScore[$ioEmoji] ?? 339
 
             # ---------------------------------
             # RAPPORT presence
             # ---------------------------------
-             if ($cols[6] -match '(:[^:]+:)') {
-                $receiptEmoji = $matches[1]
-                $receiptScore = $EmojiToScore[$receiptEmoji]  ?? 260
-            }
+            $receiptScore =
+                if ($cols[6] -match '(:[^:]+:)') {
+                    $EmojiToScore[$matches[1]]
+                }
+            $receiptScore = $receiptScore ?? 344
+
             
             # ---------------------------------
             # Signature presence
             # ---------------------------------
+            $sgnScore =
              if ($cols[7] -match '(:[^:]+:)') {
-                $sgnEmoji = $matches[1]
-                $sgnScore = $EmojiToScore[$sgnEmoji]  ?? 258
+                $EmojiToScore[$matches[1]]
             }
+            $sgnScore = $sgnScore ?? 342
 
             # ---------------------------------
             # Figure presence
@@ -132,8 +135,8 @@ function Get-ParticipationGrades {
                 $etuEmoji = $matches[1]
                 $etuScore = Get-RubricLevelIdFromEmoji `
                     -Emoji $etuEmoji `
-                    -FailLevelId 265 `
-                    -PassLevelId 266
+                    -FailLevelId 349 `
+                    -PassLevelId 350
             }
 
             # ---------------------------------
@@ -143,8 +146,8 @@ function Get-ParticipationGrades {
                 $resEmoji = $matches[1]
                 $resScore = Get-RubricLevelIdFromEmoji `
                     -Emoji $resEmoji `
-                    -FailLevelId 267 `
-                    -PassLevelId 268
+                    -FailLevelId 351 `
+                    -PassLevelId 352
             }
 
             # Debug trace for validation / troubleshooting
@@ -214,14 +217,14 @@ function New-LMSRubricFromEntry {
 
     # Construct rubric payload in LMS criterion order
     $rubric = @(
-        @{ criterionid = 109;  levelid = $Entry.readme;    remark = "Quantité README.md " }
-        @{ criterionid = 110;  levelid = $Entry.image;     remark = "présence répertoire images " }
-        @{ criterionid = 111;  levelid = $Entry.io;        remark = "Éxécution de IO.py" }
-        @{ criterionid = 113;  levelid = $Entry.rapport;   remark = "Présence Rapport Jupyter Notebook" }
-        @{ criterionid = 112;  levelid = $Entry.signature; remark = "Présence Signature" }
-        @{ criterionid = 114; levelid = $Entry.figure;     remark = "Nombre de Figures dans le rapport" }
-        @{ criterionid = 115; levelid = $Entry.etudiants;  remark = "Présence analyse.ps1" }
-        @{ criterionid = 116; levelid = $Entry.resultat;   remark = "Présence rapport.txt" }
+        @{ criterionid = 145;  levelid = $Entry.readme;    remark = "Quantité README.md " }
+        @{ criterionid = 146;  levelid = $Entry.image;     remark = "présence répertoire images " }
+        @{ criterionid = 147;  levelid = $Entry.io;        remark = "Éxécution de IO.py" }
+        @{ criterionid = 149;  levelid = $Entry.rapport;   remark = "Présence Rapport Jupyter Notebook" }
+        @{ criterionid = 148;  levelid = $Entry.signature; remark = "Présence Signature" }
+        @{ criterionid = 150; levelid = $Entry.figure;     remark = "Nombre de Figures dans le rapport" }
+        @{ criterionid = 151; levelid = $Entry.etudiants;  remark = "Présence analyse.ps1" }
+        @{ criterionid = 152; levelid = $Entry.resultat;   remark = "Présence rapport.txt" }
     )
 
     # Safety check: ensure all level IDs exist

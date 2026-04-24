@@ -52,7 +52,7 @@ function Get-StudentReport {
         }
         catch {
             $errorIcon = ":boom:"
-            return
+            return ":boom:"
         }
 
         # Count errors

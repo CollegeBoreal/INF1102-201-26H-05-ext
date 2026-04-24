@@ -1,0 +1,9 @@
+=== ESSENCE TORONTO ===
+Moyenne: 1.61
+Min: 1.58
+Max: 1.65
+
+=== BRENT ===
+Moyenne: 84.64
+Min: 82.4
+Max: 87.0
