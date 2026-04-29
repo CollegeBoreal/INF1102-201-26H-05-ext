@@ -2,17 +2,6 @@
 
 INF1102 (201) - Programmation de systèmes
 
-## :date: [Épreuves](.epreuves)
-
-| :hash:  | Date   | Épreuves                                           |
-|-------- |--------|:---------------------------------------------------|
-
-## 🧨 [Évaluations](.evaluations)
-
-| :hash:  | Date   | Evaluations                                        |
-|-------- |--------|:---------------------------------------------------|
-
-
 ## :one: [Devoirs](Devoirs)
 
 |  :hash: | Date  | Cours                              | 🎉 Participations                   | 🏁 Vérification |
