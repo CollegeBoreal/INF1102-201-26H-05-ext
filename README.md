@@ -15,6 +15,10 @@ INF1102 (201) - Programmation de systèmes
 
 ## :one: [Devoirs](Devoirs)
 
+```bash
+git remote set-url origin git@github.com:CollegeBoreal/INF1102-201-26H-05-ext.git
+```
+
 |  :hash: | Date  | Cours                              | 🎉 Participations                   | 🏁 Vérification |
 |---------|-------|:-----------------------------------|:------------------------------------|----------------|
 | :one:   | 02-Feb| [3.IaC](3.IaC)                     | [🎉 :1st_place_medal:](3.IaC/.scripts/Participation-group1.md) :curly_loop: [🎉 :2nd_place_medal:](3.IaC/.scripts/Participation-group2.md) | [🏁 :1st_place_medal:](3.IaC/.scripts/Check-group1.md) :curly_loop: [🏁 :2nd_place_medal:](3.IaC/.scripts/Check-group2.md) |
