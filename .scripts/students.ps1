@@ -7,11 +7,11 @@ $STUDENTS = @(
 
 
 # --------------------------------------
-# Division des étudiants en 2 groupes
+# Division des étudiants en 1 groupe
 # --------------------------------------
 
 $TOTAL = $STUDENTS.Count
-$GROUP_SIZE = [Math]::Ceiling($TOTAL / 2)
+$GROUP_SIZE = [Math]::Ceiling($TOTAL / 1)
 
 $GROUP_1 = $STUDENTS[0..($GROUP_SIZE - 1)]
 $GROUP_2 = $STUDENTS[($GROUP_SIZE)..($TOTAL - 1)]
