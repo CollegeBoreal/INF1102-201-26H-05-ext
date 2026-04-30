@@ -13,7 +13,7 @@ with open("data/sample.log", "r") as fichier:
 top_ips = Counter(ips).most_common(3)
 top_urls = Counter(urls).most_common(3)
 
-with open("output/rapport.txt", "w") as rapport:
+with open("rapport.txt", "w") as rapport:
     rapport.write("===== RAPPORT ANALYSE LOG =====\n\n")
 
     rapport.write("Top IP:\n")
