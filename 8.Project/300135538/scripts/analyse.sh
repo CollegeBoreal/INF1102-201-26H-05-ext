@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 analyse.py
+python3 scripts/analyse.py

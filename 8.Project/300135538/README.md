@@ -1,3 +1,8 @@
-# TP8
+# TP8 - Analyse de logs
 
-python analyse.py
+## Objectif
+Analyser un fichier log et générer un rapport.
+
+## Exécution
+```bash
+bash scripts/analyse.sh
