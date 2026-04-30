@@ -1,5 +1,2 @@
 #!/bin/bash
-
-echo "Analyse en cours..."
-python scripts/analyse.py
-echo "Terminé"
+python3 analyse.py ../data/sample.log > ../output/rapport.txt

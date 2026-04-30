@@ -3,7 +3,7 @@ from collections import Counter
 ips = []
 urls = []
 
-with open("data/sample.log", "r") as fichier:
+with open("../data/sample.log", "r") as fichier:
     for ligne in fichier:
         elements = ligne.split()
         if len(elements) >= 3:
@@ -13,7 +13,7 @@ with open("data/sample.log", "r") as fichier:
 top_ips = Counter(ips).most_common(3)
 top_urls = Counter(urls).most_common(3)
 
-with open("output/rapport.txt", "w") as rapport:
+with open("../output/rapport.txt", "w") as rapport:
     rapport.write("===== RAPPORT ANALYSE LOG =====\n\n")
 
     rapport.write("Top IP:\n")
@@ -24,4 +24,4 @@ with open("output/rapport.txt", "w") as rapport:
     for url, n in top_urls:
         rapport.write(f"{url}: {n}\n")
 
-print("Analyse terminée ✔")
+print("Analyse terminee")
