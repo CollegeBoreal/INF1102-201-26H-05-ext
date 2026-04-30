@@ -9,5 +9,4 @@
 # Errors -> $null (discarded)
 
 pwsh .scripts/participation.ps1 -Group 1 -Check > .scripts/Check-group1.md 2>$null
-pwsh .scripts/participation.ps1 -Group 2 -Check > .scripts/Check-group2.md 2>$null
 
