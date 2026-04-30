@@ -88,8 +88,8 @@ function Get-ParticipationGrades {
             $mainEmoji = ($cols[5]).Trim()
             $mainScore = Get-RubricLevelIdFromEmoji `
                 -Emoji $mainEmoji `
-                -FailLevelId 288 `
-                -PassLevelId 289
+                -FailLevelId 290 `
+                -PassLevelId 291
 
             # ---------------------------------
             # VM execution
