@@ -14,8 +14,6 @@ top_ips = Counter(ips).most_common(3)
 top_urls = Counter(urls).most_common(3)
 
 with open("rapport.txt", "w") as out:
-    out.write("===== RAPPORT ANALYSE LOG =====\n\n")
-
     out.write("Top IP:\n")
     for ip, count in top_ips:
         out.write(f"{ip}: {count}\n")
@@ -23,5 +21,3 @@ with open("rapport.txt", "w") as out:
     out.write("\nTop URLs:\n")
     for url, count in top_urls:
         out.write(f"{url}: {count}\n")
-
-print("Analyse terminée")

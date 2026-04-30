@@ -1,24 +1,8 @@
-\# Rapport TP8
+\# Rapport
 
 
 
-\## Objectif
+Analyse des logs effectuée avec Python.
 
-Analyser un fichier log.
-
-
-
-\## Résultat
-
-Le script génère rapport.txt avec :
-
-\- Top IP
-
-\- Top URLs
-
-
-
-\## Conclusion
-
-Le script fonctionne correctement.
+Résultat dans rapport.txt.
 
