@@ -1,3 +1,3 @@
-Write-Host "Lancement analyse..."
+Write-Host "Analyse en cours..."
 python scripts\analyse.py
-Write-Host "Analyse terminée"
+Write-Host "Analyse terminee"

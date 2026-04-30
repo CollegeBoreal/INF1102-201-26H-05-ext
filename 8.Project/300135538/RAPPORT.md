@@ -10,21 +10,17 @@ Analyser un fichier log avec Python.
 
 \## Méthode
 
-\- Lecture du fichier log
-
-\- Analyse des IP
-
-\- Analyse des URLs
+Le script lit le fichier data/sample.log, compte les IP et les URLs les plus fréquentes, puis génère output/rapport.txt.
 
 
 
-\## Résultats
+\## Résultat
 
-Voir rapport.txt
+Voir output/rapport.txt.
 
 
 
 \## Conclusion
 
-Le script fonctionne correctement et génère un rapport automatique.
+Le script fonctionne correctement.
 

@@ -20,21 +20,15 @@ Analyser un fichier log avec Python et PowerShell.
 
 \- RAPPORT.md
 
+\- analyse.ps1
+
 
 
 \## Exécution
 
-python scripts/analyse.py
 
 
+```powershell
 
-\## Résultat
-
-Le fichier output/rapport.txt contient les résultats.
-
-
-
-\## Auteur
-
-300135538
+python scripts\\analyse.py
 
