@@ -1,34 +1,7 @@
-\# TP8 - Analyse de logs
+# TP8
 
+Analyse de logs avec Python.
 
-
-\## Objectif
-
-Analyser un fichier log avec Python et PowerShell.
-
-
-
-\## Structure
-
-\- scripts/
-
-\- data/
-
-\- output/
-
-\- images/
-
-\- RAPPORT.md
-
-\- analyse.ps1
-
-
-
-\## Exécution
-
-
-
-```powershell
-
-python scripts\\analyse.py
+Commande :
+python analyse.py
 

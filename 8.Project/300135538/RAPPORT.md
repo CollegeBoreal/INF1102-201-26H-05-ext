@@ -4,19 +4,17 @@
 
 \## Objectif
 
-Analyser un fichier log avec Python.
-
-
-
-\## Méthode
-
-Le script lit le fichier data/sample.log, compte les IP et les URLs les plus fréquentes, puis génère output/rapport.txt.
+Analyser un fichier log.
 
 
 
 \## Résultat
 
-Voir output/rapport.txt.
+Le script génère rapport.txt avec :
+
+\- Top IP
+
+\- Top URLs
 
 
 
