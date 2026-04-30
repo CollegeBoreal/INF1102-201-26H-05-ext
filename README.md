@@ -11,7 +11,7 @@ INF1102 (201) - Programmation de systèmes
 | :three:  | 23-Feb| [5.BATCH](5.BATCH)                 | [🎉 :1st_place_medal:](5.BATCH/.scripts/Participation-group1.md) | [🏁 :1st_place_medal:](5.BATCH/.scripts/Check-group1.md)  |
 | :four:  | 16-Mar| [6.PWSH](6.PWSH)                   | [🎉 :1st_place_medal:](6.PWSH/.scripts/Participation-group1.md) | [🏁 :1st_place_medal:](6.PWSH/.scripts/Check-group1.md)  |
 | :five:  | 23-Mar| [7.REGEX](7.REGEX)                   | [🎉 :1st_place_medal:](7.REGEX/.scripts/Participation-group1.md) | [🏁 :1st_place_medal:](7.REGEX/.scripts/Check-group1.md) |
-| :five:  |  7-Avr| [8.Project](8.Project)                   | [🎉 :1st_place_medal:](8.Project/.scripts/Participation-group1.md) :curly_loop: [🎉 :2nd_place_medal:](8.Project/.scripts/Participation-group2.md) |
+| :five:  |  7-Avr| [8.Project](8.Project)                   | [🎉 :1st_place_medal:](8.Project/.scripts/Participation-group1.md) |
 | :six:  |   15-Avr| [9.Ansible](9.Ansible)                   | [🎉 :1st_place_medal:](9.Ansible/.scripts/Participation-group1.md)  |  [🏁 :1st_place_medal:](9.Ansible/.scripts/Check-group1.md) | 
 
 
