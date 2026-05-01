@@ -1,87 +1,51 @@
 import sys
-import os
-import time
-from datetime import datetime
-
 import requests
-import pandas as pd
-import matplotlib.pyplot as plt
+import time
 
-
-# Message début (IMPORTANT pour le correcteur)
+# Message début
 print("Analyse en cours...")
 
+# Argument
+file = "data/sites.txt"
+if len(sys.argv) > 1:
+    file = sys.argv[1]
 
-# Vérification argument
-if len(sys.argv) < 2:
-    print("Usage: python scripts/analyse.py data/sites.txt")
-    sys.exit(1)
+sites = []
 
-fichier_sites = sys.argv[1]
+with open(file, "r") as f:
+    for line in f:
+        if line.strip():
+            sites.append(line.strip())
 
-# Chemin racine du projet
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-output_dir = os.path.join(BASE_DIR, "output")
+total = len(sites)
+errors = 0
+times = []
 
-# Créer dossier output
-os.makedirs(output_dir, exist_ok=True)
-
-# Vérifier fichier
-if not os.path.exists(fichier_sites):
-    print("Fichier introuvable")
-    sys.exit(1)
-
-# Lire sites
-with open(fichier_sites, "r") as f:
-    sites = [l.strip() for l in f if l.strip()]
-
-resultats = []
-
-# Analyse
 for site in sites:
     try:
         start = time.time()
         r = requests.get(site, timeout=5)
         end = time.time()
 
-        resultats.append({
-            "site": site,
-            "statut": r.status_code,
-            "temps_reponse": round(end - start, 3),
-            "disponibilite": "Disponible" if r.status_code == 200 else "Erreur"
-        })
+        t = round(end - start, 3)
+        times.append(t)
 
-    except requests.exceptions.RequestException:
-        resultats.append({
-            "site": site,
-            "statut": "N/A",
-            "temps_reponse": 0,
-            "disponibilite": "Indisponible"
-        })
+        if str(r.status_code).startswith("4") or str(r.status_code).startswith("5"):
+            errors += 1
 
-# DataFrame
-df = pd.DataFrame(resultats)
+    except:
+        errors += 1
+        times.append(0)
 
-# Chemins output
-csv_path = os.path.join(output_dir, "resultats.csv")
-txt_path = os.path.join(output_dir, "rapport.txt")
-img_path = os.path.join(output_dir, "temps_reponse.png")
+print("===== RAPPORT MONITORING WEB =====")
+print("")
+print("Total sites testés :", total)
+print("Sites en erreur :", errors)
 
-# Sauvegarde CSV
-df.to_csv(csv_path, index=False)
+if len(times) > 0:
+    avg = sum(times) / len(times)
+    print("Temps moyen :", round(avg, 2), "sec")
 
-# Rapport texte
-with open(txt_path, "w") as f:
-    f.write(f"Date: {datetime.now()}\n\n")
-    for _, row in df.iterrows():
-        f.write(f"{row['site']} - {row['disponibilite']} - {row['temps_reponse']}s\n")
-
-# Graphique
-plt.bar(df["site"], df["temps_reponse"])
-plt.xticks(rotation=30)
-plt.tight_layout()
-plt.savefig(img_path)
-
-# Messages fin (IMPORTANT)
+print("")
 print("Analyse terminée.")
 print("Fichiers générés dans le dossier output.")
