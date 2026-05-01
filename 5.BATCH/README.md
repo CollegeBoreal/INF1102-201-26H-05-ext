@@ -3,8 +3,6 @@
 | #️⃣ | Participations | Vérifications |
 |-|-|-| 
 | 🥇 | [:tada: Participation](.scripts/Participation-group1.md) | [:checkered_flag: Vérification](.scripts/Check-group1.md) |
-| 🥈 | [:tada: Participation](.scripts/Participation-group2.md) | [:checkered_flag: Vérification](.scripts/Check-group2.md) |
-
 
 ## 🎯 Objectif
 
