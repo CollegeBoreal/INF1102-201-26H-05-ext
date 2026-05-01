@@ -1,6 +1,6 @@
 site,statut,temps_reponse,disponibilite
-https://google.com,200,0.58,Disponible
-https://wikipedia.org,403,0.354,Erreur
-https://github.com,200,0.481,Disponible
-https://openai.com,200,0.396,Disponible
-https://python.org,200,0.547,Disponible
+https://google.com,200,0.839,Disponible
+https://wikipedia.org,403,0,Erreur HTTP
+https://github.com,200,0.394,Disponible
+https://openai.com,403,0,Erreur HTTP
+https://python.org,200,0.553,Disponible

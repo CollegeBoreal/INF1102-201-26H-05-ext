@@ -1,7 +1,28 @@
-Date: 2026-05-01 16:17:20.121980
+===== RAPPORT MONITORING WEB =====
+Date : 2026-05-01 16:33:31.601030
 
-https://google.com - Disponible - 0.58s
-https://wikipedia.org - Erreur - 0.354s
-https://github.com - Disponible - 0.481s
-https://openai.com - Disponible - 0.396s
-https://python.org - Disponible - 0.547s
+Site : https://google.com
+Statut : 200
+Temps de reponse : 0.839 sec
+Disponibilite : Disponible
+-----------------------------
+Site : https://wikipedia.org
+Statut : 403
+Temps de reponse : 0 sec
+Disponibilite : Erreur HTTP
+-----------------------------
+Site : https://github.com
+Statut : 200
+Temps de reponse : 0.394 sec
+Disponibilite : Disponible
+-----------------------------
+Site : https://openai.com
+Statut : 403
+Temps de reponse : 0 sec
+Disponibilite : Erreur HTTP
+-----------------------------
+Site : https://python.org
+Statut : 200
+Temps de reponse : 0.553 sec
+Disponibilite : Disponible
+-----------------------------
