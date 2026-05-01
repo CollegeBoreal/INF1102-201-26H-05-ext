@@ -1,32 +1,73 @@
-from pathlib import Path
-from collections import Counter
+import sys
+import requests
+import time
+import pandas as pd
+import matplotlib.pyplot as plt
+from datetime import datetime
 
-base = Path(__file__).resolve().parent.parent
+# Vérification argument
+if len(sys.argv) < 2:
+    print("Erreur : fichier sites manquant")
+    sys.exit(1)
 
-log_file = base / "data" / "sample.log"
-rapport_file = base / "output" / "rapport.txt"
+fichier_sites = sys.argv[1]
 
-ips = []
-urls = []
+resultats = []
 
-with open(log_file, "r", encoding="utf-8") as fichier:
-    for ligne in fichier:
-        elements = ligne.split()
-        if len(elements) >= 3:
-            ips.append(elements[0])
-            urls.append(elements[-1].replace('"', ""))
+# Lire les sites
+with open(fichier_sites, "r") as f:
+    sites = [ligne.strip() for ligne in f if ligne.strip()]
 
-top_ips = Counter(ips).most_common(3)
-top_urls = Counter(urls).most_common(3)
+print("Analyse en cours...")
 
-with open(rapport_file, "w", encoding="utf-8") as rapport:
-    rapport.write("===== RAPPORT ANALYSE LOG =====\n\n")
-    rapport.write("Top IP:\n")
-    for ip, n in top_ips:
-        rapport.write(f"{ip}: {n}\n")
+# Tester chaque site
+for site in sites:
+    try:
+        start = time.time()
+        response = requests.get(site, timeout=5)
+        end = time.time()
 
-    rapport.write("\nTop URLs:\n")
-    for url, n in top_urls:
-        rapport.write(f"{url}: {n}\n")
+        temps = round(end - start, 3)
+        statut = response.status_code
 
-print("Analyse terminee")
+        dispo = "Disponible" if statut == 200 else "Erreur"
+
+    except:
+        temps = 0
+        statut = "N/A"
+        dispo = "Indisponible"
+
+    resultats.append({
+        "site": site,
+        "statut": statut,
+        "temps_reponse": temps,
+        "disponibilite": dispo
+    })
+
+# DataFrame
+df = pd.DataFrame(resultats)
+
+# Sauvegarde CSV
+df.to_csv("../output/resultats.csv", index=False)
+
+# Rapport texte
+with open("../output/rapport.txt", "w", encoding="utf-8") as f:
+    f.write("=== Rapport Monitoring Web ===\n")
+    f.write(f"Date : {datetime.now()}\n\n")
+
+    for _, row in df.iterrows():
+        f.write(f"Site : {row['site']}\n")
+        f.write(f"Statut : {row['statut']}\n")
+        f.write(f"Temps : {row['temps_reponse']} s\n")
+        f.write(f"Disponibilité : {row['disponibilite']}\n")
+        f.write("-----------------------------\n")
+
+# Graphique
+plt.figure()
+plt.bar(df["site"], df["temps_reponse"])
+plt.xticks(rotation=30)
+plt.title("Temps de réponse des sites")
+plt.tight_layout()
+plt.savefig("../output/temps_reponse.png")
+
+print("Rapport généré dans /output")
