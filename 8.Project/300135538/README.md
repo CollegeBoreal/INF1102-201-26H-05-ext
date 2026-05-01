@@ -94,26 +94,58 @@ https://error.com
 ```powershell
 .\scripts\analyse.ps1
 
-➡️ Lance automatiquement le script Python
+# 🌐 Projet Monitoring Web
 
-3️⃣ Script Python
+## 🎯 Objectif
+
+Ce projet permet de surveiller la disponibilité de plusieurs sites web et de mesurer leur temps de réponse.
+
+L’analyse est réalisée avec Python et automatisée avec PowerShell.
+
+---
+
+## ⚙️ Fonctionnement
+
+Le projet suit les étapes suivantes :
+
+1. Lecture d’une liste de sites web (`data/sites.txt`)
+2. Analyse de chaque site (statut + temps de réponse)
+3. Génération des résultats dans le dossier `output`
+
+---
+
+## 📁 Structure du projet
+
+
+300135538/
+├── data/
+│ └── sites.txt
+├── scripts/
+│ ├── analyse.ps1
+│ └── analyse.py
+├── output/
+│ ├── rapport.txt
+│ ├── resultats.csv
+│ └── temps_reponse.png
+├── images/
+├── RAPPORT.ipynb
+└── README.md
+
+
+---
+
+## 🚀 Exécution
+
+### ▶️ PowerShell
+
+```powershell
+.\scripts\analyse.ps1
+▶️ Python
 python scripts/analyse.py data/sites.txt
-
-➡️ Analyse les sites
-➡️ Génère les fichiers output
-
-🧪 Test du script
-
-Exécution :
-
-python scripts/analyse.py data/sites.txt
-
-Résultat attendu :
-
-Analyse en cours...
-Analyse terminée.
-Fichiers générés dans le dossier output.
 📊 Résultats
+
+Après exécution, les fichiers suivants sont générés :
+
 📄 Rapport texte
 
 output/rapport.txt
@@ -122,28 +154,28 @@ Contient :
 
 liste des sites
 statut HTTP
+disponibilité
 temps de réponse
+📊 Données CSV
+
+output/resultats.csv
+
+Permet d’exploiter les résultats sous forme de tableau.
+
 📈 Graphique
 
 output/temps_reponse.png
 
-➡️ Visualisation des temps de réponse
+Visualisation des temps de réponse des sites.
 
-📊 CSV
+🖼️ Exemple de résultat
 
-output/resultats.csv
+📓 Rapport Jupyter
 
-➡️ Données exploitables
+Le fichier RAPPORT.ipynb contient une présentation du projet et des résultats obtenus.
 
-🖼️ Captures
 
-Ajoute ici tes images :
 
-images/
-   ├── execution.png
-   ├── graphique.png
-
-Exemple :
 
 👤 Auteur
 Étudiant : 300135538
