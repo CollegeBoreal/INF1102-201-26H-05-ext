@@ -59,33 +59,73 @@ for site in sites:
         "disponibilite": disponibilite
     })
 
-# Création du DataFrame
+import sys
+import os
+import time
+from datetime import datetime
+
+import requests
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+if len(sys.argv) < 2:
+    print("Usage: python scripts/analyse.py data/sites.txt")
+    sys.exit(1)
+
+fichier_sites = sys.argv[1]
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+output_dir = os.path.join(BASE_DIR, "output")
+
+os.makedirs(output_dir, exist_ok=True)
+
+if not os.path.exists(fichier_sites):
+    print("Fichier introuvable")
+    sys.exit(1)
+
+with open(fichier_sites, "r") as f:
+    sites = [l.strip() for l in f if l.strip()]
+
+resultats = []
+
+for site in sites:
+    try:
+        start = time.time()
+        r = requests.get(site, timeout=5)
+        end = time.time()
+
+        resultats.append({
+            "site": site,
+            "statut": r.status_code,
+            "temps_reponse": round(end - start, 3),
+            "disponibilite": "Disponible" if r.status_code == 200 else "Erreur"
+        })
+
+    except requests.exceptions.RequestException:
+        resultats.append({
+            "site": site,
+            "statut": "N/A",
+            "temps_reponse": 0,
+            "disponibilite": "Indisponible"
+        })
+
 df = pd.DataFrame(resultats)
 
-# Sauvegarde CSV
-df.to_csv("output/resultats.csv", index=False, encoding="utf-8")
+csv_path = os.path.join(output_dir, "resultats.csv")
+txt_path = os.path.join(output_dir, "rapport.txt")
+img_path = os.path.join(output_dir, "temps_reponse.png")
 
-# Génération du rapport texte
-with open("output/rapport.txt", "w", encoding="utf-8") as rapport:
-    rapport.write("=== Rapport Monitoring Web ===\n")
-    rapport.write(f"Date d'analyse : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
+df.to_csv(csv_path, index=False)
 
-    for _, ligne in df.iterrows():
-        rapport.write(f"Site : {ligne['site']}\n")
-        rapport.write(f"Statut HTTP : {ligne['statut']}\n")
-        rapport.write(f"Temps de réponse : {ligne['temps_reponse']} seconde(s)\n")
-        rapport.write(f"Disponibilité : {ligne['disponibilite']}\n")
-        rapport.write("-----------------------------\n")
+with open(txt_path, "w") as f:
+    f.write(f"Date: {datetime.now()}\n\n")
+    for _, row in df.iterrows():
+        f.write(f"{row['site']} - {row['disponibilite']} - {row['temps_reponse']}s\n")
 
-# Génération du graphique
-plt.figure(figsize=(10, 5))
 plt.bar(df["site"], df["temps_reponse"])
-plt.xlabel("Sites web")
-plt.ylabel("Temps de réponse (secondes)")
-plt.title("Temps de réponse des sites web")
-plt.xticks(rotation=30, ha="right")
+plt.xticks(rotation=30)
 plt.tight_layout()
-plt.savefig("output/temps_reponse.png")
+plt.savefig(img_path)
 
-print("Analyse terminée.")
-print("Fichiers générés dans le dossier output.")
+print("OK")
