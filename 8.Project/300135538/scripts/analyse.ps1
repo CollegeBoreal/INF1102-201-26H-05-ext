@@ -1,11 +1,9 @@
 Write-Host "=== Monitoring des sites web ==="
 
-# Vérifier dossier output
-if (!(Test-Path "../output")) {
-    New-Item -ItemType Directory -Path "../output"
-}
+# Aller dans le bon dossier
+Set-Location $PSScriptRoot
 
-# Lancer Python
-python ../scripts/analyse.py ../data/sites.txt
+# Lancer le script Python avec le bon chemin
+python analyse.py ../data/sites.txt
 
 Write-Host "=== Analyse terminée ==="
