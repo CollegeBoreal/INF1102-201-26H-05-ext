@@ -81,6 +81,10 @@ Visualisation des temps de réponse des sites analysés.
 
 Voici le graphique généré par le script :
 
+## 📊 Graphique
+
+![Graphique](images/temps_reponse.png)
+
 📓 Rapport Jupyter
 
 Le fichier RAPPORT.ipynb contient une présentation du projet et des résultats obtenus.
