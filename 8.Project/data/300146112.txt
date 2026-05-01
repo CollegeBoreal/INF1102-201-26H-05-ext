@@ -1,3 +1,0 @@
-INFO démarrage
-ERROR test
-INFO fin

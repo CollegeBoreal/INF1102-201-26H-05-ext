@@ -1,5 +1,0 @@
-=== RAPPORT METEO ===
-
-Dernière mesure:
-Température: 2.03 °C
-Humidité: 93 %
