@@ -128,4 +128,5 @@ plt.xticks(rotation=30)
 plt.tight_layout()
 plt.savefig(img_path)
 
-print("OK")
+print("Analyse terminée.")
+print("Fichiers générés dans le dossier output.")
