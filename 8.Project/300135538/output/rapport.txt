@@ -1,9 +1,9 @@
 ===== RAPPORT MONITORING WEB =====
-Date : 2026-05-01 16:33:31.601030
+Date : 2026-05-01 20:34:36.772182
 
 Site : https://google.com
 Statut : 200
-Temps de reponse : 0.839 sec
+Temps de reponse : 0.504 sec
 Disponibilite : Disponible
 -----------------------------
 Site : https://wikipedia.org
@@ -13,7 +13,7 @@ Disponibilite : Erreur HTTP
 -----------------------------
 Site : https://github.com
 Statut : 200
-Temps de reponse : 0.394 sec
+Temps de reponse : 0.172 sec
 Disponibilite : Disponible
 -----------------------------
 Site : https://openai.com
@@ -23,6 +23,6 @@ Disponibilite : Erreur HTTP
 -----------------------------
 Site : https://python.org
 Statut : 200
-Temps de reponse : 0.553 sec
+Temps de reponse : 0.09 sec
 Disponibilite : Disponible
 -----------------------------
