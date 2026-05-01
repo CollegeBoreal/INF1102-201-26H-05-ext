@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 # Vérification de l'argument
 if len(sys.argv) < 2:
     print("Erreur : veuillez fournir le fichier contenant les sites.")
-    print("Exemple : python analyse.py ../data/sites.txt")
+    print("Exemple : python scripts/analyse.py data/sites.txt")
     sys.exit(1)
 
 fichier_sites = sys.argv[1]
@@ -21,8 +21,8 @@ if not os.path.exists(fichier_sites):
     print(f"Erreur : le fichier {fichier_sites} est introuvable.")
     sys.exit(1)
 
-# Créer le dossier output si nécessaire
-os.makedirs("../output", exist_ok=True)
+# Créer le dossier output (à la racine du projet)
+os.makedirs("output", exist_ok=True)
 
 resultats = []
 
@@ -59,14 +59,14 @@ for site in sites:
         "disponibilite": disponibilite
     })
 
-# Création du tableau de résultats
+# Création du DataFrame
 df = pd.DataFrame(resultats)
 
-# Sauvegarde des résultats en CSV
-df.to_csv("../output/resultats.csv", index=False, encoding="utf-8")
+# Sauvegarde CSV
+df.to_csv("output/resultats.csv", index=False, encoding="utf-8")
 
 # Génération du rapport texte
-with open("../output/rapport.txt", "w", encoding="utf-8") as rapport:
+with open("output/rapport.txt", "w", encoding="utf-8") as rapport:
     rapport.write("=== Rapport Monitoring Web ===\n")
     rapport.write(f"Date d'analyse : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
 
@@ -85,7 +85,7 @@ plt.ylabel("Temps de réponse (secondes)")
 plt.title("Temps de réponse des sites web")
 plt.xticks(rotation=30, ha="right")
 plt.tight_layout()
-plt.savefig("../output/temps_reponse.png")
+plt.savefig("output/temps_reponse.png")
 
 print("Analyse terminée.")
 print("Fichiers générés dans le dossier output.")
