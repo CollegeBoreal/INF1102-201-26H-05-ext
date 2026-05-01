@@ -1,4 +1,7 @@
 #!/usr/bin/env pwsh
+param(
+    [switch]$Quiet
+)
 
 $dirs = @(
     "3.IaC",
@@ -10,12 +13,17 @@ $dirs = @(
     "9.Ansible"
 )
 
-
 foreach ($dir in $dirs) {
     Write-Output "=> $dir"
+
     Push-Location $dir
     try {
-        ./.scripts/grading/push_grades.ps1
+        if ($Quiet) {
+            ./.scripts/grading/push_grades.ps1 *> $null
+        }
+        else {
+            ./.scripts/grading/push_grades.ps1
+        }
     }
     finally {
         Pop-Location
