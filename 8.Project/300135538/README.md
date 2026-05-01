@@ -170,6 +170,10 @@ Visualisation des temps de réponse des sites.
 
 🖼️ Exemple de résultat
 
+### 📈 Graphique des temps de réponse
+
+![Graphique](images/temps_reponse.png)
+
 📓 Rapport Jupyter
 
 Le fichier RAPPORT.ipynb contient une présentation du projet et des résultats obtenus.
