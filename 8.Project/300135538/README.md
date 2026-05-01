@@ -83,7 +83,7 @@ Voici le graphique généré par le script :
 
 ## 📊 Graphique
 
-![Graphique](300135538/images/temps_reponse.png)
+![Graphique](images/temps_reponse.png)
 
 📓 Rapport Jupyter
 
