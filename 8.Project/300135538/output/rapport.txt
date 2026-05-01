@@ -1,28 +1,28 @@
 === Rapport Monitoring Web ===
-Date d'analyse : 2026-05-01 15:46:21
+Date d'analyse : 2026-05-01 16:09:09
 
 Site : https://google.com
 Statut HTTP : 200
-Temps de réponse : 0.663 seconde(s)
+Temps de réponse : 0.645 seconde(s)
 Disponibilité : Disponible
 -----------------------------
 Site : https://wikipedia.org
 Statut HTTP : 403
-Temps de réponse : 0.331 seconde(s)
+Temps de réponse : 0.319 seconde(s)
 Disponibilité : Erreur HTTP
 -----------------------------
 Site : https://github.com
 Statut HTTP : 200
-Temps de réponse : 0.362 seconde(s)
+Temps de réponse : 0.379 seconde(s)
 Disponibilité : Disponible
 -----------------------------
 Site : https://openai.com
 Statut HTTP : 200
-Temps de réponse : 0.403 seconde(s)
+Temps de réponse : 0.342 seconde(s)
 Disponibilité : Disponible
 -----------------------------
 Site : https://python.org
 Statut HTTP : 200
-Temps de réponse : 0.569 seconde(s)
+Temps de réponse : 1.403 seconde(s)
 Disponibilité : Disponible
 -----------------------------
