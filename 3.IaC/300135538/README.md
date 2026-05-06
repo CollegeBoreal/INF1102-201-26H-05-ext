@@ -1,6 +1,6 @@
 
 
-<image src=images/VM.png width='50%' height='50%' /?
+<image src=images/VM.png width='50%' height='50%' />
 
 
 ```
