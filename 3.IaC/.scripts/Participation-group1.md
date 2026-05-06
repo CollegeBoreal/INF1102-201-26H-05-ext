@@ -30,5 +30,5 @@
 
 |:hash:| Boréal :id:                | README.md | images | main.tf | :link: IP |
 |------|----------------------------|-----------|--------|---------|------------|
-| 0 | [300135538](../300135538/README.md) [<image src='https://avatars0.githubusercontent.com/u/133056385?s=460&v=4' width=20 height=20></image>](https://github.com/RedaYousfi) | :2nd_place_medal: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.224 |
+| 0 | [300135538](../300135538/README.md) [<image src='https://avatars0.githubusercontent.com/u/133056385?s=460&v=4' width=20 height=20></image>](https://github.com/RedaYousfi) | :1st_place_medal: | :heavy_check_mark: | :heavy_check_mark: | 10.7.237.224 |
 | :abacus: | \$\\frac{1}{1}\$ = 100% | \$\displaystyle\sum_{i=1}^{1} s_i\$ = 1 |
