@@ -46,8 +46,7 @@ Le script permet :
     └── images/
         ├── type.png
         └── script.png
-
-``` id="w4y0q1"
+```
 
 # 📸 Captures d’écran
 
