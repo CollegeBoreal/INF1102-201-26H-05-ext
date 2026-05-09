@@ -46,3 +46,14 @@ Le script permet :
     └── images/
         ├── type.png
         └── script.png
+# 📸 Captures d’écran
+
+## Préparation de l’environnement
+
+![Préparation](./images/type.png)
+
+---
+
+## Contenu du script Batch
+
+![Script](./images/script.png)
