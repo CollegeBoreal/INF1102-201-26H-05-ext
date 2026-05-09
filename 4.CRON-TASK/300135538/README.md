@@ -158,6 +158,7 @@ Cette commande permet de vérifier que le service cron fonctionne correctement.
 ### Structure du projet
 
 ![Structure](images/structure.png)
+
 ### Contenu du script
 
 ![Contenu Script](images/contenu-script.png)
