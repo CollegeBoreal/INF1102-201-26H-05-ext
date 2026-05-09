@@ -1,0 +1,11 @@
+systemctl restart pveproxy
+
+systemctl restart pvedaemon
+
+systemctl status pveproxy
+
+systemctl status pvedaemon
+
+systemctl list-units --type=service | grep pve
+
+journalctl -u pveproxy -f

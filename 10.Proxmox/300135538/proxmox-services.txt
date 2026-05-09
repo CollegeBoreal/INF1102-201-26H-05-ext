@@ -1,0 +1,8 @@
+pve-cluster
+pvedaemon
+pveproxy
+pvestatd
+pve-firewall
+qemu-server
+lxc
+corosync
