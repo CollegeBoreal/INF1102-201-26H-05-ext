@@ -26,16 +26,35 @@ Ce laboratoire permet de pratiquer PowerShell afin de :
 ---
 
 # 📁 Structure du projet
+---
 
-```text
-6.PWSH/
-└── 300135538/
-    ├── README.md
-    ├── devops_batch.ps1
-    └── images/
-        ├── cpu.png
-        ├── memoire.png
-        ├── powershell-version.png
-        ├── script.png
-        └── structure.png
+# 📸 Captures d’écran
+
+## Version PowerShell
+
+![PowerShell](./images/powershell-version.png)
+
+---
+
+## Analyse CPU
+
+![CPU](./images/cpu.png)
+
+---
+
+## Analyse mémoire
+
+![Mémoire](./images/memoire.png)
+
+---
+
+## Contenu du script
+
+![Script](./images/script.png)
+
+---
+
+## Structure du projet
+
+![Structure](./images/structure.png)
 ```
