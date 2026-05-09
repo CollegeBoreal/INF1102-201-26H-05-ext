@@ -155,25 +155,17 @@ Cette commande permet de vérifier que le service cron fonctionne correctement.
 
 # 📸 Captures d’écran
 
-## Script Shell
+### Structure du projet
 
-Ajouter ici les captures du script.
+![Structure](images/structure.png)
+### Contenu du script
 
-```md
+![Contenu Script](images/contenu-script.png)
+
+
+### Script Shell
+
 ![Script](images/script.png)
-```
-
-## Cron
-
-```md
-![Cron](images/cron.png)
-```
-
-## Service Cron
-
-```md
-![Service Cron](images/service_cron.png)
-```
 
 ---
 
