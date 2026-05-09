@@ -1,68 +1,266 @@
 # Linux — Gestionnaire de tâches & Observateur d’évènements
 
-## 👤 Informations étudiant
-
-| Champ   | Détails                   |
-| ------- | ------------------------- |
-| Nom     | Mohamed Reda El Youssoufi |
-| Cours   | Programmation de systèmes |
-| Travail | CRON-TASK                 |
-
----
-
-# 🔍 Scruter les logs Nginx et détecter les IP des visiteurs
+| #️⃣ | Participations | Vérifications |
+|-|-|-| 
+| 🥇 | [:tada: Participation](.scripts/Participation-group1.md) | [:checkered_flag: Vérification](.scripts/Check-group1.md) |
+| 🥈 | [:tada: Participation](.scripts/Participation-group2.md) | [:checkered_flag: Vérification](.scripts/Check-group2.md) |
 
 ## 🎯 Objectif
 
-Ce travail consiste à analyser les logs Nginx afin d’extraire automatiquement les adresses IP des visiteurs d’un site web.
-
-Le script doit :
-
-* Lire le fichier `access.log`
-* Extraire les adresses IP
-* Supprimer les doublons
-* Sauvegarder les résultats dans un fichier texte
-* Automatiser l’exécution avec `cron`
+Surveiller le système **en temps réel** et **analyser les pannes après coup**.
 
 ---
 
-# 📁 Structure du projet
+**CRON** est un service des systèmes Unix/Linux qui permet de **planifier l’exécution automatique de tâches** à des dates et heures précises.
 
-```text
-4.CRON-TASK/
-│
-├── images/
-├── scruter_nginx.sh
-└── README.md
+Le nom vient du mot grec **"chronos"** (temps).
+
+---
+
+## 🔎 À quoi sert CRON ?
+
+CRON permet d’exécuter automatiquement :
+
+* des scripts
+* des sauvegardes
+* des mises à jour
+* des tâches de maintenance
+* des commandes système
+
+Par exemple :
+
+* Tous les jours à 2h → sauvegarde
+* Toutes les 5 minutes → vérification d’un service
+* Chaque lundi → génération d’un rapport
+
+---
+
+## ⚙️ Comment ça fonctionne ?
+
+Le service principal s’appelle :
+
+* cron
+
+Les tâches planifiées sont définies dans un fichier appelé :
+
+* **crontab** (cron table)
+
+---
+
+## 🧱 Structure d’une ligne CRON
+
+```
+* * * * * commande
+| | | | |
+| | | | └── Jour de la semaine (0-7)
+| | | └──── Mois (1-12)
+| | └────── Jour du mois (1-31)
+| └──────── Heure (0-23)
+└────────── Minute (0-59)
 ```
 
 ---
 
-# 📄 Logs Nginx
+## 📌 Exemple
 
-Le fichier principal utilisé est :
+Exécuter un script tous les jours à 3h15 :
+
+```
+15 3 * * * /home/user/backup.sh
+```
+
+Exécuter une commande toutes les 5 minutes :
+
+```
+*/5 * * * * /usr/bin/php /var/www/html/cron.php
+```
+
+---
+
+## 🔧 Commandes utiles
+
+Afficher les tâches planifiées :
+
+```
+crontab -l
+```
+
+Modifier les tâches :
+
+```
+crontab -e
+```
+
+---
+
+
+## 1️⃣ Gestionnaire de tâches (temps réel)
+
+### 🔹 Processus
+
+```bash
+top        # basique
+htop       # recommandé
+ps aux     # liste complète
+```
+
+### 🔹 Actions
+
+```bash
+kill PID
+kill -9 PID
+```
+
+### 🔹 Ressources
+
+```bash
+uptime     # charge système
+free -h    # mémoire
+df -h      # disque
+```
+
+---
+
+## 2️⃣ Observateur d’évènements (logs)
+
+📂 Logs système :
+
+```bash
+/var/log/syslog
+/var/log/auth.log
+```
+
+📂 Logs noyau :
+
+```bash
+dmesg
+```
+
+📂 Logs services :
+
+```bash
+journalctl
+journalctl -u nginx
+journalctl -xe
+```
+
+---
+
+## 3️⃣ Services systemd
+
+```bash
+systemctl status nginx
+systemctl restart nginx
+```
+
+---
+
+## 4️⃣ Méthode de dépannage
+
+| Étape            | Outil                    |
+| ---------------- | ------------------------ |
+| Observer         | `top`, `htop`            |
+| Vérifier service | `systemctl status`       |
+| Analyser cause   | `journalctl`, `/var/log` |
+| Corriger         | config / restart         |
+
+---
+
+## 5️⃣ Équivalences Windows → Linux
+
+| Windows                  | Linux                    |
+| ------------------------ | ------------------------ |
+| Gestionnaire de tâches   | `top`, `htop`            |
+| Observateur d’évènements | `journalctl`, `/var/log` |
+
+---
+
+## 🔑 À retenir
+
+* **Temps réel** = performance
+* **Logs** = diagnostic
+* Toujours utiliser **les deux ensemble**
+
+
+# Exercice : Scruter les logs Nginx et détecter les IP des visiteurs
+
+## 1️⃣ 👁️ Big Brother
+
+Nginx, serveur web très populaire, enregistre toutes les requêtes dans des **fichiers de logs**. Il existe principalement deux types de logs :
+
+* **access.log** : contient toutes les requêtes reçues (pages visitées, adresses IP, statut HTTP…).
+* **error.log** : contient les erreurs du serveur.
+
+**Objectif de l'exercice :**
+
+* Extraire toutes les **adresses IP** qui visitent le site.
+* Stocker ces IP dans un fichier.
+* Automatiser la tâche pour qu’elle s’exécute **toutes les heures**.
+
+---
+
+## 2️⃣ Comprendre le fichier `access.log`
+
+Le fichier se trouve généralement ici :
 
 ```bash
 /var/log/nginx/access.log
 ```
 
-Exemple de ligne :
+Un exemple de ligne typique :
 
-```text
+```
 192.168.1.15 - - [05/Feb/2026:15:20:11 +0000] "GET /index.html HTTP/1.1" 200 1024 "-" "Mozilla/5.0 ..."
 ```
 
+* **10.7.237.226** → adresse IP du visiteur
+* **[05/Feb/2026:15:20:11 +0000]** → date et heure
+* **GET /index.html** → ressource demandée
+* **200** → code HTTP
+* **1024** → taille de la réponse
+
+On se concentre sur **la première colonne**, qui est l’IP.
+
 ---
 
-# 🚀 Création du script
+## 3️⃣ Extraire les IP avec Linux
 
-## Création du fichier
+### a) Utilisation de `awk`
+
+```bash
+awk '{print $1}' /var/log/nginx/access.log
+```
+
+* `$1` → première colonne (IP)
+
+### b) Filtrer les doublons avec `sort` et `uniq`
+
+```bash
+awk '{print $1}' /var/log/nginx/access.log | sort | uniq
+```
+
+* `sort` → trie les IP
+* `uniq` → supprime les doublons
+
+### c) Ajouter à un fichier
+
+```bash
+awk '{print $1}' /var/log/nginx/access.log | sort | uniq > /home/ubuntu/nginx_ips.txt
+```
+
+Maintenant, toutes les IP uniques sont dans `nginx_ips.txt`.
+
+---
+
+## 4️⃣ Créer un script shell automatisé
+
+1. Créer un fichier `scruter_nginx.sh` :
 
 ```bash
 nano /home/ubuntu/scruter_nginx.sh
 ```
 
-## Contenu du script
+2. Ajouter le contenu suivant :
 
 ```bash
 #!/bin/bash
@@ -76,113 +274,70 @@ OUTPUT_FILE="/home/ubuntu/nginx_ips.txt"
 # Extraire les IP uniques et les stocker
 awk '{print $1}' $LOG_FILE | sort | uniq > $OUTPUT_FILE
 
-# Ajouter un timestamp à chaque exécution
+# Optionnel : ajouter un timestamp à chaque exécution
 echo "Script exécuté le $(date)" >> /home/ubuntu/nginx_ips.log
 ```
 
----
-
-# 🔧 Permissions du script
-
-Commande utilisée :
+3. Rendre le script exécutable :
 
 ```bash
 chmod +x /home/ubuntu/scruter_nginx.sh
 ```
 
-Cette commande permet de rendre le script exécutable.
-
----
-
-# 🧪 Test du script
-
-Exécution du script :
+4. Tester le script :
 
 ```bash
 /home/ubuntu/scruter_nginx.sh
-```
-
-Vérification du contenu :
-
-```bash
 cat /home/ubuntu/nginx_ips.txt
 ```
 
 ---
 
-# ⏱️ Automatisation avec Cron
+## 5️⃣ Automatiser avec cron (toutes les heures)
 
-Ouverture de la crontab :
+1. Éditer le crontab de l’utilisateur :
 
 ```bash
 crontab -e
 ```
 
-Ajout de la tâche automatique :
+2. Ajouter la ligne suivante pour exécuter le script toutes les heures :
 
-```bash
+```cron
 0 * * * * /home/ubuntu/scruter_nginx.sh
 ```
 
-Cette ligne permet d’exécuter le script automatiquement à chaque heure.
+* `0 * * * *` → à la minute 0 de chaque heure
+* `/home/ubuntu/scruter_nginx.sh` → chemin du script
 
----
-
-# 🔍 Vérification du service Cron
-
-Commande utilisée :
+3. Vérifier que le cron est bien actif :
 
 ```bash
 systemctl status cron
 ```
 
-Cette commande permet de vérifier que le service cron fonctionne correctement.
+---
+
+## 6️⃣ Bonus : IP les plus fréquentes
+
+Pour détecter les **visiteurs les plus actifs** :
+
+```bash
+awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr > /home/ubuntu/nginx_ips_freq.txt
+```
+
+* `uniq -c` → compte le nombre d’occurrences
+* `sort -nr` → trie par fréquence décroissante
 
 ---
 
-# 🧠 Commandes importantes
+## 7️⃣ Résumé des commandes clés
 
-| Commande              | Description                 |
-| --------------------- | --------------------------- |
-| awk '{print $1}'      | Extraire les adresses IP    |
-| sort                  | Trier les résultats         |
-| uniq                  | Supprimer les doublons      |
-| chmod +x              | Rendre le script exécutable |
-| crontab -e            | Modifier les tâches cron    |
-| systemctl status cron | Vérifier le service cron    |
+| Commande                      | Description                          |                                 |
+| ----------------------------- | ------------------------------------ | ------------------------------- |
+| `awk '{print $1}' access.log` | Extraire la première colonne (IP)    |                                 |
+| `sort                         | uniq`                                | Trier et supprimer les doublons |
+| `uniq -c`                     | Compter les occurrences              |                                 |
+| `crontab -e`                  | Programmer le script automatiquement |                                 |
+| `chmod +x script.sh`          | Rendre le script exécutable          |                                 |
 
----
-
-# 📸 Captures d’écran
-
-## Script Shell
-
-Ajouter ici les captures du script.
-
-```md
-![Script](images/script.png)
-```
-
-## Cron
-
-```md
-![Cron](images/cron.png)
-```
-
-## Service Cron
-
-```md
-![Service Cron](images/service_cron.png)
-```
-
----
-
-# ✅ Résultat
-
-Ce travail a permis :
-
-* d’analyser les logs Nginx,
-* d’extraire les adresses IP automatiquement,
-* d’utiliser les commandes Linux de traitement de texte,
-* d’automatiser les tâches avec cron,
-* et de comprendre la surveillance système sous Linux.
