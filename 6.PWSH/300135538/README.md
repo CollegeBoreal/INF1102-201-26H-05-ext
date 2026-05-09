@@ -38,3 +38,4 @@ Ce laboratoire permet de pratiquer PowerShell afin de :
         ├── powershell-version.png
         ├── script.png
         └── structure.png
+```
